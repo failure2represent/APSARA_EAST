@@ -26,11 +26,13 @@ html {
 }
 
 header {
+    background-color: $sec-color--dark;
     .header__container {
+        max-width: 1820px;
+        margin: 0 auto;
         display: flex;
         place-content: space-between;
-        padding: 13px 50px;
-        background-color: $sec-color--dark;
+        padding: 13px 0px;
         .header__logo {
             .header__logo-img {
                 display: block;
@@ -100,7 +102,7 @@ header {
         gap: 50px;
         .hero__title {
             max-width: 718px;
-            color: whitesmoke;
+            color: #fcfcfc;
             font-size: 65px;
             font-family: $sec-font;
             font-weight: 700;
@@ -115,8 +117,8 @@ header {
             }
         }
         .hero__subtitle {
-            max-width: 590px;
-            color: whitesmoke;
+            max-width: 666px;
+            color: #fcfcfc;
             font-size: 22px;
             font-family: $main-font;
             font-weight: 500;
@@ -129,7 +131,7 @@ header {
         }
         .uniq__button {
             max-width: 300px;
-            max-height: 71px;
+            max-height: 72px;
             color: #000000;
             font-size: 18px;
             font-family: $main-font;
@@ -137,7 +139,7 @@ header {
             font-style: normal;
             line-height: 1.2;
             letter-spacing: 0px;
-            padding: 25px;
+            padding: 26px;
             background: $main-color--dark;
             border-radius: 15px;
             border: none;
@@ -165,7 +167,7 @@ header {
                 padding: 20px;
                 background-color: rgba(15, 27, 46, 0.9);
                 border-radius: 25px;
-                color: whitesmoke;
+                color: #fcfcfc;
                 max-width: 738px;
                 text-align: center;
                 bottom: 25px;
@@ -180,6 +182,7 @@ header {
                 .uniq__wrap {
                     font-size: 30px;
                     color: $main-color--dark;
+                    font-weight: 700;
                 }
             }
         }
@@ -203,7 +206,7 @@ header {
                         max-width: 201px;
                         font-size: 22px;
                         font-family: $main-font;
-                        color: whitesmoke;
+                        color: #fcfcfc;
                         font-weight: 600;
                         line-height: 1.2;
                         letter-spacing: 0px;
@@ -221,7 +224,7 @@ header {
                     }
                 }
                 &.about__card--invert {
-                    background: whitesmoke;
+                    background: #fcfcfc;
                     box-shadow: inset 0 0 0 1px $text-color;
                     .about__card-top {
                         .about__card-title {
@@ -244,7 +247,7 @@ header {
     .services__container {
         max-width: 1328px;
         .services__title {
-            font-size: 38px;
+            font-size: 32px;
             font-family: $main-font;
             color: #000000;
             font-weight: 700;
@@ -264,7 +267,7 @@ header {
                 border-radius: 15px;
                 width: 540px;
                 padding: 55px 35px;
-                background-color: whitesmoke;
+                background-color: #fcfcfc;
                 .service__card-title {
                     font-size: 38px;
                     font-family: $main-font;
@@ -327,6 +330,7 @@ header {
                     }
                 }
                 .uniq__button {
+                    max-width: 410px;
                     font-size: 30px;
                     font-family: $main-font;
                     font-weight: 600;
@@ -335,29 +339,67 @@ header {
                     letter-spacing: 0px;
                     box-shadow: inset 0 0 0 1px $text-color;
                     border: none;
-                    background-color: whitesmoke;
+                    background-color: #fcfcfc;
                     text-align: center;
                     border-radius: 25px;
-                    padding: 24px 150px;
+                    padding: 28px 136px;
                     place-self: center;
                 }
                 &.service__card--invert {
                     background-color: $sec-color;
                     box-shadow: inset 0 0 0 1px $main-color--dark;
                     .service__card-title {
-                        color: whitesmoke;
+                        color: #fcfcfc;
                     }
                     .service__card-subtitle {
                         color: $text-color;
                     }
                     .service__card-list {
                         .service__card-item {
-                            color: whitesmoke;
+                            color: #fcfcfc;
                         }
                     }
                     .uniq__button {
                         background: $main-color--dark;
                         box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $sec-color--dark;
+    .footer__container {
+        max-width: 1820px;
+        margin: 0 auto;
+        padding: 50px 0px 25px;
+        .footer__top {
+            display: flex;
+            place-content: space-between;
+            .footer__socials {
+                padding: 50px 0px 50px 62px;
+
+                .footer__logo {
+                    display: inline-block;
+                    margin-bottom: 30px;
+                    .footer__logo-img {
+                        display: block;
+                        width: 145px;
+                        height: 50px;
+                    }
+                }
+                .footer__socials-text {
+                    max-width: 190px;
+                    color: $text-color;
+                    font-family: "PT Serif";
+                    font-size: 17px;
+                    font-weight: 400;
+                    line-height: 1.2;
+                    letter-spacing: 0px;
+                    margin-bottom: 30px {
+
                     }
                 }
             }
