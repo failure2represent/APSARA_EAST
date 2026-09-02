@@ -397,8 +397,6 @@ header {
 			display: flex;
 			gap: 20px;
 			.faq__content {
-				position: relative;
-				top: 1px;
 				.faq__accordion {
 					display: flex;
 					flex-direction: column;
