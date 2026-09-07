@@ -19,3 +19,21 @@ document.querySelectorAll('.accordion__item').forEach((item) => {
 		}
 	});
 });
+
+
+//burger-menu
+const burger = document.querySelector('.header__burger');
+const nav = document.querySelector('.header__nav');
+const overlay = document.querySelector('.header__overlay');
+
+function toggleMenu() {
+	burger.classList.toggle('active');
+	nav.classList.toggle('active');
+	overlay.classList.toggle('active');
+}
+
+function closeMenu() {
+	burger.classList.remove('active');
+	nav.classList.remove('active');
+	overlay.classList.remove('active');
+}

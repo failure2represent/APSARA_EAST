@@ -23,26 +23,43 @@
 			<nav class="header__nav">
 				<ul class="header__nav-list">
 					<li class="header__nav-item">
-						<a class="header__nav-link" href="#">
+						<a class="header__nav-link" onclick="closeMenu()" href="#">
 							Тарифы
 						</a>
 					</li>
 					<li class="header__nav-item">
-						<a class="header__nav-link" href="#">
-							Как это работает
+						<a class="header__nav-link" onclick="closeMenu()" href="#">
+							Наши возможности
 						</a>
 
 					</li>
 					<li class="header__nav-item">
-						<a class="header__nav-link" href="#">
-							Вопросы
+						<a class="header__nav-link" onclick="closeMenu()" href="#">
+							Частые вопросы
 						</a>
 					</li>
 				</ul>
 			</nav>
 
-			<p class="header__lang-ch">RU</p>
+			<div class="header__actions">
+				<button class="header__contact" href="#">Контакт</button>
+				<ul class="header__langs">
+					<li class="header__lang">
+						RU
+						<ul class="langs__dropdown">
+							<li class="dropdown__lang">EN</li>
+							<li class="dropdown__lang">UA</li>
+						</ul>
+					</li>
 
+				</ul>
+				<button type="button" class="header__burger" aria-label="Меню" onclick="toggleMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<div class="header__overlay" onclick="toggleMenu()"></div>
+			</div>
 		</div>
 	</header>
 	<main>
@@ -51,9 +68,9 @@
 				<h1 class="hero__title">Ваши <span class="uniq__wrap">врата</span> в <span
 						class="hero__title-wrap">Юго-Восточную Азию</span>
 				</h1>
-				<h2 class="hero__subtitle">Легальный статус, новый рынок, <span class="uniq__wrap">новая жизнь</span> —
+				<h2 class="hero__subtitle">Легальный статус, новый рынок, <span class="uniq__wrap">новая жизнь</span> –
 					начните заполнением одной формы</h2>
-				<button class="uniq__button">Начать оформление</button>
+				<button class="hero__button">Начать оформление</button>
 			</div>
 
 		</section>
@@ -61,136 +78,87 @@
 			<div class="about__container container">
 				<div class="about__desc">
 					<img class="about__desc-img" src="img/about.webp">
-					<p class="about__desc-text"><span class="uniq__wrap">APSARA EAST</span> — консалтинговая компания,
+					<p class="about__desc-text"><span class="desc__wrap">APSARA EAST</span> – консалтинговая компания,
 						которая помогает предпринимателям, инвесторам
 						получить
-						долгосрочную бизнес-визу в Камбодже и легально переехать
+						долгосрочную бизнес-визу в Камбодже и <span class="text__wrap">легально</span> переехать
 						в Юго-Восточную Азию.</p>
 				</div>
 				<div class="about__cards">
 					<article class="about__card">
 						<div class="about__card-top">
 							<h3 class="about__card-title">Визовое сопровождение</h3>
-							<svg class="about__card-icon" xmlns="http://www.w3.org/2000/svg" width="61" height="61"
-								viewBox="0 0 24 24" fill="none" stroke="#e8a93d" stroke-width="1" stroke-linecap="round"
-								stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-world">
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-								<path d="M3.6 9h16.8" />
-								<path d="M3.6 15h16.8" />
-								<path d="M11.5 3a17 17 0 0 0 0 18" />
-								<path d="M12.5 3a17 17 0 0 1 0 18" />
-							</svg>
+							<img class="about__card-icon" src="img/world.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								Мы берём на себя всю бюрократическую сторону вопроса — от первичной консультации до
+								<span class="uniq__wrap">
+									Мы берём на себя всю бюрократическую сторону вопроса –
+								</span>от первичной консультации до
 								получения готового документа.
 							</p>
 						</div>
 					</article>
 					<article class="about__card about__card--invert">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Визовое сопровождение</h3>
-							<svg class="about__card-icon" xmlns="http://www.w3.org/2000/svg" width="61" height="61"
-								viewBox="0 0 24 24" fill="none" stroke="#e8a93d" stroke-width="1" stroke-linecap="round"
-								stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-world">
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-								<path d="M3.6 9h16.8" />
-								<path d="M3.6 15h16.8" />
-								<path d="M11.5 3a17 17 0 0 0 0 18" />
-								<path d="M12.5 3a17 17 0 0 1 0 18" />
-							</svg>
+							<h3 class="about__card-title">Оформление визы</h3>
+							<img class="about__card-icon" src="img/fingerprint.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								Мы берём на себя всю бюрократическую сторону вопроса — от первичной консультации до
-								получения готового документа.
+								Виза в Камбоджу «под ключ» – от подготовки документов до получения визы.
 							</p>
 						</div>
 					</article>
 					<article class="about__card about__card--invert">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Визовое сопровождение</h3>
-							<svg class="about__card-icon" xmlns="http://www.w3.org/2000/svg" width="61" height="61"
-								viewBox="0 0 24 24" fill="none" stroke="#e8a93d" stroke-width="1" stroke-linecap="round"
-								stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-world">
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-								<path d="M3.6 9h16.8" />
-								<path d="M3.6 15h16.8" />
-								<path d="M11.5 3a17 17 0 0 0 0 18" />
-								<path d="M12.5 3a17 17 0 0 1 0 18" />
-							</svg>
+							<h3 class="about__card-title">Банковские счета</h3>
+							<img class="about__card-icon" src="img/transaction.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								Мы берём на себя всю бюрократическую сторону вопроса — от первичной консультации до
-								получения готового документа.
+								Консультации по открытию банковских счетов на месте.
+								<span class="uniq__wrap">Поможем разобраться с требованиями банка и необходимыми
+									документами.</span>
 							</p>
 						</div>
 					</article>
 					<article class="about__card">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Визовое сопровождение</h3>
-							<svg class="about__card-icon" xmlns="http://www.w3.org/2000/svg" width="61" height="61"
-								viewBox="0 0 24 24" fill="none" stroke="#e8a93d" stroke-width="1" stroke-linecap="round"
-								stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-world">
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-								<path d="M3.6 9h16.8" />
-								<path d="M3.6 15h16.8" />
-								<path d="M11.5 3a17 17 0 0 0 0 18" />
-								<path d="M12.5 3a17 17 0 0 1 0 18" />
-							</svg>
+							<h3 class="about__card-title">Регистрация бизнеса</h3>
+							<img class="about__card-icon" src="img/briefcase.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								Мы берём на себя всю бюрократическую сторону вопроса — от первичной консультации до
-								получения готового документа.
+								Помощь в регистрации компаний и запуске бизнеса при необходимости.
+								<span class="uniq__wrap">
+									Консультируем по выбору формы бизнеса и сопровождаем процесс регистрации.
+								</span>
+
 							</p>
 						</div>
 					</article>
 					<article class="about__card">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Визовое сопровождение</h3>
-							<svg class="about__card-icon" xmlns="http://www.w3.org/2000/svg" width="61" height="61"
-								viewBox="0 0 24 24" fill="none" stroke="#e8a93d" stroke-width="1" stroke-linecap="round"
-								stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-world">
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-								<path d="M3.6 9h16.8" />
-								<path d="M3.6 15h16.8" />
-								<path d="M11.5 3a17 17 0 0 0 0 18" />
-								<path d="M12.5 3a17 17 0 0 1 0 18" />
-							</svg>
+							<h3 class="about__card-title">Релокация</h3>
+							<img class="about__card-icon" src="img/shield-check.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								Мы берём на себя всю бюрократическую сторону вопроса — от первичной консультации до
-								получения готового документа.
+								Поддержка при релокации и адаптации в стране.
+								<span class="uniq__wrap">Предоставим информацию и рекомендации по ключевым вопросам
+									переезда.</span>
 							</p>
 						</div>
 					</article>
 					<article class="about__card about__card--invert">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Визовое сопровождение</h3>
-							<svg class="about__card-icon" xmlns="http://www.w3.org/2000/svg" width="61" height="61"
-								viewBox="0 0 24 24" fill="none" stroke="#e8a93d" stroke-width="1" stroke-linecap="round"
-								stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-world">
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-								<path d="M3.6 9h16.8" />
-								<path d="M3.6 15h16.8" />
-								<path d="M11.5 3a17 17 0 0 0 0 18" />
-								<path d="M12.5 3a17 17 0 0 1 0 18" />
-							</svg>
+							<h3 class="about__card-title">Языковая поддержка</h3>
+							<img class="about__card-icon" src="img/lang-support.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								Мы берём на себя всю бюрократическую сторону вопроса — от первичной консультации до
-								получения готового документа.
+								Экспертная поддержка на русском, украинском и английском языках.
 							</p>
 						</div>
 					</article>
@@ -204,7 +172,7 @@
 					<article class="service__card">
 						<p class="service__card-badge">БАЗОВЫЙ</p>
 						<h3 class="service__card-title">
-							«Standart»
+							Standart
 						</h3>
 						<p class="service__card-subtitle">
 							Оформление визы в срок от 30 дней
@@ -220,12 +188,12 @@
 							<li class="service__card-item service__card-item--disabled">Поддержка при адаптации в стране
 							</li>
 						</ul>
-						<button class="uniq__button">Выбрать</button>
+						<button class="service__button">Выбрать</button>
 					</article>
 					<article class="service__card service__card--invert">
 						<p class="service__card-badge">СРОЧНЫЙ</p>
 						<h3 class="service__card-title">
-							«Standart+»
+							Standart+
 						</h3>
 						<p class="service__card-subtitle">
 							Оформление визы в срок до 14 дней
@@ -244,15 +212,15 @@
 
 
 						</ul>
-						<button class="uniq__button">Выбрать</button>
+						<button class="service__button">Выбрать</button>
 					</article>
 				</div>
 			</div>
 		</section>
 
 		<section class="QR">
-
 		</section>
+
 		<section class="faq">
 			<div class="faq__container container">
 				<h3 class="faq__title">Частые вопросы</h3>
@@ -264,7 +232,7 @@
 								</div>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Стоимость зависит от выбранного пакета — Стандарт или Стандарт+. Перед началом
+										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
 										работы, менеджер подробно расскажет, какие услуги входят в пакет и потребуется
 										ли
 										что-то дополнительно.
@@ -275,7 +243,7 @@
 								<div class="accordion__title">Какие документы нужны для начала оформления?</div>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Стоимость зависит от выбранного пакета — Стандарт или Стандарт+. Перед началом
+										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
 										работы, менеджер подробно расскажет, какие услуги входят в пакет и потребуется
 										ли
 										что-то дополнительно.
@@ -283,10 +251,10 @@
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">Какие документы нужны для начала оформления?</div>
+								<div class="accordion__title">Сколько времени занимает оформление?</div>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Стоимость зависит от выбранного пакета — Стандарт или Стандарт+. Перед началом
+										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
 										работы, менеджер подробно расскажет, какие услуги входят в пакет и потребуется
 										ли
 										что-то дополнительно.
@@ -294,10 +262,10 @@
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">Какие документы нужны для начала оформления?</div>
+								<div class="accordion__title">Можно ли оформить всё без личного присутствия?</div>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Стоимость зависит от выбранного пакета — Стандарт или Стандарт+. Перед началом
+										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
 										работы, менеджер подробно расскажет, какие услуги входят в пакет и потребуется
 										ли
 										что-то дополнительно.
@@ -305,10 +273,10 @@
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">Какие документы нужны для начала оформления?</div>
+								<div class="accordion__title">Что делать, если мне откажут в визе или регистрации?</div>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Стоимость зависит от выбранного пакета — Стандарт или Стандарт+. Перед началом
+										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
 										работы, менеджер подробно расскажет, какие услуги входят в пакет и потребуется
 										ли
 										что-то дополнительно.
@@ -316,10 +284,10 @@
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">Какие документы нужны для начала оформления?</div>
+								<div class="accordion__title">Работаете ли вы с гражданами всех стран?</div>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Стоимость зависит от выбранного пакета — Стандарт или Стандарт+. Перед началом
+										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
 										работы, менеджер подробно расскажет, какие услуги входят в пакет и потребуется
 										ли
 										что-то дополнительно.
@@ -327,10 +295,10 @@
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">Какие документы нужны для начала оформления?</div>
+								<div class="accordion__title">Какие способы оплаты доступны ?</div>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Стоимость зависит от выбранного пакета — Стандарт или Стандарт+. Перед началом
+										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
 										работы, менеджер подробно расскажет, какие услуги входят в пакет и потребуется
 										ли
 										что-то дополнительно.
@@ -338,10 +306,10 @@
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">Какие документы нужны для начала оформления?</div>
+								<div class="accordion__title">Что входит в стоимость выбранного пакета?</div>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Стоимость зависит от выбранного пакета — Стандарт или Стандарт+. Перед началом
+										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
 										работы, менеджер подробно расскажет, какие услуги входят в пакет и потребуется
 										ли
 										что-то дополнительно.
@@ -444,16 +412,15 @@
 						в Юго-Восточной Азии</p>
 					<div class="footer__socials-links">
 						<a class="footer__socials-link" href="#">
-							<svg class="footer__socials-icon" width="50" xmlns="http://www.w3.org/2000/svg" height="50"
-								id="screenshot-e8f02f89-625d-8093-8008-8b3d7eaa6a4b" viewBox="938.071 5240 50 50"
-								style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink"
-								fill="none" version="1.1">
-								<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a4b">
+							<svg class="socials-link__img" width="50" xmlns="http://www.w3.org/2000/svg" height="50"
+								id="screenshot-450ec170-c358-8001-8008-9057ac792585" viewBox="7450.071 5400 50 50"
+								xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+								<g id="shape-450ec170-c358-8001-8008-9057ac792585">
 									<defs>
-										<clipPath id="frame-clip-e8f02f89-625d-8093-8008-8b3d7eaa6a4b-render-14704"
+										<clipPath id="frame-clip-450ec170-c358-8001-8008-9057ac792585-render-32000"
 											class="frame-clip frame-clip-def">
-											<rect rx="10" ry="10" x="938.0714285714284" y="5240.000000000001" width="50"
-												height="50"
+											<rect rx="10" ry="10" x="7450.0714285714275" y="5400.000000000001"
+												width="50" height="50"
 												transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)">
 											</rect>
 										</clipPath>
@@ -461,68 +428,68 @@
 									<g class="frame-container-wrapper">
 										<g class="frame-container-blur">
 											<g class="frame-container-shadows">
-												<g clip-path="url(#frame-clip-e8f02f89-625d-8093-8008-8b3d7eaa6a4b-render-14704)"
+												<g clip-path="url(#frame-clip-450ec170-c358-8001-8008-9057ac792585-render-32000)"
 													fill="none">
-													<g class="fills" id="fills-e8f02f89-625d-8093-8008-8b3d7eaa6a4b">
-														<rect rx="10" ry="10" x="938.0714285714284"
-															y="5240.000000000001" width="50" height="50"
+													<g class="fills" id="fills-450ec170-c358-8001-8008-9057ac792585">
+														<rect rx="10" ry="10" x="7450.0714285714275"
+															y="5400.000000000001" width="50" height="50"
 															transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)"
 															class="frame-background">
 														</rect>
 													</g>
 													<g class="frame-children">
-														<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a51"
+														<g id="shape-450ec170-c358-8001-8008-9057ac79258b"
 															style="fill:#000000" width="24"
 															class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"
 															height="24" rx="0" ry="0">
-															<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a52">
+															<g id="shape-450ec170-c358-8001-8008-9057ac79258c">
 																<g class="fills"
-																	id="fills-e8f02f89-625d-8093-8008-8b3d7eaa6a52">
+																	id="fills-450ec170-c358-8001-8008-9057ac79258c">
 																	<path
-																		d="M945.0715942382812,5247L981.0715942382812,5247L981.0715942382812,5283L945.0715942382812,5283L945.0715942382812,5247"
+																		d="M7457.072265625,5407L7493.072265625,5407L7493.072265625,5443L7457.072265625,5443L7457.072265625,5407"
 																		stroke="none" fill="none"
 																		stroke-linejoin="round" stroke-linecap="round"
 																		stroke-width="2" style="fill:none">
 																	</path>
 																</g>
 															</g>
-															<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a53">
+															<g id="shape-450ec170-c358-8001-8008-9057ac79258d">
 																<g class="fills"
-																	id="fills-e8f02f89-625d-8093-8008-8b3d7eaa6a53">
+																	id="fills-450ec170-c358-8001-8008-9057ac79258d">
 																	<path
-																		d="M967.5715942382812,5262L961.5715942382812,5268L970.5715942382812,5277L976.5715942382812,5253L949.5715942382812,5263.5L955.5715942382812,5266.5L958.5715942382812,5275.5L963.0715942382812,5269.5"
+																		d="M7479.572265625,5422L7473.572265625,5428L7482.572265625,5437L7488.572265625,5413L7461.572265625,5423.5L7467.572265625,5426.5L7470.572265625,5435.5L7475.072265625,5429.5"
 																		fill="none" stroke-linejoin="round"
 																		stroke-linecap="round" style="fill:none">
 																	</path>
 																</g>
 																<g fill="none" stroke-linejoin="round"
 																	stroke-linecap="round"
-																	id="strokes-7bcf5226-958b-8093-8008-93198e6f5111-e8f02f89-625d-8093-8008-8b3d7eaa6a53"
+																	id="strokes-55d75d1e-0e9c-80cb-8008-97076b85512e-450ec170-c358-8001-8008-9057ac79258d"
 																	class="strokes">
 																	<g class="stroke-shape">
 																		<path
-																			d="M967.5715942382812,5262L961.5715942382812,5268L970.5715942382812,5277L976.5715942382812,5253L949.5715942382812,5263.5L955.5715942382812,5266.5L958.5715942382812,5275.5L963.0715942382812,5269.5"
+																			d="M7479.572265625,5422L7473.572265625,5428L7482.572265625,5437L7488.572265625,5413L7461.572265625,5423.5L7467.572265625,5426.5L7470.572265625,5435.5L7475.072265625,5429.5"
 																			style="fill:none;fill-opacity:none;stroke-width:2;stroke:#259dd8;stroke-opacity:1;stroke-linecap:round">
 																		</path>
 																	</g>
 																</g>
 															</g>
-															<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a54">
+															<g id="shape-450ec170-c358-8001-8008-9057ac79258e">
 																<g class="fills"
-																	id="fills-e8f02f89-625d-8093-8008-8b3d7eaa6a54">
+																	id="fills-450ec170-c358-8001-8008-9057ac79258e">
 																	<path
-																		d="M967.5715942382812,5262L961.5715942382812,5268L970.5715942382812,5277L976.5715942382812,5253L949.5715942382812,5263.5L955.5715942382812,5266.5L958.5715942382812,5275.5L963.0715942382812,5269.5"
+																		d="M7479.572265625,5422L7473.572265625,5428L7482.572265625,5437L7488.572265625,5413L7461.572265625,5423.5L7467.572265625,5426.5L7470.572265625,5435.5L7475.072265625,5429.5"
 																		fill="none" stroke-linejoin="round"
 																		stroke-linecap="round" style="fill:none">
 																	</path>
 																</g>
 																<g fill="none" stroke-linejoin="round"
 																	stroke-linecap="round"
-																	id="strokes-7bcf5226-958b-8093-8008-93198e6f5112-e8f02f89-625d-8093-8008-8b3d7eaa6a54"
+																	id="strokes-55d75d1e-0e9c-80cb-8008-97076b85512f-450ec170-c358-8001-8008-9057ac79258e"
 																	class="strokes">
 																	<g class="stroke-shape">
 																		<path
-																			d="M967.5715942382812,5262L961.5715942382812,5268L970.5715942382812,5277L976.5715942382812,5253L949.5715942382812,5263.5L955.5715942382812,5266.5L958.5715942382812,5275.5L963.0715942382812,5269.5"
+																			d="M7479.572265625,5422L7473.572265625,5428L7482.572265625,5437L7488.572265625,5413L7461.572265625,5423.5L7467.572265625,5426.5L7470.572265625,5435.5L7475.072265625,5429.5"
 																			style="fill:none;fill-opacity:none;stroke-width:2;stroke:#259dd8;stroke-opacity:1;stroke-linecap:round">
 																		</path>
 																	</g>
@@ -532,28 +499,8 @@
 													</g>
 												</g>
 											</g>
-											<g id="strokes-7bcf5226-958b-8093-8008-93198e6f5113-e8f02f89-625d-8093-8008-8b3d7eaa6a4b"
+											<g id="strokes-55d75d1e-0e9c-80cb-8008-97076b855130-450ec170-c358-8001-8008-9057ac792585"
 												class="strokes">
-												<g class="inner-stroke-shape"
-													transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)">
-													<defs>
-														<clipPath
-															id="inner-stroke-render-14704-e8f02f89-625d-8093-8008-8b3d7eaa6a4b-0">
-															<use
-																href="#stroke-shape-render-14704-e8f02f89-625d-8093-8008-8b3d7eaa6a4b-0">
-															</use>
-														</clipPath>
-														<rect rx="10" ry="10" x="938.0714285714284"
-															y="5240.000000000001" width="50" height="50"
-															class="frame-background"
-															style="fill:none;fill-opacity:none;stroke-width:2;stroke:#e8a93d;stroke-opacity:1"
-															id="stroke-shape-render-14704-e8f02f89-625d-8093-8008-8b3d7eaa6a4b-0">
-														</rect>
-													</defs>
-													<use href="#stroke-shape-render-14704-e8f02f89-625d-8093-8008-8b3d7eaa6a4b-0"
-														clip-path="url(&#x27;#inner-stroke-render-14704-e8f02f89-625d-8093-8008-8b3d7eaa6a4b-0&#x27;)">
-													</use>
-												</g>
 											</g>
 										</g>
 									</g>
@@ -561,7 +508,7 @@
 							</svg>
 						</a>
 						<a class="footer__socials-link" href="#">
-							<svg width="50" xmlns="http://www.w3.org/2000/svg" height="50"
+							<svg class="socials-link__img" width="50" xmlns="http://www.w3.org/2000/svg" height="50"
 								id="screenshot-e8f02f89-625d-8093-8008-8b3d7eaa6a4a" viewBox="1023.071 5240 50 50"
 								style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink"
 								fill="none" version="1.1">
@@ -751,11 +698,14 @@
 				</div>
 				<div class="footer__pay-methods">
 					<h3 class="footer__column-title">Принимаем оплату</h3>
-					<img src="img/mastercard.png">
-					<img src="img/mastercard.png">
-					<img src="img/mastercard.png">
-					<img src="img/mastercard.png">
-					<img src="img/mastercard.png">
+					<div class="pay-methods">
+						<img class="pay-method__icon" src="img/mastercard.png">
+						<img class="pay-method__icon" src="img/mastercard.png">
+						<img class="pay-method__icon" src="img/mastercard.png">
+						<!-- <img class="pay-method__icon" src="img/mastercard.png">
+					<img class="pay-method__icon" src="img/mastercard.png"> -->
+					</div>
+
 				</div>
 			</div>
 
