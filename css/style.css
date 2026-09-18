@@ -30,7 +30,7 @@ header .header__container {
   place-content: space-between;
   padding: 13px 0px;
 }
-header .header__container .header__logo .header__logo-img {
+header .header__container .header__logo .header__logo-link .header__logo-img {
   display: block;
   width: 145px;
   height: 50px;
@@ -54,6 +54,12 @@ header .header__container .header__nav .header__nav-list .header__nav-item .head
 }
 header .header__container .header__nav .header__nav-list .header__nav-item .header__nav-link:hover {
   color: #e8a93d;
+}
+header .header__container .header__nav .header__nav-socials .header__nav-media {
+  display: none;
+}
+header .header__container .header__nav .header__nav-contact {
+  display: none;
 }
 header .header__container .header__actions {
   display: flex;
@@ -107,7 +113,7 @@ header .header__container .header__actions .header__lang .langs__dropdown .dropd
   letter-spacing: 0px;
   padding: 12px 32px;
 }
-header .header__container .header__actions .header__contact {
+header .header__container .header__actions .header__contact-btn {
   padding: 13px 25px;
   border-radius: 11px;
   background-color: #e8a93d;
@@ -143,7 +149,7 @@ header .header__container .header__actions .header__contact {
   letter-spacing: 0px;
   margin-bottom: 8px;
 }
-.hero .hero__container .hero__title .uniq__wrap {
+.hero .hero__container .hero__title .hero__title-recolor {
   color: #e8a93d;
 }
 .hero .hero__container .hero__title .hero__title-wrap {
@@ -160,7 +166,7 @@ header .header__container .header__actions .header__contact {
   letter-spacing: 0px;
   margin-bottom: 40px;
 }
-.hero .hero__container .hero__subtitle .uniq__wrap {
+.hero .hero__container .hero__subtitle .hero__subtitle-wrap {
   color: #e8a93d;
 }
 .hero .hero__container .hero__button {
@@ -199,32 +205,32 @@ header .header__container .header__actions .header__contact {
      object-fit: cover;
   border-radius: 15px;
 }
-.about .about__container .about__desc .about__desc-text {
+.about .about__container .about__desc .about__desc-inner {
   grid-area: 1/1;
   align-self: end;
-  padding: 20px;
-  background-color: #0f1b2e;
-  opacity: 90%;
-  border-radius: 25px;
-  color: #fcfcfc;
-  max-width: 738px;
-  text-align: center;
-  bottom: 25px;
   position: relative;
+  bottom: 25px;
   left: 25px;
+  padding: 20px;
+  background-color: rgba(15, 27, 46, 0.9);
+  border-radius: 25px;
+  max-width: 738px;
+}
+.about .about__container .about__desc .about__desc-inner .about__desc-text {
+  color: #fcfcfc;
+  text-align: center;
   font-size: 24px;
   font-family: "PT Serif", serif;
   font-weight: 400;
-  font-style: normal;
   line-height: 1.5;
-  letter-spacing: 0px;
+  letter-spacing: 0;
 }
-.about .about__container .about__desc .about__desc-text .desc__wrap {
+.about .about__container .about__desc .about__desc-inner .desc__wrap {
   font-size: 30px;
   color: #e8a93d;
   font-weight: 700;
 }
-.about .about__container .about__desc .about__desc-text .text__wrap {
+.about .about__container .about__desc .about__desc-inner .text__wrap {
   color: #e8a93d;
 }
 .about .about__container .about__cards {
@@ -264,11 +270,8 @@ header .header__container .header__actions .header__contact {
   line-height: 1.2;
   letter-spacing: 0px;
 }
-.about .about__container .about__cards .about__card .about__card-bottom .about__card-text .uniq__wrap {
-  display: inline-flex;
-}
 .about .about__container .about__cards .about__card:nth-of-type(2) .about__card-bottom .about__card-text {
-  max-width: 228px;
+  max-width: 352px;
 }
 .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-top {
   justify-content: space-between;
@@ -353,6 +356,7 @@ header .header__container .header__actions .header__contact {
   margin-bottom: 86px;
 }
 .services .services__container .services__inner .service__card .service__card-list .service__card-item {
+  place-items: center;
   color: #000000;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -452,6 +456,12 @@ header .header__container .header__actions .header__contact {
   gap: 33px;
 }
 .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item {
+  display: flex;
+  flex-wrap: wrap;
+  place-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 16px 25px;
   border-block: 1px solid #e8a93d;
   transition: background-color 0.3s ease;
 }
@@ -461,11 +471,14 @@ header .header__container .header__actions .header__contact {
 .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item--active .accordion__title {
   color: #fcfcfc;
 }
+.faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item--active .accordion__title-icon {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
 .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 25px;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -476,25 +489,19 @@ header .header__container .header__actions .header__contact {
   line-height: 1.2;
   letter-spacing: 0px;
 }
-.faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title::after {
-  content: "";
-  flex-shrink: 0;
-  width: 50px;
-  height: 50px;
-  background: url("../img/plane.svg") no-repeat center/contain;
+.faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
   transition: transform 0.3s ease;
 }
-.faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title--active::after {
-  transform: rotate(90deg);
-}
 .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content {
+  place-content: center;
   height: 0;
   overflow: hidden;
   transition: height 0.3s ease;
 }
 .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content .accordion__text {
   margin: 0;
-  padding: 0px 264px 16px 25px;
+  padding-right: 288px;
+  margin-top: 17px;
   font-family: "PT Serif", serif;
   color: #9a9a9a;
   font-size: 16px;
@@ -713,6 +720,96 @@ footer .footer__container .footer__bottom .footer__copyright {
   visibility: visible;
 }
 
+@media (max-width: 1279px) {
+  header .header__container {
+    place-items: center;
+  }
+  header .header__container .header__logo .header__logo-link .header__logo-img {
+    width: 140px;
+    height: 48px;
+  }
+  header .header__container .header__nav {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100dvh;
+    background-color: #010e1c;
+    z-index: 1000;
+    padding: 80px 30px 30px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+  }
+  header .header__container .header__nav.active {
+    right: 0;
+    place-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  header .header__container .header__nav .header__nav-list {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 40px;
+  }
+  header .header__container .header__nav .header__nav-list .header__nav-item {
+    width: 100%;
+  }
+  header .header__container .header__nav .header__nav-list .header__nav-item .header__nav-link {
+    display: block;
+    width: 100%;
+    font-size: 21px;
+    padding: 18px 0;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+  }
+  header .header__container .header__nav .header__nav-socials {
+    display: flex;
+    gap: 30px;
+  }
+  header .header__container .header__nav .header__nav-socials .header__nav-media {
+    display: initial;
+  }
+  header .header__container .header__nav .header__nav-contact {
+    display: flex;
+    font-size: 16px;
+    max-width: 280px;
+    padding: 24px 51px;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 0px;
+    background: #e8a93d;
+    border-radius: 15px;
+    border: none;
+    margin-bottom: 40px;
+  }
+  .header__burger {
+    display: flex;
+  }
+  .header__overlay {
+    display: block;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
+    display: none;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__upper {
+    text-transform: uppercase;
+  }
+}
+@media (max-width: 767px) {
+  header .header__container .header__actions .header__contact-btn {
+    display: none;
+  }
+}
 @media (1440px <= width < 1920px) {
   .container {
     max-width: 1280px;
@@ -723,11 +820,11 @@ footer .footer__container .footer__bottom .footer__copyright {
   header .header__container .header__nav .header__nav-list .header__nav-item .header__nav-link {
     font-size: 21px;
   }
+  header .header__container .header__nav .header__nav-contact {
+    display: none;
+  }
   header .header__container .header__actions .header__lang {
     font-size: 17px;
-  }
-  .hero .hero__container {
-    padding-top: 223px;
   }
   .hero .hero__container .hero__title {
     font-size: 61px;
@@ -765,6 +862,12 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
     font-size: 14px;
   }
+  .about .about__container .about__desc .about__desc-inner {
+    max-width: 578px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text {
+    font-size: 21px;
+  }
   .services .services__container .services__title {
     font-size: 33px;
   }
@@ -776,7 +879,10 @@ footer .footer__container .footer__bottom .footer__copyright {
   }
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
     font-size: 21px;
-    padding: 14px 25px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
+    width: 46px;
+    height: 46px;
   }
   .faq .faq__container .faq__inner .faq__media .faq__media-img {
     max-width: 410px;
@@ -786,13 +892,13 @@ footer .footer__container .footer__bottom .footer__copyright {
     max-width: 1340px;
   }
   footer .footer__container .footer__top .footer__socials {
-    padding: 50px 55px 50px 28px;
+    padding: 50px 60px 50px 30px;
   }
   footer .footer__container .footer__top .footer__contacts {
-    padding: 50px 55px 104px;
+    padding: 50px 60px 104px;
   }
   footer .footer__container .footer__top .footer__open-hours {
-    padding: 50px 40px 70px;
+    padding: 50px 60px 70px;
   }
   footer .footer__container .footer__top .footer__pay-methods {
     padding: 113px 30px 113px 60px;
@@ -807,8 +913,21 @@ footer .footer__container .footer__bottom .footer__copyright {
   header > .header__container {
     max-width: 1200px;
   }
+  header .header__container {
+    padding: 10px 0px;
+  }
+  header .header__container .header__logo .header__logo-link .header__logo-img {
+    width: 140px;
+    height: 48px;
+  }
   header .header__container .header__nav .header__nav-list {
     gap: 66px;
+  }
+  header .header__container .header__nav .header__nav-list .header__nav-item .header__nav-link {
+    font-size: 20px;
+  }
+  header .header__container .header__nav .header__nav-contact {
+    display: none;
   }
   .hero .hero__container {
     padding-top: 200px;
@@ -828,12 +947,14 @@ footer .footer__container .footer__bottom .footer__copyright {
     max-width: 588px;
     height: 650px;
   }
-  .about .about__container .about__desc .about__desc-text {
+  .about .about__container .about__desc .about__desc-inner {
     max-width: 538px;
-    font-size: 21px;
     padding: 15px;
   }
-  .about .about__container .about__desc .about__desc-text .desc__wrap {
+  .about .about__container .about__desc .about__desc-inner .about__desc-text {
+    font-size: 21px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text .desc__wrap {
     font-size: 28px;
   }
   .about .about__container .about__cards {
@@ -855,6 +976,15 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
     font-size: 14px;
   }
+  .about .about__container .about__cards .about__card:first-of-type .about__card-bottom .about__card-text {
+    max-width: 242px;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-bottom .about__card-text .card-text__wrap {
+    display: initial;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(3) .about__card-bottom .about__card-text .card-text__wrap {
+    display: initial;
+  }
   .services .services__container .services__title {
     font-size: 32px;
   }
@@ -875,25 +1005,29 @@ footer .footer__container .footer__bottom .footer__copyright {
     gap: 13px;
   }
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
+    max-width: 620px;
     font-size: 21px;
-    padding: 14px 25px;
   }
-  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title::after {
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
     width: 46px;
     height: 46px;
   }
   .faq .faq__container .faq__media .faq__media-img {
     max-width: 410px;
-    max-height: 700px;
+    height: 735px;
   }
   footer .footer__container .footer__top .footer__socials {
-    padding: 50px 35px 50px 18px;
+    padding: 50px 40px 50px 20px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__logo .footer__logo-img {
+    width: 140px;
+    height: 48px;
   }
   footer .footer__container .footer__top .footer__contacts {
-    padding: 50px 35px 104px;
+    padding: 50px 40px 104px;
   }
   footer .footer__container .footer__top .footer__open-hours {
-    padding: 50px 35px 70px;
+    padding: 50px 40px 70px;
   }
   footer .footer__container .footer__top .footer__pay-methods {
     padding: 113px 20px 113px 40px;
@@ -906,53 +1040,10 @@ footer .footer__container .footer__bottom .footer__copyright {
     max-width: 944px;
   }
   header .header__container {
-    place-items: center;
-  }
-  .header__burger {
-    display: flex;
-  }
-  .header__overlay {
-    display: block;
-  }
-  header .header__container .header__logo .header__logo-img {
-    width: 140px;
-    height: 48px;
-  }
-  header .header__container .header__nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: #fff;
-    z-index: 1000;
-    padding: 80px 30px 30px;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-  }
-  header .header__container .header__nav.active {
-    right: 0;
-  }
-  header .header__container .header__nav .header__nav-list {
-    flex-direction: column;
-    gap: 0;
-    margin-top: 30px;
-  }
-  header .header__container .header__nav .header__nav-list .header__nav-item {
-    width: 100%;
-    border-bottom: 1px solid #eee;
-  }
-  header .header__container .header__nav .header__nav-list .header__nav-item .header__nav-link {
-    display: block;
-    width: 100%;
-    font-size: 20px;
-    padding: 18px 0;
-    border: none;
-    border-radius: 0;
-    text-align: left;
+    padding: 11px 0px;
   }
   .hero .hero__container {
-    padding-top: 200px;
+    padding-top: 210px;
   }
   .hero .hero__container .hero__title {
     font-size: 56px;
@@ -969,11 +1060,14 @@ footer .footer__container .footer__bottom .footer__copyright {
     max-width: 460px;
     height: 720px;
   }
-  .about .about__container .about__desc .about__desc-text {
+  .about .about__container .about__desc .about__desc-inner {
     max-width: 410px;
-    font-size: 18px;
+    padding: 15px;
   }
-  .about .about__container .about__desc .about__desc-text .desc__wrap {
+  .about .about__container .about__desc .about__desc-inner .about__desc-text {
+    font-size: 17px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text .desc__wrap {
     font-size: 24px;
   }
   .about .about__container .about__cards .about__card {
@@ -996,8 +1090,19 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
     font-size: 14px;
   }
-  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .uniq__wrap {
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
     display: none;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__upper {
+    text-transform: uppercase;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(2) .about__card-bottom .card-text__devider {
+    display: inline-flex;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-top .about__card-title {
+    width: 142px;
+    height: 43px;
+    place-content: center;
   }
   .services .services__container .services__title {
     font-size: 32px;
@@ -1022,16 +1127,16 @@ footer .footer__container .footer__bottom .footer__copyright {
     gap: 13px;
   }
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
+    max-width: 508px;
     font-size: 18px;
-    padding: 14px 25px;
   }
-  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title::after {
-    width: 40px;
-    height: 40px;
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
+    width: 46px;
+    height: 46px;
   }
   .faq .faq__container .faq__media .faq__media-img {
     max-width: 272px;
-    height: 651px;
+    height: 731px;
   }
   footer .footer__container .footer__top .footer__socials {
     padding: 50px 21px 62px 11px;
@@ -1074,7 +1179,989 @@ footer .footer__container .footer__bottom .footer__copyright {
     font-size: 16px;
   }
   footer .footer__container .footer__top .footer__pay-methods {
-    padding: 115px 11px 113px 21px;
+    padding: 115px 11px 115px 21px;
+  }
+  footer .footer__container .footer__top .footer__pay-methods .footer__column-title {
+    font-size: 19px;
+  }
+}
+@media (768px <= width < 1024px) {
+  .container,
+  header > .header__container,
+  footer > .footer__container {
+    max-width: 688px;
+  }
+  header .header__container {
+    padding: 11px 0px;
+  }
+  .hero .hero__container {
+    padding-top: 270px;
+  }
+  .hero .hero__container .hero__title {
+    font-size: 52px;
+  }
+  .hero .hero__container .hero__subtitle {
+    max-width: 518px;
+    font-size: 17px;
+  }
+  .hero .hero__container .hero__button {
+    font-size: 16px;
+    max-width: 280px;
+    padding: 22px;
+  }
+  .about .about__container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .about .about__container .about__desc .about__desc-img {
+    max-width: 688px;
+  }
+  .about .about__container .about__desc .about__desc-inner {
+    max-width: 638px;
+    padding: 15px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text {
+    font-size: 20px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text .desc__wrap {
+    font-size: 24px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text .card-text__devider {
+    display: inline-flex;
+  }
+  .about .about__container .about__cards {
+    gap: 20px;
+  }
+  .about .about__container .about__cards .about__card {
+    max-width: 216px;
+    gap: 34px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top .about__card-title {
+    font-size: 18px;
+    max-width: 168px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top .about__card-icon {
+    width: 42px;
+    height: 42px;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
+    font-size: 14px;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
+    display: none;
+  }
+  .about .about__container .about__cards .about__card:first-of-type {
+    order: 1;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(2) {
+    order: 2;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(2) .about__card-bottom .about__card-text .card-text__devider {
+    display: inline-flex;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(3) {
+    order: 4;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(4) {
+    order: 5;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(5) {
+    order: 3;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-top .about__card-title {
+    width: 168px;
+    height: 43px;
+    place-content: center;
+  }
+  .about .about__container .about__cards .about__card:last-of-type {
+    order: 6;
+  }
+  .services .services__container .services__title {
+    font-size: 31px;
+  }
+  .services .services__container .services__inner {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .services .services__container .services__inner .service__card {
+    width: 520px;
+  }
+  .services .services__container .services__inner .service__card .service__card-title {
+    font-size: 37px;
+  }
+  .services .services__container .services__inner .service__card .service__button {
+    padding: 24px 130px;
+    font-size: 26px;
+  }
+  .faq {
+    min-height: 940px;
+  }
+  .faq .faq__container .faq__title {
+    font-size: 31px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion {
+    gap: 13px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
+    max-width: 548px;
+    font-size: 18px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
+    width: 46px;
+    height: 46px;
+  }
+  .faq .faq__container .faq__media .faq__media-img {
+    display: none;
+  }
+  footer .footer__container .footer__top {
+    flex-wrap: wrap;
+  }
+  footer .footer__container .footer__top .footer__socials {
+    padding: 50px 24px 62px 0px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__logo .footer__logo-img {
+    width: 140px;
+    height: 48px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-text {
+    max-width: 172px;
+    font-size: 15px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-links .footer__socials-link .socials-link__img {
+    width: 44px;
+    height: 44px;
+  }
+  footer .footer__container .footer__top .footer__contacts {
+    padding: 50px 24px 113px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__column-title {
+    font-size: 19px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text {
+    font-size: 16px;
+    gap: 15px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text::before {
+    width: 22px;
+    height: 22px;
+  }
+  footer .footer__container .footer__top .footer__open-hours {
+    padding: 50px 0px 77px 24px;
+    border-right: none;
+  }
+  footer .footer__container .footer__top .footer__open-hours .footer__column-title {
+    font-size: 19px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .content__wrap {
+    gap: 22px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .content__wrap .footer__hours-list .footer__hours-item {
+    font-size: 16px;
+  }
+  footer .footer__container .footer__top .footer__pay-methods {
+    padding: initial;
+    padding-top: 30px;
+  }
+  footer .footer__container .footer__top .footer__pay-methods .footer__column-title {
+    font-size: 19px;
+  }
+}
+@media (440px <= width < 768px) {
+  .container,
+  header > .header__container,
+  footer > .footer__container {
+    max-width: 400px;
+  }
+  header .header__container .header__logo .header__logo-link .header__logo-img {
+    width: 135px;
+    height: 45px;
+  }
+  .hero .hero__container {
+    padding-top: 250px;
+    place-items: center;
+  }
+  .hero .hero__container .hero__title {
+    font-size: 48px;
+    text-align: center;
+  }
+  .hero .hero__container .hero__subtitle {
+    max-width: 328px;
+    font-size: 16px;
+    text-align: center;
+  }
+  .hero .hero__container .hero__button {
+    font-size: 16px;
+    max-width: 280px;
+    padding: 22px 51px;
+  }
+  .about .about__container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .about .about__container .about__desc .about__desc-img {
+    max-width: 400px;
+    height: 530px;
+  }
+  .about .about__container .about__desc .about__desc-inner {
+    max-width: 350px;
+    padding: 15px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text {
+    font-size: 17px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text .desc__wrap {
+    font-size: 22px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text .card-text__devider {
+    display: inline-flex;
+  }
+  .about .about__container .about__cards {
+    gap: 20px;
+  }
+  .about .about__container .about__cards .about__card {
+    max-width: 190px;
+    gap: 41px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top .about__card-title {
+    font-size: 17px;
+    max-width: 168px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top .about__card-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
+    font-size: 13px;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
+    display: none;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(2) .about__card-bottom .about__card-text .card-text__devider {
+    display: inline-flex;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-top .about__card-title {
+    width: 160px;
+    height: 41px;
+    place-content: center;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-bottom .about__card-text {
+    padding-right: 5px;
+  }
+  .services .services__container .services__title {
+    font-size: 30px;
+  }
+  .services .services__container .services__inner {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .services .services__container .services__inner .service__card {
+    width: 400px;
+  }
+  .services .services__container .services__inner .service__card .service__card-title {
+    font-size: 36px;
+  }
+  .services .services__container .services__inner .service__card .service__button {
+    padding: 23px 104px;
+    font-size: 22px;
+    border-radius: 22px;
+  }
+  .faq {
+    min-height: 856px;
+  }
+  .faq .faq__container .faq__title {
+    font-size: 30px;
+    text-align: center;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion {
+    gap: 13px;
+    max-width: 400px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
+    font-size: 18px;
+    max-width: 260px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
+    width: 46px;
+    height: 46px;
+  }
+  .faq .faq__container .faq__media .faq__media-img {
+    display: none;
+  }
+  footer .footer__container .footer__top {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  footer .footer__container .footer__top .footer__socials {
+    padding: initial;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__logo .footer__logo-img {
+    width: 135px;
+    height: 45px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-text {
+    max-width: 172px;
+    font-size: 15px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-links {
+    margin-left: initial;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-links .footer__socials-link .socials-link__img {
+    width: 44px;
+    height: 44px;
+  }
+  footer .footer__container .footer__top .footer__contacts {
+    padding: initial;
+    border: none;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__column-title {
+    font-size: 19px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text {
+    font-size: 16px;
+    gap: 15px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text::before {
+    width: 22px;
+    height: 22px;
+  }
+  footer .footer__container .footer__top .footer__open-hours {
+    padding: initial;
+    border: none;
+    border-right: none;
+    width: 170px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .footer__column-title {
+    font-size: 19px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .content__wrap {
+    gap: 22px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .content__wrap .footer__hours-list .footer__hours-item {
+    font-size: 16px;
+  }
+  footer .footer__container .footer__top .footer__pay-methods {
+    padding: initial;
+  }
+  footer .footer__container .footer__top .footer__pay-methods .footer__column-title {
+    font-size: 19px;
+  }
+}
+@media (390px <= width < 440px) {
+  .container,
+  header > .header__container,
+  footer > .footer__container {
+    max-width: 350px;
+  }
+  header .header__container {
+    padding: 10px 0px;
+  }
+  header .header__container .header__logo .header__logo-link .header__logo-img {
+    width: 130px;
+    height: 44px;
+  }
+  header .header__container .header__nav {
+    max-width: 390px;
+    padding: 80px 0px 30px;
+  }
+  header .header__container .header__nav.active {
+    right: 0;
+  }
+  header .header__container .header__nav .header__nav-contact {
+    font-size: 15px;
+    padding: 22px 54px;
+  }
+  .hero .hero__container {
+    padding-top: 210px;
+    place-items: center;
+  }
+  .hero .hero__container .hero__title {
+    font-size: 43px;
+    text-align: center;
+  }
+  .hero .hero__container .hero__subtitle {
+    max-width: 328px;
+    font-size: 16px;
+    text-align: center;
+  }
+  .hero .hero__container .hero__button {
+    font-size: 15px;
+    padding: 22px 54px;
+  }
+  .about .about__container {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .about .about__container .about__desc .about__desc-img {
+    max-width: 350px;
+    height: 500px;
+  }
+  .about .about__container .about__desc .about__desc-inner {
+    max-width: 300px;
+    padding: 15px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text {
+    font-size: 15px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text .desc__wrap {
+    font-size: 21px;
+  }
+  .about .about__container .about__cards {
+    gap: 14px;
+  }
+  .about .about__container .about__cards .about__card {
+    max-width: 168px;
+    gap: 34px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top .about__card-title {
+    font-size: 16px;
+    max-width: 168px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top .about__card-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
+    font-size: 12px;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
+    display: none;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(2) .about__card-bottom .about__card-text .card-text__devider {
+    display: inline-flex;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-top .about__card-title {
+    width: 138px;
+    height: 38px;
+    place-content: center;
+  }
+  .services .services__container .services__title {
+    font-size: 28px;
+  }
+  .services .services__container .services__inner {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .services .services__container .services__inner .service__card {
+    width: 350px;
+    padding-bottom: 30px;
+  }
+  .services .services__container .services__inner .service__card .service__card-list .service__card-item {
+    font-size: 15px;
+  }
+  .services .services__container .services__inner .service__card .service__card-title {
+    font-size: 36px;
+  }
+  .services .services__container .services__inner .service__card .service__button {
+    padding: 21px 89px;
+    font-size: 22px;
+    border-radius: 22px;
+  }
+  .faq {
+    min-height: 1065px;
+  }
+  .faq .faq__container .faq__title {
+    font-size: 28px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion {
+    gap: 13px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item {
+    max-width: 350px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
+    max-width: 220px;
+    font-size: 16px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title::after {
+    width: 40px;
+    height: 40px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
+    width: 42px;
+    height: 42px;
+  }
+  .faq .faq__container .faq__media .faq__media-img {
+    display: none;
+  }
+  footer .footer__container .footer__top {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  footer .footer__container .footer__top .footer__socials {
+    padding: initial;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__logo .footer__logo-img {
+    width: 130px;
+    height: 44px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-text {
+    max-width: 172px;
+    font-size: 15px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-links {
+    margin-left: initial;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-links .footer__socials-link .socials-link__img {
+    width: 44px;
+    height: 44px;
+  }
+  footer .footer__container .footer__top .footer__contacts {
+    padding: initial;
+    border: none;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__column-title {
+    font-size: 19px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text {
+    font-size: 16px;
+    gap: 15px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text::before {
+    width: 22px;
+    height: 22px;
+  }
+  footer .footer__container .footer__top .footer__open-hours {
+    padding: initial;
+    border: none;
+    border-right: none;
+    width: 170px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .footer__column-title {
+    font-size: 19px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .content__wrap {
+    gap: 22px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .content__wrap .footer__hours-list .footer__hours-item {
+    font-size: 16px;
+  }
+  footer .footer__container .footer__top .footer__pay-methods {
+    padding: initial;
+  }
+  footer .footer__container .footer__top .footer__pay-methods .footer__column-title {
+    font-size: 19px;
+  }
+}
+@media (375px <= width < 390px) {
+  .container,
+  header > .header__container,
+  footer > .footer__container {
+    max-width: 335px;
+  }
+  header .header__container .header__logo .header__logo-link .header__logo-img {
+    width: 130px;
+    height: 42px;
+  }
+  header .header__container .header__nav {
+    max-width: 375px;
+    padding: 80px 0px 30px;
+  }
+  header .header__container .header__nav.active {
+    right: 0;
+  }
+  header .header__container .header__nav .header__nav-contact {
+    font-size: 15px;
+    padding: 22px 45px;
+  }
+  .hero .hero__container {
+    padding-top: 205px;
+    place-items: center;
+  }
+  .hero .hero__container .hero__title {
+    font-size: 40px;
+    text-align: center;
+  }
+  .hero .hero__container .hero__subtitle {
+    max-width: 288px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .hero .hero__container .hero__button {
+    font-size: 15px;
+    padding: 22px 45px;
+  }
+  .about .about__container {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .about .about__container .about__desc .about__desc-img {
+    max-width: 335px;
+    height: 480px;
+  }
+  .about .about__container .about__desc .about__desc-inner {
+    max-width: 285px;
+    padding: 15px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text {
+    font-size: 14px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text .desc__wrap {
+    font-size: 20px;
+  }
+  .about .about__container .about__cards {
+    gap: 14px;
+  }
+  .about .about__container .about__cards .about__card {
+    max-width: 160px;
+    gap: 34px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top .about__card-title {
+    font-size: 15px;
+    max-width: 168px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top .about__card-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
+    font-size: 12px;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
+    display: none;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-top .about__card-title {
+    width: 130px;
+    height: 36px;
+    place-content: center;
+  }
+  .services .services__container .services__title {
+    font-size: 26px;
+  }
+  .services .services__container .services__inner {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .services .services__container .services__inner .service__card {
+    width: 335px;
+    padding-bottom: 30px;
+  }
+  .services .services__container .services__inner .service__card .service__card-list .service__card-item {
+    font-size: 15px;
+  }
+  .services .services__container .services__inner .service__card .service__card-title {
+    font-size: 36px;
+  }
+  .services .services__container .services__inner .service__card .service__card-subtitle {
+    font-size: 13px;
+  }
+  .services .services__container .services__inner .service__card .service__button {
+    padding: 19px 78px;
+    font-size: 22px;
+    border-radius: 22px;
+  }
+  .faq {
+    min-height: 1065px;
+  }
+  .faq .faq__container .faq__title {
+    font-size: 28px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion {
+    gap: 13px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item {
+    max-width: 335px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
+    font-size: 15px;
+    max-width: 234px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .faq .faq__container .faq__media .faq__media-img {
+    display: none;
+  }
+  footer .footer__container .footer__top {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  footer .footer__container .footer__top .footer__socials {
+    padding: initial;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__logo .footer__logo-img {
+    width: 130px;
+    height: 42px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-text {
+    max-width: 172px;
+    font-size: 15px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-links {
+    margin-left: initial;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-links .footer__socials-link .socials-link__img {
+    width: 44px;
+    height: 44px;
+  }
+  footer .footer__container .footer__top .footer__contacts {
+    padding: initial;
+    border: none;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__column-title {
+    font-size: 19px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text {
+    font-size: 16px;
+    gap: 15px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text::before {
+    width: 22px;
+    height: 22px;
+  }
+  footer .footer__container .footer__top .footer__open-hours {
+    padding: initial;
+    border: none;
+    border-right: none;
+    width: 170px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .footer__column-title {
+    font-size: 19px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .content__wrap {
+    gap: 22px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .content__wrap .footer__hours-list .footer__hours-item {
+    font-size: 16px;
+  }
+  footer .footer__container .footer__top .footer__pay-methods {
+    padding: initial;
+  }
+  footer .footer__container .footer__top .footer__pay-methods .footer__column-title {
+    font-size: 19px;
+  }
+}
+@media (360px <= width < 375px) {
+  .container,
+  header > .header__container,
+  footer > .footer__container {
+    max-width: 320px;
+  }
+  header .header__container .header__logo .header__logo-link .header__logo-img {
+    width: 130px;
+    height: 42px;
+  }
+  header .header__container .header__nav {
+    max-width: 360px;
+    padding: 80px 0px 30px;
+  }
+  header .header__container .header__nav.active {
+    right: 0;
+  }
+  header .header__container .header__nav .header__nav-contact {
+    font-size: 14px;
+    padding: 22px 47px;
+  }
+  .hero .hero__container {
+    padding-top: 182px;
+    place-items: center;
+  }
+  .hero .hero__container .hero__title {
+    font-size: 38px;
+    text-align: center;
+  }
+  .hero .hero__container .hero__subtitle {
+    max-width: 288px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .hero .hero__container .hero__button {
+    font-size: 14px;
+    padding: 22px 47px;
+  }
+  .about .about__container {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .about .about__container .about__desc .about__desc-img {
+    max-width: 320px;
+    height: 460px;
+  }
+  .about .about__container .about__desc .about__desc-inner {
+    max-width: 270px;
+    padding: 15px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text {
+    font-size: 14px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text .desc__wrap {
+    font-size: 19px;
+  }
+  .about .about__container .about__cards {
+    gap: 14px;
+  }
+  .about .about__container .about__cards .about__card {
+    max-width: 153px;
+    gap: 18px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top .about__card-title {
+    font-size: 14px;
+    max-width: 168px;
+  }
+  .about .about__container .about__cards .about__card .about__card-top .about__card-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
+    font-size: 12px;
+  }
+  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
+    display: none;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-top .about__card-title {
+    width: 123px;
+    height: 34px;
+    place-content: center;
+  }
+  .services .services__container .services__title {
+    font-size: 26px;
+  }
+  .services .services__container .services__inner {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .services .services__container .services__inner .service__card {
+    width: 320px;
+    padding-bottom: 30px;
+  }
+  .services .services__container .services__inner .service__card .service__card-title {
+    font-size: 36px;
+  }
+  .services .services__container .services__inner .service__card .service__card-subtitle {
+    font-size: 13px;
+  }
+  .services .services__container .services__inner .service__card .service__card-list {
+    margin-bottom: 42px;
+  }
+  .services .services__container .services__inner .service__card .service__card-list .service__card-item {
+    font-size: 14px;
+  }
+  .services .services__container .services__inner .service__card .service__card-list .service__card-item::before {
+    width: 18px;
+    height: 18px;
+  }
+  .services .services__container .services__inner .service__card .service__card-list .service__card-item.service__card-item--disabled::before {
+    width: 18px;
+    height: 18px;
+  }
+  .services .services__container .services__inner .service__card .service__button {
+    padding: 18px 74px;
+    font-size: 21px;
+    border-radius: 21px;
+  }
+  .faq {
+    min-height: 1065px;
+  }
+  .faq .faq__container .faq__title {
+    font-size: 26px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion {
+    gap: 13px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item {
+    max-width: 320px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
+    max-width: 222px;
+    font-size: 15px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .faq .faq__container .faq__media .faq__media-img {
+    display: none;
+  }
+  footer .footer__container .footer__top {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  footer .footer__container .footer__top .footer__socials {
+    padding: initial;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__logo .footer__logo-img {
+    width: 130px;
+    height: 42px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-text {
+    max-width: 172px;
+    font-size: 15px;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-links {
+    margin-left: initial;
+  }
+  footer .footer__container .footer__top .footer__socials .footer__socials-links .footer__socials-link .socials-link__img {
+    width: 44px;
+    height: 44px;
+  }
+  footer .footer__container .footer__top .footer__contacts {
+    padding: initial;
+    border: none;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__column-title {
+    font-size: 19px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text {
+    font-size: 16px;
+    gap: 15px;
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text::before {
+    width: 22px;
+    height: 22px;
+  }
+  footer .footer__container .footer__top .footer__open-hours {
+    padding: initial;
+    border: none;
+    border-right: none;
+    width: 170px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .footer__column-title {
+    font-size: 19px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .content__wrap {
+    gap: 22px;
+  }
+  footer .footer__container .footer__top .footer__open-hours .content__wrap .footer__hours-list .footer__hours-item {
+    font-size: 16px;
+  }
+  footer .footer__container .footer__top .footer__pay-methods {
+    padding: initial;
   }
   footer .footer__container .footer__top .footer__pay-methods .footer__column-title {
     font-size: 19px;
@@ -1082,15 +2169,31 @@ footer .footer__container .footer__bottom .footer__copyright {
 }
 /*
 
-- сверстать 1024 -> 360px 
-
--перепроверить вёрстку 1920 -> 360px
-
 -доделать бургер (от 1024 и ниже)
+
+-перепроверить вёрстку 
+	=header 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
+	=burger 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
+	=hero 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
+	=about 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
+	=services 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
+	=faq 1920~~ 1440~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360
+	=footer 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360
+
+	+сделать одинаковыми карточки услуг
+	+сделать одинаковыми карточки about
+	+перепроверить футер (размеры, сделать одинаково и на хедер???)
+	+отступы между секциями ++ отступ для last FAQ
+	+решить "проблемы" от VScode с иконками
+	+проверить иконки тг/ва (pixel perfect!) [возможно изнач. сделать рамку на моб.]
+	+проверить размеры кнопок на телефоне (hero и т.д)
+
+-якорьные ссылки
 
 -поп-ап (+ сделать под мобилы)
 
 -придумать hover эффекты
 
+-решить с icon на footer(оплата) + иконки телефона и почты
 
 *//*# sourceMappingURL=style.css.map */

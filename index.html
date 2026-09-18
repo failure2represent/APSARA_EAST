@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
@@ -18,7 +18,10 @@
 	<header>
 		<div class="header__container">
 			<div class="header__logo">
-				<img class="header__logo-img" src="img/logo.png">
+				<a class="header__logo-link" href="index.html">
+					<img class="header__logo-img" src="img/logo.svg">
+				</a>
+
 			</div>
 			<nav class="header__nav">
 				<ul class="header__nav-list">
@@ -39,10 +42,66 @@
 						</a>
 					</li>
 				</ul>
+				<button class="header__nav-contact">Начать оформление</button>
+				<div class="header__nav-socials">
+					<a class="header__nav-media" href="#">
+						<svg class="nav-media__img" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+							fill="none" class="socials-link__img" viewBox="7450.071 5400 50 50">
+							<defs>
+								<clipPath id="a" class="frame-clip frame-clip-def">
+									<rect width="50" height="50" x="7450.071" y="5400" rx="10" ry="10" />
+								</clipPath>
+							</defs>
+							<g class="frame-container-wrapper">
+								<g class="frame-container-blur">
+									<g class="frame-container-shadows" clip-path="url(#a)">
+										<g class="fills">
+											<rect width="50" height="50" x="7450.071" y="5400" class="frame-background"
+												rx="10" ry="10" />
+										</g>
+										<g class="frame-children">
+											<g class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"
+												style="fill:#000">
+												<path fill="none" d="M7457.072 5407h36v36h-36z" class="fills"
+													style="fill:none" />
+												<path fill="none" d="m7479.572 5422-6 6 9 9 6-24-27 10.5 6 3 3 9 4.5-6"
+													class="fills" style="fill:none" />
+												<g fill="none" stroke-linecap="round" stroke-linejoin="round"
+													class="strokes">
+													<path d="m7479.572 5422-6 6 9 9 6-24-27 10.5 6 3 3 9 4.5-6"
+														class="stroke-shape"
+														style="fill:none;fill-opacity:none;stroke-width:2;stroke:#259dd8;stroke-opacity:1;stroke-linecap:round" />
+												</g>
+												<path fill="none" d="m7479.572 5422-6 6 9 9 6-24-27 10.5 6 3 3 9 4.5-6"
+													class="fills" style="fill:none" />
+												<g fill="none" stroke-linecap="round" stroke-linejoin="round"
+													class="strokes">
+													<path d="m7479.572 5422-6 6 9 9 6-24-27 10.5 6 3 3 9 4.5-6"
+														class="stroke-shape"
+														style="fill:none;fill-opacity:none;stroke-width:2;stroke:#259dd8;stroke-opacity:1;stroke-linecap:round" />
+												</g>
+											</g>
+										</g>
+									</g>
+								</g>
+							</g>
+						</svg>
+					</a>
+					<a class="header__nav-media" href="#">
+						<svg class="nav-media__img" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+							viewBox="7537.357 5400 50 50" fill="none">
+							<path d="m7548.858 5438.5 2.475-5.7a13.5 13.5 0 1 1 5.1 4.35z" stroke="#27d367"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M7557.858 5422a.75.75 0 1 0 1.5 0v-1.5a.75.75 0 1 0-1.5 0za7.5 7.5 0 0 0 7.5 7.5h1.5a.75.75 0 1 0 0-1.5h-1.5a.75.75 0 1 0 0 1.5"
+								stroke="#27d367" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</a>
+				</div>
 			</nav>
 
 			<div class="header__actions">
-				<button class="header__contact" href="#">Контакт</button>
+				<button class="header__contact-btn" href="#">Контакт</button>
 				<ul class="header__langs">
 					<li class="header__lang">
 						RU
@@ -65,10 +124,11 @@
 	<main>
 		<section class="hero">
 			<div class="hero__container container">
-				<h1 class="hero__title">Ваши <span class="uniq__wrap">врата</span> в <span
+				<h1 class="hero__title">Ваши <span class="hero__title-recolor">врата</span> в <span
 						class="hero__title-wrap">Юго-Восточную Азию</span>
 				</h1>
-				<h2 class="hero__subtitle">Легальный статус, новый рынок, <span class="uniq__wrap">новая жизнь</span> –
+				<h2 class="hero__subtitle">Легальный статус, новый рынок, <span class="hero__subtitle-wrap">новая
+						жизнь</span> –
 					начните заполнением одной формы</h2>
 				<button class="hero__button">Начать оформление</button>
 			</div>
@@ -77,12 +137,16 @@
 		<section class="about">
 			<div class="about__container container">
 				<div class="about__desc">
-					<img class="about__desc-img" src="img/about.webp">
-					<p class="about__desc-text"><span class="desc__wrap">APSARA EAST</span> – консалтинговая компания,
-						которая помогает предпринимателям, инвесторам
-						получить
-						долгосрочную бизнес-визу в Камбодже и <span class="text__wrap">легально</span> переехать
-						в Юго-Восточную Азию.</p>
+					<img class="about__desc-img" src="img/about2.webp">
+					<div class="about__desc-inner">
+						<p class="about__desc-text"><span class="desc__wrap">APSARA EAST</span> – консалтинговая
+							компания,
+							которая помогает предпринимателям, инвесторам
+							получить
+							долгосрочную бизнес-визу в Камбодже и&nbsp<span class="text__wrap">легально</span>
+							переехать <span class="card-text__devider">в Юго-Восточную Азию.</span></p>
+					</div>
+
 				</div>
 				<div class="about__cards">
 					<article class="about__card">
@@ -92,9 +156,9 @@
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								<span class="uniq__wrap">
+								<span class="card-text__wrap">
 									Мы берём на себя всю бюрократическую сторону вопроса –
-								</span>от первичной консультации до
+								</span><span class="card-text__upper">о</span>т первичной консультации до
 								получения готового документа.
 							</p>
 						</div>
@@ -106,7 +170,8 @@
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								Виза в Камбоджу «под ключ» – от подготовки документов до получения визы.
+								Виза в Камбоджу <span class="card-text__devider">«под ключ»</span> – от подготовки
+								документов до получения визы.
 							</p>
 						</div>
 					</article>
@@ -118,7 +183,7 @@
 						<div class="about__card-bottom">
 							<p class="about__card-text">
 								Консультации по открытию банковских счетов на месте.
-								<span class="uniq__wrap">Поможем разобраться с требованиями банка и необходимыми
+								<span class="card-text__wrap">Поможем разобраться с требованиями банка и необходимыми
 									документами.</span>
 							</p>
 						</div>
@@ -130,8 +195,9 @@
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								Помощь в регистрации компаний и запуске бизнеса при необходимости.
-								<span class="uniq__wrap">
+								Помощь в регистрации компаний и запуске бизнеса при
+								необходимости.
+								<span class="card-text__wrap">
 									Консультируем по выбору формы бизнеса и сопровождаем процесс регистрации.
 								</span>
 
@@ -146,7 +212,7 @@
 						<div class="about__card-bottom">
 							<p class="about__card-text">
 								Поддержка при релокации и адаптации в стране.
-								<span class="uniq__wrap">Предоставим информацию и рекомендации по ключевым вопросам
+								<span class="card-text__wrap">Предоставим информацию и рекомендации по ключевым вопросам
 									переезда.</span>
 							</p>
 						</div>
@@ -230,6 +296,30 @@
 							<div class="accordion__item">
 								<div class="accordion__title">Могу ли я подать заявку, если я не живу в крупном городе?
 								</div>
+								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
+									height="50" fill="none" style="-webkit-print-color-adjust::exact"
+									viewBox="8455 4145 50 50">
+									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
+										style="fill:#000">
+										<path fill="none" d="M8455 4145h50v50h-50z" class="fills" style="fill:none" />
+										<path fill="none"
+											d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+											class="fills" style="fill:#e8a93d;fill-opacity:1" />
+										<g fill="none" stroke-linecap="round" stroke-linejoin="round" class="strokes">
+											<g class="inner-stroke-shape">
+												<defs>
+													<clipPath id="d">
+														<use href="#c" />
+													</clipPath>
+													<path id="c"
+														d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+														style="fill:none;fill-opacity:none;stroke-width:4;stroke:#e8a93d;stroke-opacity:1" />
+												</defs>
+												<use clip-path="url('#d')" href="#c" />
+											</g>
+										</g>
+									</g>
+								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
 										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
@@ -241,6 +331,30 @@
 							</div>
 							<div class="accordion__item">
 								<div class="accordion__title">Какие документы нужны для начала оформления?</div>
+								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
+									height="50" fill="none" style="-webkit-print-color-adjust::exact"
+									viewBox="8455 4145 50 50">
+									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
+										style="fill:#000">
+										<path fill="none" d="M8455 4145h50v50h-50z" class="fills" style="fill:none" />
+										<path fill="none"
+											d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+											class="fills" style="fill:#e8a93d;fill-opacity:1" />
+										<g fill="none" stroke-linecap="round" stroke-linejoin="round" class="strokes">
+											<g class="inner-stroke-shape">
+												<defs>
+													<clipPath id="d">
+														<use href="#c" />
+													</clipPath>
+													<path id="c"
+														d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+														style="fill:none;fill-opacity:none;stroke-width:4;stroke:#e8a93d;stroke-opacity:1" />
+												</defs>
+												<use clip-path="url('#d')" href="#c" />
+											</g>
+										</g>
+									</g>
+								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
 										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
@@ -252,6 +366,30 @@
 							</div>
 							<div class="accordion__item">
 								<div class="accordion__title">Сколько времени занимает оформление?</div>
+								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
+									height="50" fill="none" style="-webkit-print-color-adjust::exact"
+									viewBox="8455 4145 50 50">
+									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
+										style="fill:#000">
+										<path fill="none" d="M8455 4145h50v50h-50z" class="fills" style="fill:none" />
+										<path fill="none"
+											d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+											class="fills" style="fill:#e8a93d;fill-opacity:1" />
+										<g fill="none" stroke-linecap="round" stroke-linejoin="round" class="strokes">
+											<g class="inner-stroke-shape">
+												<defs>
+													<clipPath id="d">
+														<use href="#c" />
+													</clipPath>
+													<path id="c"
+														d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+														style="fill:none;fill-opacity:none;stroke-width:4;stroke:#e8a93d;stroke-opacity:1" />
+												</defs>
+												<use clip-path="url('#d')" href="#c" />
+											</g>
+										</g>
+									</g>
+								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
 										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
@@ -263,6 +401,30 @@
 							</div>
 							<div class="accordion__item">
 								<div class="accordion__title">Можно ли оформить всё без личного присутствия?</div>
+								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
+									height="50" fill="none" style="-webkit-print-color-adjust::exact"
+									viewBox="8455 4145 50 50">
+									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
+										style="fill:#000">
+										<path fill="none" d="M8455 4145h50v50h-50z" class="fills" style="fill:none" />
+										<path fill="none"
+											d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+											class="fills" style="fill:#e8a93d;fill-opacity:1" />
+										<g fill="none" stroke-linecap="round" stroke-linejoin="round" class="strokes">
+											<g class="inner-stroke-shape">
+												<defs>
+													<clipPath id="d">
+														<use href="#c" />
+													</clipPath>
+													<path id="c"
+														d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+														style="fill:none;fill-opacity:none;stroke-width:4;stroke:#e8a93d;stroke-opacity:1" />
+												</defs>
+												<use clip-path="url('#d')" href="#c" />
+											</g>
+										</g>
+									</g>
+								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
 										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
@@ -274,6 +436,30 @@
 							</div>
 							<div class="accordion__item">
 								<div class="accordion__title">Что делать, если мне откажут в визе или регистрации?</div>
+								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
+									height="50" fill="none" style="-webkit-print-color-adjust::exact"
+									viewBox="8455 4145 50 50">
+									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
+										style="fill:#000">
+										<path fill="none" d="M8455 4145h50v50h-50z" class="fills" style="fill:none" />
+										<path fill="none"
+											d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+											class="fills" style="fill:#e8a93d;fill-opacity:1" />
+										<g fill="none" stroke-linecap="round" stroke-linejoin="round" class="strokes">
+											<g class="inner-stroke-shape">
+												<defs>
+													<clipPath id="d">
+														<use href="#c" />
+													</clipPath>
+													<path id="c"
+														d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+														style="fill:none;fill-opacity:none;stroke-width:4;stroke:#e8a93d;stroke-opacity:1" />
+												</defs>
+												<use clip-path="url('#d')" href="#c" />
+											</g>
+										</g>
+									</g>
+								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
 										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
@@ -285,6 +471,30 @@
 							</div>
 							<div class="accordion__item">
 								<div class="accordion__title">Работаете ли вы с гражданами всех стран?</div>
+								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
+									height="50" fill="none" style="-webkit-print-color-adjust::exact"
+									viewBox="8455 4145 50 50">
+									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
+										style="fill:#000">
+										<path fill="none" d="M8455 4145h50v50h-50z" class="fills" style="fill:none" />
+										<path fill="none"
+											d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+											class="fills" style="fill:#e8a93d;fill-opacity:1" />
+										<g fill="none" stroke-linecap="round" stroke-linejoin="round" class="strokes">
+											<g class="inner-stroke-shape">
+												<defs>
+													<clipPath id="d">
+														<use href="#c" />
+													</clipPath>
+													<path id="c"
+														d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+														style="fill:none;fill-opacity:none;stroke-width:4;stroke:#e8a93d;stroke-opacity:1" />
+												</defs>
+												<use clip-path="url('#d')" href="#c" />
+											</g>
+										</g>
+									</g>
+								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
 										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
@@ -296,6 +506,30 @@
 							</div>
 							<div class="accordion__item">
 								<div class="accordion__title">Какие способы оплаты доступны ?</div>
+								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
+									height="50" fill="none" style="-webkit-print-color-adjust::exact"
+									viewBox="8455 4145 50 50">
+									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
+										style="fill:#000">
+										<path fill="none" d="M8455 4145h50v50h-50z" class="fills" style="fill:none" />
+										<path fill="none"
+											d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+											class="fills" style="fill:#e8a93d;fill-opacity:1" />
+										<g fill="none" stroke-linecap="round" stroke-linejoin="round" class="strokes">
+											<g class="inner-stroke-shape">
+												<defs>
+													<clipPath id="d">
+														<use href="#c" />
+													</clipPath>
+													<path id="c"
+														d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+														style="fill:none;fill-opacity:none;stroke-width:4;stroke:#e8a93d;stroke-opacity:1" />
+												</defs>
+												<use clip-path="url('#d')" href="#c" />
+											</g>
+										</g>
+									</g>
+								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
 										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
@@ -307,6 +541,30 @@
 							</div>
 							<div class="accordion__item">
 								<div class="accordion__title">Что входит в стоимость выбранного пакета?</div>
+								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
+									height="50" fill="none" style="-webkit-print-color-adjust::exact"
+									viewBox="8455 4145 50 50">
+									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
+										style="fill:#000">
+										<path fill="none" d="M8455 4145h50v50h-50z" class="fills" style="fill:none" />
+										<path fill="none"
+											d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+											class="fills" style="fill:#e8a93d;fill-opacity:1" />
+										<g fill="none" stroke-linecap="round" stroke-linejoin="round" class="strokes">
+											<g class="inner-stroke-shape">
+												<defs>
+													<clipPath id="d">
+														<use href="#c" />
+													</clipPath>
+													<path id="c"
+														d="M8488.334 4165.833h8.333a4.168 4.168 0 0 1 0 8.334h-8.333L8480 4188.75h-6.25l4.167-14.583h-8.333l-4.167 4.166h-6.25l4.167-8.333-4.167-8.333h6.25l4.167 4.166h8.333l-4.167-14.583h6.25z"
+														style="fill:none;fill-opacity:none;stroke-width:4;stroke:#e8a93d;stroke-opacity:1" />
+												</defs>
+												<use clip-path="url('#d')" href="#c" />
+											</g>
+										</g>
+									</g>
+								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
 										Стоимость зависит от выбранного пакета – Стандарт или Стандарт+. Перед началом
@@ -332,7 +590,7 @@
 				<div class="form__card">
 					<form action="https://api.web3forms.com/submit" method="POST">
 
-						<input type="hidden" name="access_key" value="c4e0b6f7-7530-48ac-81ff-1685ad332865">
+						<input type="hidden" name="access_key" value="13dbfdde-07b7-48f8-85df-a9c40801085a">
 						<input type="hidden" name="subject" value="Нова заявка з сайту БК ЗАКАРПАТТЯ">
 						<input type="hidden" name="redirect" value="https://web3forms.com/success">
 
@@ -406,101 +664,50 @@
 			<div class="footer__top">
 				<div class="footer__socials">
 					<div class="footer__logo">
-						<img class="footer__logo-img" src="img/logo.png">
+						<img class="footer__logo-img" src="img/logo.svg">
 					</div>
 					<p class="footer__socials-text">Ваш надёжный партнёр
 						в Юго-Восточной Азии</p>
 					<div class="footer__socials-links">
 						<a class="footer__socials-link" href="#">
-							<svg class="socials-link__img" width="50" xmlns="http://www.w3.org/2000/svg" height="50"
-								id="screenshot-450ec170-c358-8001-8008-9057ac792585" viewBox="7450.071 5400 50 50"
-								xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
-								<g id="shape-450ec170-c358-8001-8008-9057ac792585">
-									<defs>
-										<clipPath id="frame-clip-450ec170-c358-8001-8008-9057ac792585-render-32000"
-											class="frame-clip frame-clip-def">
-											<rect rx="10" ry="10" x="7450.0714285714275" y="5400.000000000001"
-												width="50" height="50"
-												transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)">
-											</rect>
-										</clipPath>
-									</defs>
-									<g class="frame-container-wrapper">
-										<g class="frame-container-blur">
-											<g class="frame-container-shadows">
-												<g clip-path="url(#frame-clip-450ec170-c358-8001-8008-9057ac792585-render-32000)"
-													fill="none">
-													<g class="fills" id="fills-450ec170-c358-8001-8008-9057ac792585">
-														<rect rx="10" ry="10" x="7450.0714285714275"
-															y="5400.000000000001" width="50" height="50"
-															transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)"
-															class="frame-background">
-														</rect>
+							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none"
+								class="socials-link__img" viewBox="7450.071 5400 50 50">
+								<defs>
+									<clipPath id="a" class="frame-clip frame-clip-def">
+										<rect width="50" height="50" x="7450.071" y="5400" rx="10" ry="10" />
+									</clipPath>
+								</defs>
+								<g class="frame-container-wrapper">
+									<g class="frame-container-blur">
+										<g class="frame-container-shadows" clip-path="url(#a)">
+											<g class="fills">
+												<rect width="50" height="50" x="7450.071" y="5400"
+													class="frame-background" rx="10" ry="10" />
+											</g>
+											<g class="frame-children">
+												<g class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"
+													style="fill:#000">
+													<path fill="none" d="M7457.072 5407h36v36h-36z" class="fills"
+														style="fill:none" />
+													<path fill="none"
+														d="m7479.572 5422-6 6 9 9 6-24-27 10.5 6 3 3 9 4.5-6"
+														class="fills" style="fill:none" />
+													<g fill="none" stroke-linecap="round" stroke-linejoin="round"
+														class="strokes">
+														<path d="m7479.572 5422-6 6 9 9 6-24-27 10.5 6 3 3 9 4.5-6"
+															class="stroke-shape"
+															style="fill:none;fill-opacity:none;stroke-width:2;stroke:#259dd8;stroke-opacity:1;stroke-linecap:round" />
 													</g>
-													<g class="frame-children">
-														<g id="shape-450ec170-c358-8001-8008-9057ac79258b"
-															style="fill:#000000" width="24"
-															class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"
-															height="24" rx="0" ry="0">
-															<g id="shape-450ec170-c358-8001-8008-9057ac79258c">
-																<g class="fills"
-																	id="fills-450ec170-c358-8001-8008-9057ac79258c">
-																	<path
-																		d="M7457.072265625,5407L7493.072265625,5407L7493.072265625,5443L7457.072265625,5443L7457.072265625,5407"
-																		stroke="none" fill="none"
-																		stroke-linejoin="round" stroke-linecap="round"
-																		stroke-width="2" style="fill:none">
-																	</path>
-																</g>
-															</g>
-															<g id="shape-450ec170-c358-8001-8008-9057ac79258d">
-																<g class="fills"
-																	id="fills-450ec170-c358-8001-8008-9057ac79258d">
-																	<path
-																		d="M7479.572265625,5422L7473.572265625,5428L7482.572265625,5437L7488.572265625,5413L7461.572265625,5423.5L7467.572265625,5426.5L7470.572265625,5435.5L7475.072265625,5429.5"
-																		fill="none" stroke-linejoin="round"
-																		stroke-linecap="round" style="fill:none">
-																	</path>
-																</g>
-																<g fill="none" stroke-linejoin="round"
-																	stroke-linecap="round"
-																	id="strokes-55d75d1e-0e9c-80cb-8008-97076b85512e-450ec170-c358-8001-8008-9057ac79258d"
-																	class="strokes">
-																	<g class="stroke-shape">
-																		<path
-																			d="M7479.572265625,5422L7473.572265625,5428L7482.572265625,5437L7488.572265625,5413L7461.572265625,5423.5L7467.572265625,5426.5L7470.572265625,5435.5L7475.072265625,5429.5"
-																			style="fill:none;fill-opacity:none;stroke-width:2;stroke:#259dd8;stroke-opacity:1;stroke-linecap:round">
-																		</path>
-																	</g>
-																</g>
-															</g>
-															<g id="shape-450ec170-c358-8001-8008-9057ac79258e">
-																<g class="fills"
-																	id="fills-450ec170-c358-8001-8008-9057ac79258e">
-																	<path
-																		d="M7479.572265625,5422L7473.572265625,5428L7482.572265625,5437L7488.572265625,5413L7461.572265625,5423.5L7467.572265625,5426.5L7470.572265625,5435.5L7475.072265625,5429.5"
-																		fill="none" stroke-linejoin="round"
-																		stroke-linecap="round" style="fill:none">
-																	</path>
-																</g>
-																<g fill="none" stroke-linejoin="round"
-																	stroke-linecap="round"
-																	id="strokes-55d75d1e-0e9c-80cb-8008-97076b85512f-450ec170-c358-8001-8008-9057ac79258e"
-																	class="strokes">
-																	<g class="stroke-shape">
-																		<path
-																			d="M7479.572265625,5422L7473.572265625,5428L7482.572265625,5437L7488.572265625,5413L7461.572265625,5423.5L7467.572265625,5426.5L7470.572265625,5435.5L7475.072265625,5429.5"
-																			style="fill:none;fill-opacity:none;stroke-width:2;stroke:#259dd8;stroke-opacity:1;stroke-linecap:round">
-																		</path>
-																	</g>
-																</g>
-															</g>
-														</g>
+													<path fill="none"
+														d="m7479.572 5422-6 6 9 9 6-24-27 10.5 6 3 3 9 4.5-6"
+														class="fills" style="fill:none" />
+													<g fill="none" stroke-linecap="round" stroke-linejoin="round"
+														class="strokes">
+														<path d="m7479.572 5422-6 6 9 9 6-24-27 10.5 6 3 3 9 4.5-6"
+															class="stroke-shape"
+															style="fill:none;fill-opacity:none;stroke-width:2;stroke:#259dd8;stroke-opacity:1;stroke-linecap:round" />
 													</g>
 												</g>
-											</g>
-											<g id="strokes-55d75d1e-0e9c-80cb-8008-97076b855130-450ec170-c358-8001-8008-9057ac792585"
-												class="strokes">
 											</g>
 										</g>
 									</g>
@@ -508,170 +715,13 @@
 							</svg>
 						</a>
 						<a class="footer__socials-link" href="#">
-							<svg class="socials-link__img" width="50" xmlns="http://www.w3.org/2000/svg" height="50"
-								id="screenshot-e8f02f89-625d-8093-8008-8b3d7eaa6a4a" viewBox="1023.071 5240 50 50"
-								style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink"
-								fill="none" version="1.1">
-								<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a4a">
-									<defs>
-										<clipPath id="frame-clip-e8f02f89-625d-8093-8008-8b3d7eaa6a4a-render-14715"
-											class="frame-clip frame-clip-def">
-											<rect rx="10" ry="10" x="1023.0714285714284" y="5240.000000000001"
-												width="50" height="50"
-												transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)">
-											</rect>
-										</clipPath>
-									</defs>
-									<g class="frame-container-wrapper">
-										<g class="frame-container-blur">
-											<g class="frame-container-shadows">
-												<g clip-path="url(#frame-clip-e8f02f89-625d-8093-8008-8b3d7eaa6a4a-render-14715)"
-													fill="none">
-													<g class="fills" id="fills-e8f02f89-625d-8093-8008-8b3d7eaa6a4a">
-														<rect rx="10" ry="10" x="1023.0714285714284"
-															y="5240.000000000001" width="50" height="50"
-															transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)"
-															class="frame-background">
-														</rect>
-													</g>
-													<g class="frame-children">
-														<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a4c"
-															style="fill:#000000" width="24"
-															class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
-															height="24" rx="0" ry="0">
-															<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a4d"
-																style="display:none">
-																<g class="fills"
-																	id="fills-e8f02f89-625d-8093-8008-8b3d7eaa6a4d">
-																	<rect rx="0" ry="0" x="1030.0714285714284"
-																		y="5247.000000000001"
-																		transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)"
-																		width="36" height="36" fill="none"
-																		stroke-linejoin="round" stroke-linecap="round"
-																		style="fill:none">
-																	</rect>
-																</g>
-																<g fill="none" stroke-linejoin="round"
-																	stroke-linecap="round"
-																	id="strokes-7bcf5226-958b-8093-8008-931a7479ba27-e8f02f89-625d-8093-8008-8b3d7eaa6a4d"
-																	class="strokes">
-																	<g class="inner-stroke-shape"
-																		transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)">
-																		<defs>
-																			<clipPath
-																				id="inner-stroke-render-14717-e8f02f89-625d-8093-8008-8b3d7eaa6a4d-0">
-																				<use
-																					href="#stroke-shape-render-14717-e8f02f89-625d-8093-8008-8b3d7eaa6a4d-0">
-																				</use>
-																			</clipPath>
-																			<rect rx="0" ry="0" x="1030.0714285714284"
-																				y="5247.000000000001" width="36"
-																				height="36"
-																				style="fill:none;fill-opacity:none;stroke-width:4;stroke:#27d367;stroke-opacity:1"
-																				id="stroke-shape-render-14717-e8f02f89-625d-8093-8008-8b3d7eaa6a4d-0">
-																			</rect>
-																		</defs>
-																		<use href="#stroke-shape-render-14717-e8f02f89-625d-8093-8008-8b3d7eaa6a4d-0"
-																			clip-path="url(&#x27;#inner-stroke-render-14717-e8f02f89-625d-8093-8008-8b3d7eaa6a4d-0&#x27;)">
-																		</use>
-																	</g>
-																</g>
-															</g>
-															<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a4e">
-																<g class="fills"
-																	id="fills-e8f02f89-625d-8093-8008-8b3d7eaa6a4e">
-																	<path
-																		d="M1030.071533203125,5247L1066.071533203125,5247L1066.071533203125,5283L1030.071533203125,5283L1030.071533203125,5247"
-																		stroke="none" fill="none"
-																		stroke-linejoin="round" stroke-linecap="round"
-																		stroke-width="2" style="fill:none">
-																	</path>
-																</g>
-															</g>
-															<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a4f">
-																<g class="fills"
-																	id="fills-e8f02f89-625d-8093-8008-8b3d7eaa6a4f">
-																	<path
-																		d="M1034.571533203125,5278.5L1037.047119140625,5272.80029296875C1033.129150390625,5267.23828125,1033.962158203125,5259.63134765625,1038.989501953125,5255.0478515625C1044.016845703125,5250.4658203125,1051.668212890625,5250.33984375,1056.843994140625,5254.75390625C1062.019775390625,5259.16845703125,1063.102783203125,5266.74462890625,1059.370361328125,5272.4326171875C1055.637939453125,5278.119140625,1048.256103515625,5280.14111328125,1042.146728515625,5277.14990234375L1034.571533203125,5278.5"
-																		fill="none" stroke-linejoin="round"
-																		stroke-linecap="round" style="fill:none">
-																	</path>
-																</g>
-																<g fill="none" stroke-linejoin="round"
-																	stroke-linecap="round"
-																	id="strokes-7bcf5226-958b-8093-8008-931a7479e71b-e8f02f89-625d-8093-8008-8b3d7eaa6a4f"
-																	class="strokes">
-																	<g class="inner-stroke-shape">
-																		<defs>
-																			<clipPath
-																				id="inner-stroke-render-14719-e8f02f89-625d-8093-8008-8b3d7eaa6a4f-0">
-																				<use
-																					href="#stroke-shape-render-14719-e8f02f89-625d-8093-8008-8b3d7eaa6a4f-0">
-																				</use>
-																			</clipPath>
-																			<path
-																				d="M1034.571533203125,5278.5L1037.047119140625,5272.80029296875C1033.129150390625,5267.23828125,1033.962158203125,5259.63134765625,1038.989501953125,5255.0478515625C1044.016845703125,5250.4658203125,1051.668212890625,5250.33984375,1056.843994140625,5254.75390625C1062.019775390625,5259.16845703125,1063.102783203125,5266.74462890625,1059.370361328125,5272.4326171875C1055.637939453125,5278.119140625,1048.256103515625,5280.14111328125,1042.146728515625,5277.14990234375L1034.571533203125,5278.5"
-																				style="fill:none;fill-opacity:none;stroke-width:4;stroke:#27d367;stroke-opacity:1"
-																				id="stroke-shape-render-14719-e8f02f89-625d-8093-8008-8b3d7eaa6a4f-0">
-																			</path>
-																		</defs>
-																		<use href="#stroke-shape-render-14719-e8f02f89-625d-8093-8008-8b3d7eaa6a4f-0"
-																			clip-path="url(&#x27;#inner-stroke-render-14719-e8f02f89-625d-8093-8008-8b3d7eaa6a4f-0&#x27;)">
-																		</use>
-																	</g>
-																</g>
-															</g>
-															<g id="shape-e8f02f89-625d-8093-8008-8b3d7eaa6a50">
-																<g class="fills"
-																	id="fills-e8f02f89-625d-8093-8008-8b3d7eaa6a50">
-																	<path
-																		d="M1043.571533203125,5262C1043.571533203125,5262.41455078125,1043.907470703125,5262.75,1044.321533203125,5262.75C1044.736572265625,5262.75,1045.071533203125,5262.41455078125,1045.071533203125,5262L1045.071533203125,5260.5C1045.071533203125,5260.08544921875,1044.736572265625,5259.75,1044.321533203125,5259.75C1043.907470703125,5259.75,1043.571533203125,5260.08544921875,1043.571533203125,5260.5L1043.571533203125,5262C1043.571533203125,5266.142578125,1046.929931640625,5269.5,1051.071533203125,5269.5L1052.571533203125,5269.5C1052.986572265625,5269.5,1053.321533203125,5269.16455078125,1053.321533203125,5268.75C1053.321533203125,5268.33544921875,1052.986572265625,5268,1052.571533203125,5268L1051.071533203125,5268C1050.657470703125,5268,1050.321533203125,5268.33544921875,1050.321533203125,5268.75C1050.321533203125,5269.16455078125,1050.657470703125,5269.5,1051.071533203125,5269.5"
-																		fill="none" stroke-linejoin="round"
-																		stroke-linecap="round" style="fill:none">
-																	</path>
-																</g>
-																<g fill="none" stroke-linejoin="round"
-																	stroke-linecap="round"
-																	id="strokes-7bcf5226-958b-8093-8008-931a7479e71c-e8f02f89-625d-8093-8008-8b3d7eaa6a50"
-																	class="strokes">
-																	<g class="stroke-shape">
-																		<path
-																			d="M1043.571533203125,5262C1043.571533203125,5262.41455078125,1043.907470703125,5262.75,1044.321533203125,5262.75C1044.736572265625,5262.75,1045.071533203125,5262.41455078125,1045.071533203125,5262L1045.071533203125,5260.5C1045.071533203125,5260.08544921875,1044.736572265625,5259.75,1044.321533203125,5259.75C1043.907470703125,5259.75,1043.571533203125,5260.08544921875,1043.571533203125,5260.5L1043.571533203125,5262C1043.571533203125,5266.142578125,1046.929931640625,5269.5,1051.071533203125,5269.5L1052.571533203125,5269.5C1052.986572265625,5269.5,1053.321533203125,5269.16455078125,1053.321533203125,5268.75C1053.321533203125,5268.33544921875,1052.986572265625,5268,1052.571533203125,5268L1051.071533203125,5268C1050.657470703125,5268,1050.321533203125,5268.33544921875,1050.321533203125,5268.75C1050.321533203125,5269.16455078125,1050.657470703125,5269.5,1051.071533203125,5269.5"
-																			style="fill:none;fill-opacity:none;stroke-width:2;stroke:#27d367;stroke-opacity:1;stroke-linecap:round">
-																		</path>
-																	</g>
-																</g>
-															</g>
-														</g>
-													</g>
-												</g>
-											</g>
-											<g id="strokes-7bcf5226-958b-8093-8008-931a7479e71d-e8f02f89-625d-8093-8008-8b3d7eaa6a4a"
-												class="strokes">
-												<g class="inner-stroke-shape"
-													transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)">
-													<defs>
-														<clipPath
-															id="inner-stroke-render-14715-e8f02f89-625d-8093-8008-8b3d7eaa6a4a-0">
-															<use
-																href="#stroke-shape-render-14715-e8f02f89-625d-8093-8008-8b3d7eaa6a4a-0">
-															</use>
-														</clipPath>
-														<rect rx="10" ry="10" x="1023.0714285714284"
-															y="5240.000000000001" width="50" height="50"
-															class="frame-background"
-															style="fill:none;fill-opacity:none;stroke-width:2;stroke:#e8a93d;stroke-opacity:1"
-															id="stroke-shape-render-14715-e8f02f89-625d-8093-8008-8b3d7eaa6a4a-0">
-														</rect>
-													</defs>
-													<use href="#stroke-shape-render-14715-e8f02f89-625d-8093-8008-8b3d7eaa6a4a-0"
-														clip-path="url(&#x27;#inner-stroke-render-14715-e8f02f89-625d-8093-8008-8b3d7eaa6a4a-0&#x27;)">
-													</use>
-												</g>
-											</g>
-										</g>
-									</g>
-								</g>
+							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="7537.357 5400 50 50"
+								fill="none">
+								<path d="m7548.858 5438.5 2.475-5.7a13.5 13.5 0 1 1 5.1 4.35z" stroke="#27d367"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path
+									d="M7557.858 5422a.75.75 0 1 0 1.5 0v-1.5a.75.75 0 1 0-1.5 0za7.5 7.5 0 0 0 7.5 7.5h1.5a.75.75 0 1 0 0-1.5h-1.5a.75.75 0 1 0 0 1.5"
+									stroke="#27d367" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 							</svg>
 						</a>
 					</div>
