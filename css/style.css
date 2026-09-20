@@ -792,6 +792,10 @@ footer .footer__container .footer__bottom .footer__copyright {
     border: none;
     margin-bottom: 40px;
   }
+  header .header__container .header__nav .header__nav-socials .header__nav-media .nav-media__img {
+    border: 1px solid #e8a93d;
+    border-radius: 10px;
+  }
   .header__burger {
     display: flex;
   }
@@ -2190,6 +2194,7 @@ footer .footer__container .footer__bottom .footer__copyright {
 
 	+сделать одинаковыми карточки услуг
 		1920 1440 1280 1024 768 440 390 375 360
+	+сделать одинаковыми иконки TG+WA на бургере как на footer
 	+решить с текстом внутри аккордиона ++ отступ для last FAQ
 	+проверить текст на карточках about
 	+решить проблему с "прыжками" hero 

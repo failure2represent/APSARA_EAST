@@ -845,6 +845,14 @@ footer {
 					border: none;
 					margin-bottom: 40px;
 				}
+				.header__nav-socials {
+					.header__nav-media {
+						.nav-media__img {
+							border: 1px solid $main-color;
+							border-radius: 10px;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -2785,6 +2793,7 @@ footer {
 
 	+сделать одинаковыми карточки услуг
 		1920 1440 1280 1024 768 440 390 375 360
+	+сделать одинаковыми иконки TG+WA на бургере как на footer
 	+решить с текстом внутри аккордиона ++ отступ для last FAQ
 	+проверить текст на карточках about
 	+решить проблему с "прыжками" hero 
