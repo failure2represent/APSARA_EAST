@@ -85,9 +85,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 
-//stable hero section
-const setHeroHeight = () => { document.documentElement.style.setProperty("--hero-height", `${window.innerHeight}px`); };
-
-setHeroHeight();
-
-window.addEventListener("orientationchange", () => { requestAnimationFrame(() => { setHeroHeight(); }); });
+document.documentElement.style.setProperty(
+	"--hero-height",
+	`${window.innerHeight}px`
+);
