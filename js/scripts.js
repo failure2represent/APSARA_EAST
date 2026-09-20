@@ -93,16 +93,10 @@ const setHeroHeight = () => {
 	);
 };
 
-const updateHeroHeight = () => {
-	setTimeout(() => {
-		setHeroHeight();
-	}, 300);
-};
-
 setHeroHeight();
 
-if (screen.orientation) {
-	screen.orientation.addEventListener("change", updateHeroHeight);
-} else {
-	window.addEventListener("orientationchange", updateHeroHeight);
-}
+window.addEventListener("orientationchange", () => {
+	requestAnimationFrame(() => {
+		setHeroHeight();
+	});
+});
