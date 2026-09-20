@@ -144,12 +144,12 @@ header {
 }
 
 .hero {
-	height: 100dvh;
+	height: var(--hero-height);
 	background-image: url("../img/hero3.webp");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	margin-bottom: 109px;
+	margin-bottom: 106px;
 	.hero__container {
 		padding-top: 278px;
 		display: flex;
@@ -206,7 +206,7 @@ header {
 }
 
 .about {
-	margin-bottom: 163px;
+	margin-bottom: 106px;
 	.about__container {
 		display: flex;
 		gap: 24px;
@@ -327,7 +327,7 @@ header {
 }
 
 .services {
-	margin-bottom: 218px;
+	margin-bottom: 106px;
 	.services__container {
 		.services__title {
 			font-size: 34px;
@@ -464,7 +464,7 @@ header {
 
 .faq {
 	min-height: 1075px;
-	margin-bottom: 56px;
+	margin-bottom: 106px;
 	.faq__container {
 		.faq__title {
 			font-size: 34px;
@@ -874,6 +874,22 @@ footer {
 			}
 		}
 	}
+	footer {
+		.footer__container {
+			.footer__top {
+				.footer__socials {
+					.footer__socials-links {
+						.footer__socials-link {
+							.socials-link__img {
+								border: 1px solid $main-color;
+								border-radius: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 //burger media <768
@@ -939,44 +955,58 @@ footer {
 					max-width: 628px;
 					height: 824px;
 				}
-				.about__desc-text {
+
+				.about__desc-inner {
 					max-width: 578px;
-					font-size: 21px;
-					.desc__wrap {
-						font-size: 28px;
+
+					.about__desc-text {
+						font-size: 21px;
+
+						.desc__wrap {
+							font-size: 28px;
+						}
 					}
 				}
 			}
+
 			.about__cards {
 				.about__card {
 					max-width: 302px;
+					height: 258px;
+
 					.about__card-top {
 						gap: 20px;
+
 						.about__card-title {
 							font-size: 20px;
 						}
+
 						.about__card-icon {
-							width: 56px;
-							height: 56px;
+							width: 52px;
+							height: 52px;
 						}
 					}
+
 					.about__card-bottom {
 						.about__card-text {
 							font-size: 14px;
 						}
 					}
-				}
-			}
-		}
-	}
 
-	.about {
-		.about__container {
-			.about__desc {
-				.about__desc-inner {
-					max-width: 578px;
-					.about__desc-text {
-						font-size: 21px;
+					&:nth-of-type(2) {
+						.about__card-bottom {
+							.about__card-text {
+								max-width: 200px;
+							}
+						}
+					}
+
+					&:nth-of-type(3) {
+						.about__card-top {
+							.about__card-title {
+								max-width: 190px;
+							}
+						}
 					}
 				}
 			}
@@ -1051,6 +1081,7 @@ footer {
 	header > .header__container {
 		max-width: 1200px;
 	}
+
 	header {
 		.header__container {
 			padding: 10px 0px;
@@ -1077,6 +1108,7 @@ footer {
 			}
 		}
 	}
+
 	.hero {
 		.hero__container {
 			padding-top: 200px;
@@ -1093,6 +1125,7 @@ footer {
 			}
 		}
 	}
+
 	.about {
 		.about__container {
 			.about__desc {
@@ -1104,7 +1137,7 @@ footer {
 					max-width: 538px;
 					padding: 15px;
 					.about__desc-text {
-						font-size: 21px;
+						font-size: 20px;
 
 						.desc__wrap {
 							font-size: 28px;
@@ -1119,11 +1152,11 @@ footer {
 					.about__card-top {
 						gap: 20px;
 						.about__card-title {
-							font-size: 20px;
+							font-size: 19px;
 						}
 						.about__card-icon {
-							width: 56px;
-							height: 56px;
+							width: 48px;
+							height: 48px;
 						}
 					}
 					.about__card-bottom {
@@ -1138,7 +1171,19 @@ footer {
 							}
 						}
 					}
-					&:nth-of-type(5) {
+					&:nth-of-type(2) {
+						.about__card-bottom {
+							.about__card-text {
+								width: 200px;
+							}
+						}
+					}
+					&:nth-of-type(3) {
+						.about__card-top {
+							.about__card-title {
+								max-width: 180px;
+							}
+						}
 						.about__card-bottom {
 							.about__card-text {
 								.card-text__wrap {
@@ -1147,7 +1192,16 @@ footer {
 							}
 						}
 					}
-					&:nth-of-type(3) {
+					&:nth-of-type(4) {
+						.about__card-bottom {
+							.about__card-text {
+								.card-text__wrap {
+									display: none;
+								}
+							}
+						}
+					}
+					&:nth-of-type(5) {
 						.about__card-bottom {
 							.about__card-text {
 								.card-text__wrap {
@@ -1160,6 +1214,7 @@ footer {
 			}
 		}
 	}
+
 	.services {
 		.services__container {
 			.services__title {
@@ -1210,6 +1265,7 @@ footer {
 			}
 		}
 	}
+
 	footer {
 		.footer__container {
 			.footer__top {
@@ -1287,6 +1343,7 @@ footer {
 			.about__cards {
 				.about__card {
 					max-width: 218px;
+					height: 224px;
 					font-size: 16px;
 					.about__card-top {
 						gap: 6px;
@@ -1304,9 +1361,6 @@ footer {
 					.about__card-bottom {
 						.about__card-text {
 							font-size: 14px;
-							.card-text__wrap {
-								display: none;
-							}
 							.card-text__upper {
 								text-transform: uppercase;
 							}
@@ -1325,6 +1379,13 @@ footer {
 								width: 142px;
 								height: 43px;
 								place-content: center;
+							}
+						}
+					}
+					&:last-of-type {
+						.about__card-bottom {
+							.about__card-text {
+								max-width: 170px;
 							}
 						}
 					}
@@ -1378,7 +1439,7 @@ footer {
 			}
 			.faq__media {
 				.faq__media-img {
-					max-width: 272px;
+					max-width: 300px;
 					height: 731px;
 				}
 			}
@@ -1521,9 +1582,6 @@ footer {
 					.about__card-bottom {
 						.about__card-text {
 							font-size: 14px;
-							.card-text__wrap {
-								display: none;
-							}
 						}
 					}
 					&:first-of-type {
@@ -1557,6 +1615,11 @@ footer {
 					}
 					&:last-of-type {
 						order: 6;
+						.about__card-bottom {
+							.about__card-text {
+								max-width: 169px;
+							}
+						}
 					}
 				}
 			}
@@ -1773,9 +1836,6 @@ footer {
 					.about__card-bottom {
 						.about__card-text {
 							font-size: 13px;
-							.card-text__wrap {
-								display: none;
-							}
 						}
 					}
 					&:nth-of-type(2) {
@@ -1798,6 +1858,13 @@ footer {
 						.about__card-bottom {
 							.about__card-text {
 								padding-right: 5px;
+							}
+						}
+					}
+					&:last-of-type {
+						.about__card-bottom {
+							.about__card-text {
+								max-width: 146px;
 							}
 						}
 					}
@@ -1847,8 +1914,8 @@ footer {
 								max-width: 260px;
 							}
 							.accordion__title-icon {
-								width: 46px;
-								height: 46px;
+								width: 44px;
+								height: 44px;
 							}
 						}
 					}
@@ -2028,9 +2095,6 @@ footer {
 					.about__card-bottom {
 						.about__card-text {
 							font-size: 12px;
-							.card-text__wrap {
-								display: none;
-							}
 						}
 					}
 					&:nth-of-type(2) {
@@ -2048,6 +2112,13 @@ footer {
 								width: 138px;
 								height: 38px;
 								place-content: center;
+							}
+						}
+					}
+					&:last-of-type {
+						.about__card-bottom {
+							.about__card-text {
+								max-width: 130px;
 							}
 						}
 					}
@@ -2287,8 +2358,12 @@ footer {
 					.about__card-bottom {
 						.about__card-text {
 							font-size: 12px;
-							.card-text__wrap {
-								display: none;
+						}
+					}
+					&:nth-of-type(4) {
+						.about__card-bottom {
+							.about__card-text {
+								width: 131px;
 							}
 						}
 					}
@@ -2706,26 +2781,19 @@ footer {
 
 /*
 
--доделать бургер (от 1024 и ниже)
-
 -перепроверить вёрстку 
-	=header 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
-	=burger 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
-	=hero 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
-	=about 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
-	=services 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
-	=faq 1920~~ 1440~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360
-	=footer 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360
 
 	+сделать одинаковыми карточки услуг
-	+сделать одинаковыми карточки about
-	+перепроверить футер (размеры, сделать одинаково и на хедер???)
-	+отступы между секциями ++ отступ для last FAQ
-	+решить "проблемы" от VScode с иконками
-	+проверить иконки тг/ва (pixel perfect!) [возможно изнач. сделать рамку на моб.]
-	+проверить размеры кнопок на телефоне (hero и т.д)
+		1920 1440 1280 1024 768 440 390 375 360
+	+решить с текстом внутри аккордиона ++ отступ для last FAQ
+	+проверить текст на карточках about
+	+решить проблему с "прыжками" hero 
+
 
 -якорьные ссылки
+	+настроить scroll-margin
+
+-связать forms и sheets
 
 -поп-ап (+ сделать под мобилы)
 

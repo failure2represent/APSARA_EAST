@@ -36,7 +36,28 @@ function closeMenu() {
 	overlay.classList.remove('active');
 }
 
-//smooth logo
+//smth-logo
+//url-cleaner
+function cleanUrl() {
+	history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+	const hash = window.location.hash;
+	if (!hash) return;
+
+	const target = document.querySelector(hash);
+
+	if (target) {
+		setTimeout(() => {
+			target.scrollIntoView({ behavior: 'smooth' });
+			cleanUrl();
+		}, 100);
+	} else {
+		cleanUrl();
+	}
+});
+
 const logo = document.querySelector('.header__logo');
 
 logo?.addEventListener('click', function (e) {
@@ -47,5 +68,26 @@ logo?.addEventListener('click', function (e) {
 	if (isHomePage) {
 		e.preventDefault();
 		window.scrollTo({ top: 0, behavior: 'smooth' });
+		cleanUrl();
 	}
 });
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+	link.addEventListener('click', function (e) {
+		const href = this.getAttribute('href');
+		const target = document.querySelector(href);
+		if (!target) return;
+
+		e.preventDefault();
+		target.scrollIntoView({ behavior: 'smooth' });
+		cleanUrl();
+	});
+});
+
+
+//stable hero section
+const setHeroHeight = () => { document.documentElement.style.setProperty("--hero-height", `${window.innerHeight}px`); };
+
+setHeroHeight();
+
+window.addEventListener("orientationchange", () => { requestAnimationFrame(() => { setHeroHeight(); }); });

@@ -126,12 +126,12 @@ header .header__container .header__actions .header__contact-btn {
 }
 
 .hero {
-  height: 100dvh;
+  height: var(--hero-height);
   background-image: url("../img/hero3.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 109px;
+  margin-bottom: 106px;
 }
 .hero .hero__container {
   padding-top: 278px;
@@ -188,7 +188,7 @@ header .header__container .header__actions .header__contact-btn {
 }
 
 .about {
-  margin-bottom: 163px;
+  margin-bottom: 106px;
 }
 .about .about__container {
   display: flex;
@@ -294,7 +294,7 @@ header .header__container .header__actions .header__contact-btn {
 }
 
 .services {
-  margin-bottom: 218px;
+  margin-bottom: 106px;
 }
 .services .services__container .services__title {
   font-size: 34px;
@@ -435,7 +435,7 @@ header .header__container .header__actions .header__contact-btn {
 
 .faq {
   min-height: 1075px;
-  margin-bottom: 56px;
+  margin-bottom: 106px;
 }
 .faq .faq__container .faq__title {
   font-size: 34px;
@@ -804,6 +804,10 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__upper {
     text-transform: uppercase;
   }
+  footer .footer__container .footer__top .footer__socials .footer__socials-links .footer__socials-link .socials-link__img {
+    border: 1px solid #e8a93d;
+    border-radius: 10px;
+  }
 }
 @media (max-width: 767px) {
   header .header__container .header__actions .header__contact-btn {
@@ -839,15 +843,18 @@ footer .footer__container .footer__bottom .footer__copyright {
     max-width: 628px;
     height: 824px;
   }
-  .about .about__container .about__desc .about__desc-text {
+  .about .about__container .about__desc .about__desc-inner {
     max-width: 578px;
+  }
+  .about .about__container .about__desc .about__desc-inner .about__desc-text {
     font-size: 21px;
   }
-  .about .about__container .about__desc .about__desc-text .desc__wrap {
+  .about .about__container .about__desc .about__desc-inner .about__desc-text .desc__wrap {
     font-size: 28px;
   }
   .about .about__container .about__cards .about__card {
     max-width: 302px;
+    height: 258px;
   }
   .about .about__container .about__cards .about__card .about__card-top {
     gap: 20px;
@@ -856,17 +863,17 @@ footer .footer__container .footer__bottom .footer__copyright {
     font-size: 20px;
   }
   .about .about__container .about__cards .about__card .about__card-top .about__card-icon {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
   }
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
     font-size: 14px;
   }
-  .about .about__container .about__desc .about__desc-inner {
-    max-width: 578px;
+  .about .about__container .about__cards .about__card:nth-of-type(2) .about__card-bottom .about__card-text {
+    max-width: 200px;
   }
-  .about .about__container .about__desc .about__desc-inner .about__desc-text {
-    font-size: 21px;
+  .about .about__container .about__cards .about__card:nth-of-type(3) .about__card-top .about__card-title {
+    max-width: 190px;
   }
   .services .services__container .services__title {
     font-size: 33px;
@@ -952,7 +959,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     padding: 15px;
   }
   .about .about__container .about__desc .about__desc-inner .about__desc-text {
-    font-size: 21px;
+    font-size: 20px;
   }
   .about .about__container .about__desc .about__desc-inner .about__desc-text .desc__wrap {
     font-size: 28px;
@@ -967,11 +974,11 @@ footer .footer__container .footer__bottom .footer__copyright {
     gap: 20px;
   }
   .about .about__container .about__cards .about__card .about__card-top .about__card-title {
-    font-size: 20px;
+    font-size: 19px;
   }
   .about .about__container .about__cards .about__card .about__card-top .about__card-icon {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
   }
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
     font-size: 14px;
@@ -979,10 +986,19 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card:first-of-type .about__card-bottom .about__card-text {
     max-width: 242px;
   }
-  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-bottom .about__card-text .card-text__wrap {
-    display: initial;
+  .about .about__container .about__cards .about__card:nth-of-type(2) .about__card-bottom .about__card-text {
+    width: 200px;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(3) .about__card-top .about__card-title {
+    max-width: 180px;
   }
   .about .about__container .about__cards .about__card:nth-of-type(3) .about__card-bottom .about__card-text .card-text__wrap {
+    display: initial;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(4) .about__card-bottom .about__card-text .card-text__wrap {
+    display: none;
+  }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-bottom .about__card-text .card-text__wrap {
     display: initial;
   }
   .services .services__container .services__title {
@@ -1072,6 +1088,7 @@ footer .footer__container .footer__bottom .footer__copyright {
   }
   .about .about__container .about__cards .about__card {
     max-width: 218px;
+    height: 224px;
     font-size: 16px;
   }
   .about .about__container .about__cards .about__card .about__card-top {
@@ -1090,9 +1107,6 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
     font-size: 14px;
   }
-  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
-    display: none;
-  }
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__upper {
     text-transform: uppercase;
   }
@@ -1103,6 +1117,9 @@ footer .footer__container .footer__bottom .footer__copyright {
     width: 142px;
     height: 43px;
     place-content: center;
+  }
+  .about .about__container .about__cards .about__card:last-of-type .about__card-bottom .about__card-text {
+    max-width: 170px;
   }
   .services .services__container .services__title {
     font-size: 32px;
@@ -1135,7 +1152,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     height: 46px;
   }
   .faq .faq__container .faq__media .faq__media-img {
-    max-width: 272px;
+    max-width: 300px;
     height: 731px;
   }
   footer .footer__container .footer__top .footer__socials {
@@ -1251,9 +1268,6 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
     font-size: 14px;
   }
-  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
-    display: none;
-  }
   .about .about__container .about__cards .about__card:first-of-type {
     order: 1;
   }
@@ -1279,6 +1293,9 @@ footer .footer__container .footer__bottom .footer__copyright {
   }
   .about .about__container .about__cards .about__card:last-of-type {
     order: 6;
+  }
+  .about .about__container .about__cards .about__card:last-of-type .about__card-bottom .about__card-text {
+    max-width: 169px;
   }
   .services .services__container .services__title {
     font-size: 31px;
@@ -1441,9 +1458,6 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
     font-size: 13px;
   }
-  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
-    display: none;
-  }
   .about .about__container .about__cards .about__card:nth-of-type(2) .about__card-bottom .about__card-text .card-text__devider {
     display: inline-flex;
   }
@@ -1454,6 +1468,9 @@ footer .footer__container .footer__bottom .footer__copyright {
   }
   .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-bottom .about__card-text {
     padding-right: 5px;
+  }
+  .about .about__container .about__cards .about__card:last-of-type .about__card-bottom .about__card-text {
+    max-width: 146px;
   }
   .services .services__container .services__title {
     font-size: 30px;
@@ -1489,8 +1506,8 @@ footer .footer__container .footer__bottom .footer__copyright {
     max-width: 260px;
   }
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
   }
   .faq .faq__container .faq__media .faq__media-img {
     display: none;
@@ -1639,9 +1656,6 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
     font-size: 12px;
   }
-  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
-    display: none;
-  }
   .about .about__container .about__cards .about__card:nth-of-type(2) .about__card-bottom .about__card-text .card-text__devider {
     display: inline-flex;
   }
@@ -1649,6 +1663,9 @@ footer .footer__container .footer__bottom .footer__copyright {
     width: 138px;
     height: 38px;
     place-content: center;
+  }
+  .about .about__container .about__cards .about__card:last-of-type .about__card-bottom .about__card-text {
+    max-width: 130px;
   }
   .services .services__container .services__title {
     font-size: 28px;
@@ -1840,8 +1857,8 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text {
     font-size: 12px;
   }
-  .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
-    display: none;
+  .about .about__container .about__cards .about__card:nth-of-type(4) .about__card-bottom .about__card-text {
+    width: 131px;
   }
   .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-top .about__card-title {
     width: 130px;
@@ -2169,26 +2186,19 @@ footer .footer__container .footer__bottom .footer__copyright {
 }
 /*
 
--доделать бургер (от 1024 и ниже)
-
 -перепроверить вёрстку 
-	=header 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
-	=burger 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
-	=hero 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
-	=about 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
-	=services 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360~~
-	=faq 1920~~ 1440~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360
-	=footer 1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375~~ 360
 
 	+сделать одинаковыми карточки услуг
-	+сделать одинаковыми карточки about
-	+перепроверить футер (размеры, сделать одинаково и на хедер???)
-	+отступы между секциями ++ отступ для last FAQ
-	+решить "проблемы" от VScode с иконками
-	+проверить иконки тг/ва (pixel perfect!) [возможно изнач. сделать рамку на моб.]
-	+проверить размеры кнопок на телефоне (hero и т.д)
+		1920 1440 1280 1024 768 440 390 375 360
+	+решить с текстом внутри аккордиона ++ отступ для last FAQ
+	+проверить текст на карточках about
+	+решить проблему с "прыжками" hero 
+
 
 -якорьные ссылки
+	+настроить scroll-margin
+
+-связать forms и sheets
 
 -поп-ап (+ сделать под мобилы)
 
