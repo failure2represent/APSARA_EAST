@@ -86,17 +86,20 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
 
 //stable hero section
+const mediaQuery = window.matchMedia("(max-width: 1024px)");
+
 const setHeroHeight = () => {
+	const offset = mediaQuery.matches ? 120 : 0;
 	document.documentElement.style.setProperty(
 		"--hero-height",
-		`${window.innerHeight + 120}px`
+		`${window.innerHeight + offset}px`
 	);
 };
 
 setHeroHeight();
 
 window.addEventListener("orientationchange", () => {
-	requestAnimationFrame(() => {
-		setHeroHeight();
-	});
+	requestAnimationFrame(setHeroHeight);
 });
+
+mediaQuery.addEventListener("change", setHeroHeight);
