@@ -850,12 +850,15 @@ footer {
 						.nav-media__img {
 							border: 1px solid $main-color;
 							border-radius: 10px;
+							width: 48px;
+							height: 48px;
 						}
 					}
 				}
 			}
 		}
 	}
+
 	.header__burger {
 		display: flex;
 	}
@@ -882,6 +885,7 @@ footer {
 			}
 		}
 	}
+
 	footer {
 		.footer__container {
 			.footer__top {
@@ -908,6 +912,25 @@ footer {
 			.header__actions {
 				.header__contact-btn {
 					display: none;
+				}
+			}
+		}
+	}
+}
+
+//burger media <440
+
+@media (max-width: 439px) {
+	header {
+		.header__container {
+			.header__nav {
+				.header__nav-socials {
+					.header__nav-media {
+						.nav-media__img {
+							width: 44px;
+							height: 44px;
+						}
+					}
 				}
 			}
 		}
@@ -1484,8 +1507,8 @@ footer {
 					.footer__socials-links {
 						.footer__socials-link {
 							.socials-link__img {
-								width: 44px;
-								height: 44px;
+								width: 48px;
+								height: 48px;
 							}
 						}
 					}
