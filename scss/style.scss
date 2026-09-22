@@ -384,7 +384,7 @@ header {
 					display: flex;
 					flex-direction: column;
 					gap: 20px;
-					margin-bottom: 86px;
+					margin-bottom: 85px;
 					.service__card-item {
 						place-items: center;
 						color: #000000;
@@ -914,7 +914,7 @@ footer {
 	}
 }
 
-@media (1440px <= width < 1920px) {
+@media (1440px <= width < 1904px) {
 	.container {
 		max-width: 1280px;
 	}
@@ -1025,6 +1025,13 @@ footer {
 		.services__container {
 			.services__title {
 				font-size: 33px;
+			}
+			.services__inner {
+				.service__card {
+					.service__card-list {
+						margin-bottom: 74px;
+					}
+				}
 			}
 		}
 	}
@@ -1231,6 +1238,9 @@ footer {
 			.services__inner {
 				.service__card {
 					width: 520px;
+					.service__card-list {
+						margin-bottom: 71px;
+					}
 					.service__card-title {
 						font-size: 37px;
 					}
@@ -1411,6 +1421,9 @@ footer {
 				gap: 60px;
 				.service__card {
 					width: 442px;
+					.service__card-list {
+						margin-bottom: 61px;
+					}
 					.service__card-title {
 						font-size: 37px;
 					}
@@ -1644,6 +1657,9 @@ footer {
 				flex-wrap: wrap;
 				.service__card {
 					width: 520px;
+					.service__card-list {
+						margin-bottom: 71px;
+					}
 					.service__card-title {
 						font-size: 37px;
 					}
@@ -1891,6 +1907,9 @@ footer {
 				flex-wrap: wrap;
 				.service__card {
 					width: 400px;
+					.service__card-list {
+						margin-bottom: 61px;
+					}
 					.service__card-title {
 						font-size: 36px;
 					}
@@ -2147,6 +2166,7 @@ footer {
 					width: 350px;
 					padding-bottom: 30px;
 					.service__card-list {
+						margin-bottom: 32px;
 						.service__card-item {
 							font-size: 15px;
 						}
@@ -2158,6 +2178,11 @@ footer {
 						padding: 21px 89px;
 						font-size: 22px;
 						border-radius: 22px;
+					}
+					&:nth-of-type(2) {
+						.service__card-list {
+							margin-bottom: 64px;
+						}
 					}
 				}
 			}
@@ -2401,6 +2426,7 @@ footer {
 					width: 335px;
 					padding-bottom: 30px;
 					.service__card-list {
+						margin-bottom: 42px;
 						.service__card-item {
 							font-size: 15px;
 						}
@@ -2415,6 +2441,11 @@ footer {
 						padding: 19px 78px;
 						font-size: 22px;
 						border-radius: 22px;
+					}
+					&:nth-of-type(2) {
+						.service__card-list {
+							margin-bottom: 74px;
+						}
 					}
 				}
 			}
@@ -2676,6 +2707,11 @@ footer {
 						font-size: 21px;
 						border-radius: 21px;
 					}
+					&:nth-of-type(2) {
+						.service__card-list {
+							margin-bottom: 74px;
+						}
+					}
 				}
 			}
 		}
@@ -2791,11 +2827,8 @@ footer {
 
 -перепроверить вёрстку 
 
-	+сделать одинаковыми карточки услуг
-		1920 1440 1280 1024 768 440 390 375 360
 	+решить с текстом внутри аккордиона ++ отступ для last FAQ
 	+проверить текст на карточках about
-	+решить проблему с "прыжками" hero 
 	+сделать одинаковыми иконки TG+WA на бургере как на footer
 
 
