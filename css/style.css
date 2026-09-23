@@ -12,6 +12,18 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
+#about {
+  scroll-margin-top: 77px;
+}
+
+#services {
+  scroll-margin-top: 112px;
+}
+
+#faq {
+  scroll-margin-top: 112px;
+}
+
 .container {
   max-width: 1600px;
   margin: auto;
@@ -896,6 +908,9 @@ footer .footer__container .footer__bottom .footer__copyright {
   .about .about__container .about__cards .about__card:nth-of-type(3) .about__card-top .about__card-title {
     max-width: 190px;
   }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-bottom .about__card-text {
+    padding-right: 2px;
+  }
   .services .services__container .services__title {
     font-size: 33px;
   }
@@ -1151,6 +1166,9 @@ footer .footer__container .footer__bottom .footer__copyright {
     height: 43px;
     place-content: center;
   }
+  .about .about__container .about__cards .about__card:nth-of-type(5) .about__card-bottom .about__card-text {
+    padding-right: 2px;
+  }
   .about .about__container .about__cards .about__card:last-of-type .about__card-bottom .about__card-text {
     max-width: 170px;
   }
@@ -1393,8 +1411,8 @@ footer .footer__container .footer__bottom .footer__copyright {
     font-size: 15px;
   }
   footer .footer__container .footer__top .footer__socials .footer__socials-links .footer__socials-link .socials-link__img {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
   }
   footer .footer__container .footer__top .footer__contacts {
     padding: 50px 24px 113px;
@@ -2252,17 +2270,8 @@ footer .footer__container .footer__bottom .footer__copyright {
 }
 /*
 
--перепроверить вёрстку 
 
-	+решить с текстом внутри аккордиона 
-		1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375 360
-		++ отступ для last FAQ
-		1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375 360
-	+проверить текст на карточках about
-	+закинуть новые width для footer иконок, пересчитать paddings
-
--якорьные ссылки
-	+настроить scroll-margin
+-оформить тестовые forms
 
 -связать forms и sheets
 

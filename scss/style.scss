@@ -21,6 +21,18 @@ html {
 	-webkit-overflow-scrolling: touch;
 }
 
+#about {
+	scroll-margin-top: 77px;
+}
+
+#services {
+	scroll-margin-top: 112px;
+}
+
+#faq {
+	scroll-margin-top: 112px;
+}
+
 .container {
 	max-width: 1600px;
 	margin: auto;
@@ -1056,6 +1068,13 @@ footer {
 							}
 						}
 					}
+					&:nth-of-type(5) {
+						.about__card-bottom {
+							.about__card-text {
+								padding-right: 2px;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -1449,6 +1468,11 @@ footer {
 								place-content: center;
 							}
 						}
+						.about__card-bottom {
+							.about__card-text {
+								padding-right: 2px;
+							}
+						}
 					}
 					&:last-of-type {
 						.about__card-bottom {
@@ -1783,8 +1807,8 @@ footer {
 					.footer__socials-links {
 						.footer__socials-link {
 							.socials-link__img {
-								width: 44px;
-								height: 44px;
+								width: 46px;
+								height: 46px;
 							}
 						}
 					}
@@ -2906,13 +2930,8 @@ footer {
 
 /*
 
--перепроверить вёрстку 
 
-	+проверить текст на карточках about
-	+закинуть новые width для footer иконок, пересчитать paddings
-
--якорьные ссылки
-	+настроить scroll-margin
+-оформить тестовые forms
 
 -связать forms и sheets
 
