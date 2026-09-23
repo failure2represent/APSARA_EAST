@@ -463,7 +463,6 @@ header {
 }
 
 .faq {
-	min-height: 1075px;
 	margin-bottom: 106px;
 	.faq__container {
 		.faq__title {
@@ -526,8 +525,8 @@ header {
 
 							.accordion__text {
 								margin: 0;
-								padding-right: 288px;
-								margin-top: 17px;
+								max-width: 712px;
+								padding: 20px 0px 10px;
 								font-family: $sec-font;
 								color: $text-color;
 								font-size: 16px;
@@ -609,8 +608,20 @@ footer {
 					line-height: 1.2;
 					letter-spacing: 0px;
 					gap: 25px;
+					&::before {
+						content: "";
+						display: inline-block;
+						flex-shrink: 0;
+						width: 26px;
+						height: 26px;
+						background-image: url("../img/phone.svg");
+						background-repeat: no-repeat;
+						background-position: center;
+					}
 					&:first-of-type {
 						margin-bottom: 22px;
+					}
+					&:nth-child(2) {
 						&::before {
 							content: "";
 							display: inline-block;
@@ -621,16 +632,6 @@ footer {
 							background-repeat: no-repeat;
 							background-position: center;
 						}
-					}
-					&::before {
-						content: "";
-						display: inline-block;
-						flex-shrink: 0;
-						width: 26px;
-						height: 26px;
-						background-image: url("../img/phone.svg");
-						background-repeat: no-repeat;
-						background-position: center;
 					}
 				}
 			}
@@ -690,6 +691,10 @@ footer {
 					display: flex;
 					place-content: center;
 					gap: 25px;
+					.pay-method__icon {
+						width: 48px;
+						height: 48px;
+					}
 				}
 			}
 		}
@@ -899,6 +904,18 @@ footer {
 						}
 					}
 				}
+				.footer__contacts {
+					.footer__contact-text {
+						&::before {
+							transform: scale(0.88);
+						}
+						&:nth-child(2) {
+							&::before {
+								transform: scale(0.88);
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -1075,6 +1092,11 @@ footer {
 							.accordion__title-icon {
 								width: 46px;
 								height: 46px;
+							}
+							.accordion__content {
+								.accordion__text {
+									max-width: 614px;
+								}
 							}
 						}
 					}
@@ -1294,6 +1316,11 @@ footer {
 								width: 46px;
 								height: 46px;
 							}
+							.accordion__content {
+								.accordion__text {
+									max-width: 614px;
+								}
+							}
 						}
 					}
 				}
@@ -1476,6 +1503,12 @@ footer {
 							.accordion__title-icon {
 								width: 46px;
 								height: 46px;
+							}
+							.accordion__content {
+								.accordion__text {
+									max-width: 490px;
+									font-size: 15px;
+								}
 							}
 						}
 					}
@@ -1696,7 +1729,6 @@ footer {
 	}
 
 	.faq {
-		min-height: 940px;
 		.faq__container {
 			.faq__title {
 				font-size: 31px;
@@ -1713,6 +1745,12 @@ footer {
 							.accordion__title-icon {
 								width: 46px;
 								height: 46px;
+							}
+							.accordion__content {
+								.accordion__text {
+									font-size: 15px;
+									max-width: 490px;
+								}
 							}
 						}
 					}
@@ -1947,7 +1985,6 @@ footer {
 	}
 
 	.faq {
-		min-height: 856px;
 		.faq__container {
 			.faq__title {
 				font-size: 30px;
@@ -1966,6 +2003,12 @@ footer {
 							.accordion__title-icon {
 								width: 44px;
 								height: 44px;
+							}
+							.accordion__content {
+								.accordion__text {
+									max-width: 296px;
+									font-size: 15px;
+								}
 							}
 						}
 					}
@@ -2213,7 +2256,6 @@ footer {
 	}
 
 	.faq {
-		min-height: 1065px;
 		.faq__container {
 			.faq__title {
 				font-size: 28px;
@@ -2235,6 +2277,12 @@ footer {
 							.accordion__title-icon {
 								width: 42px;
 								height: 42px;
+							}
+							.accordion__content {
+								.accordion__text {
+									max-width: 296px;
+									font-size: 14px;
+								}
 							}
 						}
 					}
@@ -2476,7 +2524,6 @@ footer {
 	}
 
 	.faq {
-		min-height: 1065px;
 		.faq__container {
 			.faq__title {
 				font-size: 28px;
@@ -2486,7 +2533,7 @@ footer {
 					.faq__accordion {
 						gap: 13px;
 						.accordion__item {
-							max-width: 335px;
+							width: 335px;
 							.accordion__title {
 								font-size: 15px;
 								max-width: 234px;
@@ -2494,6 +2541,12 @@ footer {
 							.accordion__title-icon {
 								width: 40px;
 								height: 40px;
+							}
+							.accordion__content {
+								.accordion__text {
+									width: 285px;
+									font-size: 13px;
+								}
 							}
 						}
 					}
@@ -2741,7 +2794,6 @@ footer {
 	}
 
 	.faq {
-		min-height: 1065px;
 		.faq__container {
 			.faq__title {
 				font-size: 26px;
@@ -2751,7 +2803,7 @@ footer {
 					.faq__accordion {
 						gap: 13px;
 						.accordion__item {
-							max-width: 320px;
+							width: 320px;
 							.accordion__title {
 								max-width: 222px;
 								font-size: 15px;
@@ -2759,6 +2811,12 @@ footer {
 							.accordion__title-icon {
 								width: 40px;
 								height: 40px;
+							}
+							.accordion__content {
+								.accordion__text {
+									width: 270px;
+									font-size: 13px;
+								}
 							}
 						}
 					}
@@ -2850,10 +2908,8 @@ footer {
 
 -перепроверить вёрстку 
 
-	+решить с текстом внутри аккордиона ++ отступ для last FAQ
 	+проверить текст на карточках about
-	+сделать одинаковыми иконки TG+WA на бургере как на footer
-
+	+закинуть новые width для footer иконок, пересчитать paddings
 
 -якорьные ссылки
 	+настроить scroll-margin
@@ -2864,6 +2920,8 @@ footer {
 
 -придумать hover эффекты
 
--решить с icon на footer(оплата) + иконки телефона и почты
+-eng страница (сделать дефолтной)
+
+-оживить выбор языка (+active эффект)
 
 */

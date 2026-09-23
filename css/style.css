@@ -434,7 +434,6 @@ header .header__container .header__actions .header__contact-btn {
 }
 
 .faq {
-  min-height: 1075px;
   margin-bottom: 106px;
 }
 .faq .faq__container .faq__title {
@@ -500,8 +499,8 @@ header .header__container .header__actions .header__contact-btn {
 }
 .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content .accordion__text {
   margin: 0;
-  padding-right: 288px;
-  margin-top: 17px;
+  max-width: 712px;
+  padding: 20px 0px 10px;
   font-family: "PT Serif", serif;
   color: #9a9a9a;
   font-size: 16px;
@@ -581,19 +580,6 @@ footer .footer__container .footer__top .footer__contacts .footer__contact-text {
   letter-spacing: 0px;
   gap: 25px;
 }
-footer .footer__container .footer__top .footer__contacts .footer__contact-text:first-of-type {
-  margin-bottom: 22px;
-}
-footer .footer__container .footer__top .footer__contacts .footer__contact-text:first-of-type::before {
-  content: "";
-  display: inline-block;
-  flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  background-image: url("../img/email.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
 footer .footer__container .footer__top .footer__contacts .footer__contact-text::before {
   content: "";
   display: inline-block;
@@ -601,6 +587,19 @@ footer .footer__container .footer__top .footer__contacts .footer__contact-text::
   width: 26px;
   height: 26px;
   background-image: url("../img/phone.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+footer .footer__container .footer__top .footer__contacts .footer__contact-text:first-of-type {
+  margin-bottom: 22px;
+}
+footer .footer__container .footer__top .footer__contacts .footer__contact-text:nth-child(2)::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background-image: url("../img/email.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -656,6 +655,10 @@ footer .footer__container .footer__top .footer__pay-methods .pay-methods {
   display: flex;
   place-content: center;
   gap: 25px;
+}
+footer .footer__container .footer__top .footer__pay-methods .pay-methods .pay-method__icon {
+  width: 48px;
+  height: 48px;
 }
 footer .footer__container .footer__bottom {
   border-top: 1px solid #9a9a9a;
@@ -814,6 +817,12 @@ footer .footer__container .footer__bottom .footer__copyright {
     border: 1px solid #e8a93d;
     border-radius: 10px;
   }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text::before {
+    transform: scale(0.88);
+  }
+  footer .footer__container .footer__top .footer__contacts .footer__contact-text:nth-child(2)::before {
+    transform: scale(0.88);
+  }
 }
 @media (max-width: 767px) {
   header .header__container .header__actions .header__contact-btn {
@@ -905,6 +914,9 @@ footer .footer__container .footer__bottom .footer__copyright {
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
     width: 46px;
     height: 46px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content .accordion__text {
+    max-width: 614px;
   }
   .faq .faq__container .faq__inner .faq__media .faq__media-img {
     max-width: 410px;
@@ -1046,6 +1058,9 @@ footer .footer__container .footer__bottom .footer__copyright {
     width: 46px;
     height: 46px;
   }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content .accordion__text {
+    max-width: 614px;
+  }
   .faq .faq__container .faq__media .faq__media-img {
     max-width: 410px;
     height: 735px;
@@ -1171,6 +1186,10 @@ footer .footer__container .footer__bottom .footer__copyright {
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
     width: 46px;
     height: 46px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content .accordion__text {
+    max-width: 490px;
+    font-size: 15px;
   }
   .faq .faq__container .faq__media .faq__media-img {
     max-width: 300px;
@@ -1338,9 +1357,6 @@ footer .footer__container .footer__bottom .footer__copyright {
     padding: 24px 130px;
     font-size: 26px;
   }
-  .faq {
-    min-height: 940px;
-  }
   .faq .faq__container .faq__title {
     font-size: 31px;
   }
@@ -1354,6 +1370,10 @@ footer .footer__container .footer__bottom .footer__copyright {
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
     width: 46px;
     height: 46px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content .accordion__text {
+    font-size: 15px;
+    max-width: 490px;
   }
   .faq .faq__container .faq__media .faq__media-img {
     display: none;
@@ -1517,9 +1537,6 @@ footer .footer__container .footer__bottom .footer__copyright {
     font-size: 22px;
     border-radius: 22px;
   }
-  .faq {
-    min-height: 856px;
-  }
   .faq .faq__container .faq__title {
     font-size: 30px;
     text-align: center;
@@ -1535,6 +1552,10 @@ footer .footer__container .footer__bottom .footer__copyright {
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
     width: 44px;
     height: 44px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content .accordion__text {
+    max-width: 296px;
+    font-size: 15px;
   }
   .faq .faq__container .faq__media .faq__media-img {
     display: none;
@@ -1722,9 +1743,6 @@ footer .footer__container .footer__bottom .footer__copyright {
   .services .services__container .services__inner .service__card:nth-of-type(2) .service__card-list {
     margin-bottom: 64px;
   }
-  .faq {
-    min-height: 1065px;
-  }
   .faq .faq__container .faq__title {
     font-size: 28px;
   }
@@ -1745,6 +1763,10 @@ footer .footer__container .footer__bottom .footer__copyright {
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
     width: 42px;
     height: 42px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content .accordion__text {
+    max-width: 296px;
+    font-size: 14px;
   }
   .faq .faq__container .faq__media .faq__media-img {
     display: none;
@@ -1929,9 +1951,6 @@ footer .footer__container .footer__bottom .footer__copyright {
   .services .services__container .services__inner .service__card:nth-of-type(2) .service__card-list {
     margin-bottom: 74px;
   }
-  .faq {
-    min-height: 1065px;
-  }
   .faq .faq__container .faq__title {
     font-size: 28px;
   }
@@ -1939,7 +1958,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     gap: 13px;
   }
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item {
-    max-width: 335px;
+    width: 335px;
   }
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
     font-size: 15px;
@@ -1948,6 +1967,10 @@ footer .footer__container .footer__bottom .footer__copyright {
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
     width: 40px;
     height: 40px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content .accordion__text {
+    width: 285px;
+    font-size: 13px;
   }
   .faq .faq__container .faq__media .faq__media-img {
     display: none;
@@ -2140,9 +2163,6 @@ footer .footer__container .footer__bottom .footer__copyright {
   .services .services__container .services__inner .service__card:nth-of-type(2) .service__card-list {
     margin-bottom: 74px;
   }
-  .faq {
-    min-height: 1065px;
-  }
   .faq .faq__container .faq__title {
     font-size: 26px;
   }
@@ -2150,7 +2170,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     gap: 13px;
   }
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item {
-    max-width: 320px;
+    width: 320px;
   }
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title {
     max-width: 222px;
@@ -2159,6 +2179,10 @@ footer .footer__container .footer__bottom .footer__copyright {
   .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__title-icon {
     width: 40px;
     height: 40px;
+  }
+  .faq .faq__container .faq__inner .faq__content .faq__accordion .accordion__item .accordion__content .accordion__text {
+    width: 270px;
+    font-size: 13px;
   }
   .faq .faq__container .faq__media .faq__media-img {
     display: none;
@@ -2230,10 +2254,12 @@ footer .footer__container .footer__bottom .footer__copyright {
 
 -перепроверить вёрстку 
 
-	+решить с текстом внутри аккордиона ++ отступ для last FAQ
+	+решить с текстом внутри аккордиона 
+		1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375 360
+		++ отступ для last FAQ
+		1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390~~ 375 360
 	+проверить текст на карточках about
-	+сделать одинаковыми иконки TG+WA на бургере как на footer
-
+	+закинуть новые width для footer иконок, пересчитать paddings
 
 -якорьные ссылки
 	+настроить scroll-margin
@@ -2244,6 +2270,8 @@ footer .footer__container .footer__bottom .footer__copyright {
 
 -придумать hover эффекты
 
--решить с icon на footer(оплата) + иконки телефона и почты
+-eng страница (сделать дефолтной)
+
+-оживить выбор языка (+active эффект)
 
 *//*# sourceMappingURL=style.css.map */
