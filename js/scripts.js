@@ -87,23 +87,23 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
 
 //stable hero section
-const mediaQuery = window.matchMedia("(max-width: 767px)");
+// const mediaQuery = window.matchMedia("(max-width: 767px)");
 
-const setHeroHeight = () => {
-	const offset = mediaQuery.matches ? 120 : 0;
-	document.documentElement.style.setProperty(
-		"--hero-height",
-		`${window.innerHeight + offset}px`
-	);
-};
+// const setHeroHeight = () => {
+// 	const offset = mediaQuery.matches ? 120 : 0;
+// 	document.documentElement.style.setProperty(
+// 		"--hero-height",
+// 		`${window.innerHeight + offset}px`
+// 	);
+// };
 
-setHeroHeight();
+// setHeroHeight();
 
-window.addEventListener("orientationchange", () => {
-	requestAnimationFrame(setHeroHeight);
-});
+// window.addEventListener("orientationchange", () => {
+// 	requestAnimationFrame(setHeroHeight);
+// });
 
-mediaQuery.addEventListener("change", setHeroHeight);
+// mediaQuery.addEventListener("change", setHeroHeight);
 
 
 //supported countries
