@@ -87,7 +87,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
 
 //stable hero section
-const mediaQuery = window.matchMedia("(max-width: 1024px)");
+const mediaQuery = window.matchMedia("(max-width: 767px)");
 
 const setHeroHeight = () => {
 	const offset = mediaQuery.matches ? 120 : 0;

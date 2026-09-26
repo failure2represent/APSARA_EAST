@@ -385,6 +385,7 @@ header .header__container .header__actions .header__contact-btn, header .header_
 }
 
 .hero {
+  display: flex;
   height: var(--hero-height);
   background-image: url("../img/hero3.webp");
   background-size: cover;
@@ -393,9 +394,10 @@ header .header__container .header__actions .header__contact-btn, header .header_
   margin-bottom: 106px;
 }
 .hero .hero__container {
-  padding-top: 278px;
   display: flex;
   flex-direction: column;
+  place-self: center;
+  margin-left: 160px;
 }
 .hero .hero__container .hero__title {
   max-width: 718px;
@@ -1066,6 +1068,9 @@ footer .footer__container .footer__bottom .footer__copyright {
   .header__overlay {
     display: block;
   }
+  .hero .hero__container {
+    margin-left: 40px;
+  }
   .about .about__container .about__cards .about__card .about__card-bottom .about__card-text .card-text__wrap {
     display: none;
   }
@@ -1109,6 +1114,9 @@ footer .footer__container .footer__bottom .footer__copyright {
   }
   header .header__container .header__actions .header__lang {
     font-size: 17px;
+  }
+  .hero .hero__container {
+    margin-left: 80px;
   }
   .hero .hero__container .hero__title {
     font-size: 61px;
@@ -1226,7 +1234,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     display: none;
   }
   .hero .hero__container {
-    padding-top: 200px;
+    margin-left: 40px;
   }
   .hero .hero__container .hero__title {
     font-size: 58px;
@@ -1354,7 +1362,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     padding: 11px 0px;
   }
   .hero .hero__container {
-    padding-top: 210px;
+    margin-left: 40px;
   }
   .hero .hero__container .hero__title {
     font-size: 56px;
@@ -1515,9 +1523,6 @@ footer .footer__container .footer__bottom .footer__copyright {
   }
   header .header__container {
     padding: 11px 0px;
-  }
-  .hero .hero__container {
-    padding-top: 270px;
   }
   .hero .hero__container .hero__title {
     font-size: 52px;
@@ -1707,7 +1712,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     height: 45px;
   }
   .hero .hero__container {
-    padding-top: 250px;
+    margin: auto;
     place-items: center;
   }
   .hero .hero__container .hero__title {
@@ -1913,7 +1918,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     padding: 22px 54px;
   }
   .hero .hero__container {
-    padding-top: 210px;
+    margin: auto;
     place-items: center;
   }
   .hero .hero__container .hero__title {
@@ -2121,7 +2126,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     padding: 22px 45px;
   }
   .hero .hero__container {
-    padding-top: 205px;
+    margin: auto;
     place-items: center;
   }
   .hero .hero__container .hero__title {
@@ -2325,7 +2330,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     padding: 22px 47px;
   }
   .hero .hero__container {
-    padding-top: 182px;
+    margin: auto;
     place-items: center;
   }
   .hero .hero__container .hero__title {
