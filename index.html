@@ -42,7 +42,7 @@
 						</a>
 					</li>
 				</ul>
-				<button class="header__nav-contact">Начать оформление</button>
+				<button class="header__nav-contact" data-popup-open>Начать оформление</button>
 				<div class="header__nav-socials">
 					<a class="header__nav-media" href="#">
 						<svg class="nav-media__img" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
@@ -101,7 +101,7 @@
 			</nav>
 
 			<div class="header__actions">
-				<button class="header__contact-btn" href="#">Контакт</button>
+				<button class="header__contact-btn" data-popup-open>Контакт</button>
 				<ul class="header__langs">
 					<li class="header__lang">
 						RU
@@ -130,7 +130,7 @@
 				<h2 class="hero__subtitle">Легальный статус, новый рынок, <span class="hero__subtitle-wrap">новая
 						жизнь</span> –
 					начните заполнением одной формы</h2>
-				<button class="hero__button">Начать оформление</button>
+				<button class="hero__button" data-popup-open>Начать оформление</button>
 			</div>
 
 		</section>
@@ -256,7 +256,7 @@
 							<li class="service__card-item service__card-item--disabled">Поддержка при адаптации в стране
 							</li>
 						</ul>
-						<button class="service__button">Выбрать</button>
+						<button class="service__button" data-popup-open data-service="Standart">Выбрать</button>
 					</article>
 					<article class="service__card service__card--invert">
 						<p class="service__card-badge">СРОЧНЫЙ</p>
@@ -280,7 +280,7 @@
 
 
 						</ul>
-						<button class="service__button">Выбрать</button>
+						<button class="service__button" data-popup-open data-service="Standart+">Выбрать</button>
 					</article>
 				</div>
 			</div>
@@ -566,81 +566,126 @@
 			</div>
 		</section>
 
-		<section style="display: none;" class="order__form" id="order-form">
-			<div class="form__container container">
-				<h2 class="order__form-title">Залишіть заявку</h2>
-				<p class="order__form-subtitle">Або зателефонуйте нам – номер у розділі «Контакти»</p>
-				<div class="form__card">
-					<form action="https://api.web3forms.com/submit" method="POST">
+		<dialog class="popup" id="order-popup" aria-labelledby="popup-title">
+			<div class="popup__inner">
+				<button class="popup__close" type="button" aria-label="Закрыть" data-popup-close>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M18 6 6 18M6 6l12 12" />
+					</svg>
+				</button>
 
-						<input type="hidden" name="access_key" value="13dbfdde-07b7-48f8-85df-a9c40801085a">
-						<input type="hidden" name="subject" value="Нова заявка з сайту APSARA EAST">
-						<input type="hidden" name="redirect" value="https://web3forms.com/success">
+				<aside class="popup__aside">
+					<h2 class="popup__title" id="popup-title">Обсудим детали вашей визы в Камбоджу</h2>
+					<ul class="popup__features">
+						<li class="popup__feature"><img src="img/world.svg" alt="">Ответим в личном чате</li>
+						<li class="popup__feature"><img src="img/fingerprint.svg" alt="">Персональный подход</li>
+						<li class="popup__feature"><img src="img/transaction.svg" alt="">Поможем в сборе документов</li>
+						<li class="popup__feature"><img src="img/briefcase.svg" alt="">Поддержка на каждом этапе</li>
+						<li class="popup__feature"><img src="img/shield-check.svg" alt="">Данные под защитой</li>
+					</ul>
+				</aside>
 
-						<div class="form__card-row">
-							<div class="form__card-group">
-								<label class="form__card-label" for="name">Ваше ім'я <span
-										class="label-required">*</span></label>
-								<input class="form__card-input" type="text" maxlength="25" id="name" name="name"
-									placeholder="Іван Петренко" required>
+				<div class="popup__body">
+					<form id="lead-form" action="https://api.web3forms.com/submit" method="POST">
+						<form id="lead-form" action="https://api.web3forms.com/submit" method="POST">
+
+							<input type="hidden" name="lead_id" />
+							<input type="hidden" name="access_key" value="13dbfdde-07b7-48f8-85df-a9c40801085a">
+							<input type="hidden" name="subject" value="Нова заявка з сайту APSARA EAST">
+							<input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+							<div class="form__card-row">
+								<div class="form__card-group">
+									<label class="form__card-label" for="name">Имя<span
+											class="label-required">*</span></label>
+									<input class="form__card-input" type="text" maxlength="31" id="name" name="name"
+										placeholder="Иван" required>
+								</div>
+								<div class="form__card-group">
+									<label class="form__card-label" for="surname">Фамилия<span
+											class="label-required">*</span></label>
+									<input class="form__card-input" type="text" maxlength="31" id="surname"
+										name="surname" placeholder="Петренко" required>
+								</div>
 							</div>
+
 							<div class="form__card-group">
-								<label class="form__card-label" for="phone">Номер телефону <span
+								<label class="form__card-label" for="email">Почта<span
+										class="label-required">*</span></label>
+								<input class="form__card-input" type="email" id="email" name="email"
+									placeholder="example@gmail.com" required>
+							</div>
+
+							<div class="form__card-group">
+								<label class="form__card-label" for="phone">Телефон<span
 										class="label-required">*</span></label>
 								<input class="form__card-input" type="tel" maxlength="13" id="phone" name="phone"
 									placeholder="+380&nbsp;XX&nbsp;XXX&nbsp;XX&nbsp;XX" required>
 							</div>
-						</div>
 
-						<div class="form__card-group">
-							<label class="form__card-label" for="email">Email <span
-									class="label-required">*</span></label>
-							<input class="form__card-input" type="email" id="email" name="email"
-								placeholder="example@gmail.com" required>
-						</div>
-
-						<div class="form__card-group">
-							<label class="form__card-label" for="service">Послуга</label>
-							<div class="form__card-wrap">
-								<select class="form__card-input form__card-select" id="service" name="service">
-									<option value="" disabled selected>Оберіть послугу...</option>
-									<option>Продаж бетону</option>
-									<option>Бетонний насос</option>
-									<option>Екскаватор</option>
-									<option>Навантажувач</option>
-									<option>Доставка піску/щебню</option>
-									<option>Інше</option>
-								</select>
+							<div class="form__card-group">
+								<label class="form__card-label" for="country">
+									Страна<span class="label-required">*</span>
+								</label>
+								<input class="form__card-input" type="text" id="country" name="country" list="countries"
+									placeholder="Россия" autocomplete="country-name" required />
+								<datalist id="countries"></datalist>
 							</div>
-						</div>
 
-						<div class="form__card-group">
-							<label class="form__card-label" for="volume">Орієнтовні параметри</label>
-							<input class="form__card-input" type="text" id="volume" name="volume"
-								placeholder="Наприклад: 10 м³">
-						</div>
+							<div class="form__card-group">
+								<label class="form__card-label" for="service">Выбор пакета<span
+										class="label-required">*</span></label>
+								<div class="form__card-wrap">
+									<select class="form__card-input form__card-select" id="service" name="service">
+										<option value="" disabled selected>Оберіть послугу...</option>
+										<option>Standart</option>
+										<option>Standart+</option>
+									</select>
+								</div>
+							</div>
 
-						<div class="form__card-divider"></div>
+							<div class="form__card-row">
+								<fieldset class="form__messengers">
+									<legend class="form__card-label">Мессенджер (опционально)</legend>
 
-						<div class="form__card-group">
-							<label class="form__card-label" for="message">Коментар або питання</label>
-							<textarea class="form__card-input form__card-textarea" maxlength="1024" id="message"
-								name="message" placeholder="Розкажіть детальніше про ваш проєкт..."></textarea>
-						</div>
+									<div class="form__messenger">
+										<svg class="form__messenger-icon" width="20" height="20" viewBox="0 0 24 24"
+											fill="#229ED9" aria-hidden="true">
+											<path
+												d="M21.9 4.6c.2-1-.6-1.7-1.6-1.4L2.5 9.9c-1.1.4-1 2 .1 2.3l4.6 1.4 1.8 5.6c.3.9 1.4 1.1 2 .4l2.6-2.7 4.7 3.5c.8.6 2 .2 2.2-.8l1.4-15zM8.7 13.2l9-5.7c.3-.2.6.2.3.4l-7.4 6.7-.3 3-1.6-4.4z" />
+										</svg>
+										<input class="form__card-input" type="text" id="telegram" name="telegram"
+											placeholder="@username" autocomplete="off" />
+									</div>
 
-						<button class="form__card-submit" type="submit">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<rect x="2" y="4" width="20" height="16" rx="2"></rect>
-								<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-							</svg>
-							Надіслати заявку
-						</button>
-						<p class="form__card-note">Натискаючи кнопку, ви погоджуєтесь з умовами обробки даних</p>
+									<div class="form__messenger">
+										<svg class="form__messenger-icon" width="20" height="20" viewBox="0 0 24 24"
+											fill="#25D366" aria-hidden="true">
+											<path
+												d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.2c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3z" />
+										</svg>
+										<input class="form__card-input" type="tel" id="whatsapp" name="whatsapp"
+											placeholder="+420770663222" autocomplete="tel" />
+									</div>
+								</fieldset>
+							</div>
+
+							<button class="form__card-submit" type="submit">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+									<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+								</svg>
+								Отправить заявку
+							</button>
+							<p class="form__card-note">Нажимая «Отправить», вы соглашаетесь на обработку ваших
+								персональных
+								данных с целью обратной связи.</p>
+						</form>
 					</form>
 				</div>
 			</div>
-		</section>
+		</dialog>
 	</main>
 	<footer>
 		<div class="footer__container">

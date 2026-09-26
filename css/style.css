@@ -29,6 +29,250 @@ html {
   margin: auto;
 }
 
+.popup {
+  width: min(1000px, 100% - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: none;
+  border-radius: 24px;
+  background: #fcfcfc;
+  overflow: auto;
+  place-self: center;
+}
+.popup::backdrop {
+  background: rgba(1, 14, 28, 0.7);
+  backdrop-filter: blur(4px);
+}
+.popup[open] {
+  animation: popup-in 0.3s ease;
+}
+.popup[open]::backdrop {
+  animation: fade-in 0.3s ease;
+}
+.popup .popup__inner {
+  position: relative;
+  display: flex;
+  gap: 32px;
+  padding: 32px;
+}
+.popup .popup__inner .popup__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #e8a93d;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.popup .popup__inner .popup__close:hover {
+  transform: rotate(90deg);
+}
+.popup .popup__inner .popup__aside {
+  flex: 0.8 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 32px 24px;
+  border-radius: 20px;
+  color: #fcfcfc;
+  background: linear-gradient(160deg, #010e1c 55%, #e8a93d 130%);
+}
+.popup .popup__inner .popup__aside .popup__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.2;
+}
+.popup .popup__inner .popup__aside .popup__features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.popup .popup__inner .popup__aside .popup__features .popup__feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+.popup .popup__inner .popup__aside .popup__features .popup__feature img {
+  width: 20px;
+  height: 20px;
+}
+.popup .popup__inner .popup__body {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.popup .popup__inner .popup__body #lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #515151;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-label .label-required {
+  color: #e8a93d;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 14px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fcfcfc;
+  background: #010e1c;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-input::-moz-placeholder {
+  color: #9a9a9a;
+  font-weight: 400;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-input::placeholder {
+  color: #9a9a9a;
+  font-weight: 400;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-input:focus {
+  border-color: #e8a93d;
+  box-shadow: 0 0 0 3px rgba(232, 169, 61, 0.25);
+}
+.popup .popup__inner .popup__body #lead-form .form__card-input:user-invalid {
+  border-color: #e5484d;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-input:-webkit-autofill {
+  -webkit-text-fill-color: #fcfcfc;
+  -webkit-box-shadow: 0 0 0 1000px #010e1c inset;
+  caret-color: #fcfcfc;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-row {
+  display: flex;
+  gap: 16px;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-row > * {
+  flex: 1 1 0;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-row .form__messengers {
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  min-width: 0;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-row .form__messengers legend {
+  padding: 0;
+  margin-bottom: 6px;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-row .form__messengers .form__messenger {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  gap: 4px;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-row .form__messengers .form__messenger .form__messenger-icon {
+  flex-shrink: 0;
+  box-sizing: content-box;
+  padding: 10px;
+  background: #010e1c;
+  border-radius: 6px;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-group .form__card-wrap {
+  position: relative;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-group .form__card-wrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid #e8a93d;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-group .form__card-wrap .form__card-select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding-right: 40px;
+  cursor: pointer;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-group .form__card-wrap .form__card-select:invalid {
+  color: #9a9a9a;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-group .form__card-wrap .form__card-select option {
+  color: #fcfcfc;
+  background: #010e1c;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  align-self: center;
+  width: min(100%, 260px);
+  height: 48px;
+  margin-top: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #010e1c;
+  background: #e8a93d;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-submit:hover {
+  background: #ffdf7b;
+}
+.popup .popup__inner .popup__body #lead-form .form__card-submit:active {
+  transform: scale(0.98);
+}
+.popup .popup__inner .popup__body #lead-form .form__card-note {
+  max-width: 380px;
+  align-self: center;
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+  color: #9a9a9a;
+}
+
+body:has(.popup[open]) {
+  overflow: hidden;
+}
+
+@keyframes popup-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
 header {
   position: sticky;
   top: 0;
@@ -135,6 +379,9 @@ header .header__container .header__actions .header__contact-btn {
   line-height: 1.2;
   letter-spacing: 0px;
   border: none;
+}
+header .header__container .header__actions .header__contact-btn, header .header__container .header__actions .header__contact-btn:link, header .header__container .header__actions .header__contact-btn:visited, header .header__container .header__actions .header__contact-btn:hover, header .header__container .header__actions .header__contact-btn:active, header .header__container .header__actions .header__contact-btn:focus {
+  color: black;
 }
 
 .hero {
@@ -2270,12 +2517,13 @@ footer .footer__container .footer__bottom .footer__copyright {
 }
 /*
 
-
--оформить тестовые forms
-
--связать forms и sheets
+-безопасность forms -> sheets
 
 -поп-ап (+ сделать под мобилы)
+
+-фикс +120px только от max-width 767px
+
+-сделать так, чтобы на секции hero на любом устройстве контент был поцентру, а не через верхний padding
 
 -придумать hover эффекты
 

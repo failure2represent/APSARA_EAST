@@ -21,6 +21,7 @@ html {
 	-webkit-overflow-scrolling: touch;
 }
 
+//scroll-margin-top
 #about {
 	scroll-margin-top: 77px;
 }
@@ -38,6 +39,254 @@ html {
 	margin: auto;
 }
 
+//POPUP ФОРМА ЗАЯВКИ
+.popup {
+	width: min(1000px, calc(100% - 32px));
+	max-height: calc(100dvh - 32px);
+	padding: 0;
+	border: none;
+	border-radius: 24px;
+	background: $not-white;
+	overflow: auto;
+	place-self: center;
+	&::backdrop {
+		background: rgba($sec-color, 0.7);
+		backdrop-filter: blur(4px);
+	}
+	&[open] {
+		animation: popup-in 0.3s ease;
+	}
+	&[open]::backdrop {
+		animation: fade-in 0.3s ease;
+	}
+	.popup__inner {
+		position: relative;
+		display: flex;
+		gap: 32px;
+		padding: 32px;
+		.popup__close {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			background: none;
+			border: none;
+			color: $main-color;
+			cursor: pointer;
+			transition: transform 0.2s;
+			&:hover {
+				transform: rotate(90deg);
+			}
+		}
+		.popup__aside {
+			flex: 0.8 1 0;
+			min-width: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 32px;
+			padding: 32px 24px;
+			border-radius: 20px;
+			color: $not-white;
+			background: linear-gradient(160deg, $sec-color 55%, $main-color 130%);
+			.popup__title {
+				font-family: $main-font;
+				font-size: clamp(24px, 3vw, 36px);
+				line-height: 1.2;
+			}
+			.popup__features {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+				.popup__feature {
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					font-size: 13px;
+					img {
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+		}
+		.popup__body {
+			flex: 1 1 0;
+			min-width: 0;
+			#lead-form {
+				display: flex;
+				flex-direction: column;
+				gap: 14px;
+				// Метки и поля встречаются на разной глубине, поэтому общие стили здесь
+				.form__card-label {
+					font-family: $main-font;
+					font-size: 12px;
+					font-weight: 500;
+					color: $text-color--dark;
+					.label-required {
+						color: $main-color;
+					}
+				}
+				.form__card-input {
+					width: 100%;
+					height: 40px;
+					padding: 0 14px;
+					font-family: $main-font;
+					font-size: 14px;
+					font-weight: 600;
+					color: $not-white;
+					background: $sec-color;
+					border: 1px solid transparent;
+					border-radius: 6px;
+					outline: none;
+					transition:
+						border-color 0.2s,
+						box-shadow 0.2s;
+					&::placeholder {
+						color: $text-color;
+						font-weight: 400;
+					}
+					&:focus {
+						border-color: $main-color;
+						box-shadow: 0 0 0 3px rgba($main-color, 0.25);
+					}
+					&:user-invalid {
+						border-color: #e5484d;
+					}
+					// Убирает белый фон автозаполнения в Chrome
+					&:-webkit-autofill {
+						-webkit-text-fill-color: $not-white;
+						-webkit-box-shadow: 0 0 0 1000px $sec-color inset;
+						caret-color: $not-white;
+					}
+				}
+				.form__card-row {
+					display: flex;
+					gap: 16px;
+					> * {
+						flex: 1 1 0;
+					}
+					.form__messengers {
+						display: flex;
+						gap: 16px;
+						padding: 0;
+						margin: 0;
+						border: none;
+						min-width: 0;
+						legend {
+							padding: 0;
+							margin-bottom: 6px;
+						}
+						.form__messenger {
+							flex: 1 1 0;
+							min-width: 0;
+							display: flex;
+							gap: 4px;
+							.form__messenger-icon {
+								flex-shrink: 0;
+								box-sizing: content-box;
+								padding: 10px;
+								background: $sec-color;
+								border-radius: 6px;
+							}
+						}
+					}
+				}
+				.form__card-group {
+					display: flex;
+					flex-direction: column;
+					gap: 6px;
+					min-width: 0;
+					.form__card-wrap {
+						position: relative;
+						&::after {
+							content: "";
+							position: absolute;
+							top: 50%;
+							right: 14px;
+							width: 0;
+							height: 0;
+							border-left: 6px solid transparent;
+							border-right: 6px solid transparent;
+							border-top: 7px solid $main-color;
+							transform: translateY(-50%);
+							pointer-events: none;
+						}
+						.form__card-select {
+							appearance: none;
+							padding-right: 40px;
+							cursor: pointer;
+							&:invalid {
+								color: $text-color;
+							}
+							option {
+								color: $not-white;
+								background: $sec-color;
+							}
+						}
+					}
+				}
+				.form__card-submit {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					gap: 10px;
+					align-self: center;
+					width: min(100%, 260px);
+					height: 48px;
+					margin-top: 8px;
+					font-family: $main-font;
+					font-size: 15px;
+					font-weight: 600;
+					color: $sec-color;
+					background: $main-color;
+					border: none;
+					border-radius: 8px;
+					cursor: pointer;
+					transition:
+						background 0.2s,
+						transform 0.1s;
+					&:hover {
+						background: $main-color--light;
+					}
+					&:active {
+						transform: scale(0.98);
+					}
+				}
+				.form__card-note {
+					max-width: 380px;
+					align-self: center;
+					font-size: 11px;
+					line-height: 1.4;
+					text-align: center;
+					color: $text-color;
+				}
+			}
+		}
+	}
+}
+
+body:has(.popup[open]) {
+	overflow: hidden;
+}
+
+@keyframes popup-in {
+	from {
+		opacity: 0;
+		transform: translateY(20px) scale(0.97);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+}
+
+//main
 header {
 	position: -webkit-sticky;
 	position: sticky;
@@ -150,6 +399,14 @@ header {
 				line-height: 1.2;
 				letter-spacing: 0px;
 				border: none;
+				&,
+				&:link,
+				&:visited,
+				&:hover,
+				&:active,
+				&:focus {
+					color: black;
+				}
 			}
 		}
 	}
@@ -2930,12 +3187,13 @@ footer {
 
 /*
 
-
--оформить тестовые forms
-
--связать forms и sheets
+-безопасность forms -> sheets
 
 -поп-ап (+ сделать под мобилы)
+
+-фикс +120px только от max-width 767px
+
+-сделать так, чтобы на секции hero на любом устройстве контент был поцентру, а не через верхний padding
 
 -придумать hover эффекты
 
