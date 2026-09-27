@@ -85,27 +85,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 	});
 });
 
-
-//stable hero section
-// const mediaQuery = window.matchMedia("(max-width: 767px)");
-
-// const setHeroHeight = () => {
-// 	const offset = mediaQuery.matches ? 120 : 0;
-// 	document.documentElement.style.setProperty(
-// 		"--hero-height",
-// 		`${window.innerHeight + offset}px`
-// 	);
-// };
-
-// setHeroHeight();
-
-// window.addEventListener("orientationchange", () => {
-// 	requestAnimationFrame(setHeroHeight);
-// });
-
-// mediaQuery.addEventListener("change", setHeroHeight);
-
-
 //supported countries
 const countries = [
 	"Австралия",
@@ -333,7 +312,7 @@ popup.addEventListener('click', (e) => {
 
 //lead_id generation
 const form = document.getElementById("lead-form");
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxW8uihaUHZ5VKPfLES_iDJYVtjfocyiT62dXReuE6F6M-gIiIBbs244aG2VF5ZbPBuqw/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxhTGBugtStzgWt6c9jMTXeu5GoIWFEpiaaRrqgTRxYB8WCEUahHd4H3OMuLmqLQ6VMGw/exec";
 
 function makeLeadId() {
 	const date = new Date().toISOString().slice(0, 10).replaceAll("-", "");

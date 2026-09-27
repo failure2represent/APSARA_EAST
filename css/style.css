@@ -10,6 +10,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
 }
 
 #about {
@@ -45,6 +46,7 @@ html {
 }
 .popup[open] {
   animation: popup-in 0.3s ease;
+  will-change: transform;
 }
 .popup[open]::backdrop {
   animation: fade-in 0.3s ease;
@@ -66,7 +68,7 @@ html {
   position: relative;
   display: flex;
   gap: 32px;
-  padding: 0px 100px 30px;
+  padding: 0px 94px 20px;
 }
 .popup .popup__inner .popup__content .popup__aside {
   flex: 0.8 1 0;
@@ -74,7 +76,7 @@ html {
   max-width: 408px;
   display: flex;
   flex-direction: column;
-  gap: 93px;
+  justify-content: space-between;
   padding: 32px 24px;
   border-radius: 45px 0 45px 0;
   color: #fcfcfc;
@@ -199,14 +201,20 @@ html {
   flex: 1 1 0;
   min-width: 0;
   display: flex;
-  gap: 4px;
 }
 .popup .popup__inner .popup__content .popup__body #lead-form .form__card-row .form__messengers .form__messenger .form__messenger-icon {
   flex-shrink: 0;
   box-sizing: content-box;
-  padding: 10px;
+  padding: 9px;
   background: #010e1c;
-  border-radius: 6px;
+  border-radius: 6px 0px 0px 6px;
+}
+.popup .popup__inner .popup__content .popup__body #lead-form .form__card-row .form__messengers .form__messenger:nth-of-type(2) .form__messenger-icon {
+  padding: 8px 7px 8px 9px;
+}
+.popup .popup__inner .popup__content .popup__body #lead-form .form__card-row .form__messengers .form__card-input {
+  border-radius: 0px 6px 6px 0px;
+  border-left: 1px solid #e8a93d;
 }
 .popup .popup__inner .popup__content .popup__body #lead-form .form__card-group {
   display: flex;
@@ -283,11 +291,11 @@ body:has(.popup[open]) {
 @keyframes popup-in {
   from {
     opacity: 0;
-    transform: translateY(20px) scale(0.97);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
 }
 @keyframes fade-in {
@@ -1111,13 +1119,92 @@ footer .footer__container .footer__bottom .footer__copyright {
   footer .footer__container .footer__top .footer__contacts .footer__contact-text:nth-child(2)::before {
     transform: scale(0.88);
   }
+  .popup .popup__inner .popup__content .popup__body #lead-form {
+    gap: 12px;
+  }
+  .popup .popup__inner .popup__close svg {
+    width: 42px;
+    height: 42px;
+  }
+}
+@media (max-width: 1024px) {
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-submit {
+    font-size: 17px;
+    padding: 20px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-note {
+    font-size: 13px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-label {
+    font-size: 14px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-input {
+    font-size: 16px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-input::-moz-placeholder {
+    font-size: 16px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-input::placeholder {
+    font-size: 16px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-note {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .popup .popup__inner .popup__content {
+    padding: 0px 34px 10px;
+  }
+  .popup .popup__inner .popup__content .popup__aside {
+    display: none;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-submit {
+    padding: 21px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-submit svg {
+    width: 22px;
+    height: 22px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-row .form__messengers .form__messenger .form__messenger-icon {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-row .form__messengers .form__messenger:nth-of-type(2) .form__messenger-icon {
+    width: 22px;
+    height: 22px;
+    padding: 9px 8px 9px 10px;
+  }
 }
 @media (max-width: 767px) {
   header .header__container .header__actions .header__contact-btn {
     display: none;
   }
-  .hero {
-    min-height: calc(100svh + 120px);
+}
+@media (max-width: 440px) {
+  .popup .popup__inner .popup__content {
+    padding: 0px 4px 10px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form {
+    gap: 10px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-row {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-row > * {
+    flex: initial;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-row .form__messengers {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-row .form__messengers .form__messenger {
+    flex: initial;
+    width: 100%;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-group {
+    width: 100%;
   }
 }
 @media (max-width: 439px) {
@@ -1544,6 +1631,18 @@ footer .footer__container .footer__bottom .footer__copyright {
   footer .footer__container .footer__top .footer__pay-methods .footer__column-title {
     font-size: 19px;
   }
+  .popup .popup__inner .popup__content {
+    padding: 0px 44px 20px;
+  }
+  .popup .popup__inner .popup__content .popup__aside {
+    max-width: 300px;
+  }
+  .popup .popup__inner .popup__content .popup__aside .popup__title {
+    font-size: 38px;
+  }
+  .popup .popup__inner .popup__content .popup__aside .popup__features .popup__feature {
+    font-size: 13px;
+  }
 }
 @media (768px <= width < 1024px) {
   .container,
@@ -1729,6 +1828,9 @@ footer .footer__container .footer__bottom .footer__copyright {
   }
   footer .footer__container .footer__top .footer__pay-methods .footer__column-title {
     font-size: 19px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-submit {
+    font-size: 16px;
   }
 }
 @media (440px <= width < 768px) {
@@ -1921,6 +2023,12 @@ footer .footer__container .footer__bottom .footer__copyright {
   }
   footer .footer__container .footer__top .footer__pay-methods .footer__column-title {
     font-size: 19px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-submit {
+    font-size: 16px;
+  }
+  .popup .popup__inner .popup__content .popup__body #lead-form .form__card-note {
+    max-width: 350px;
   }
 }
 @media (390px <= width < 440px) {
@@ -2550,17 +2658,17 @@ footer .footer__container .footer__bottom .footer__copyright {
 /*
 
 -поп-ап (+ сделать под мобилы)
-	1920 1440 1280 1024 768 440 390 375 360
-
--фикс +120px только от max-width 767px
-
--сделать так, чтобы на секции hero на любом устройстве контент был поцентру, а не через верхний padding
-
--придумать hover эффекты
+	1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390 375 360
+	размер шрифта кнопки как на hero
+	размер option как и у текста+placeholder
 
 -eng страница (сделать дефолтной)
 
--оживить выбор языка (+active эффект)
+-оживить выбор языка
+
+-придумать hover эффекты
+
+-настройка/проверки для формы
 
 -безопасность forms -> sheets
 

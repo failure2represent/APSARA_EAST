@@ -19,6 +19,7 @@ $not-white: #fcfcfc;
 html {
 	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
+	scrollbar-gutter: stable;
 }
 
 //scroll-margin-top
@@ -55,6 +56,7 @@ html {
 	}
 	&[open] {
 		animation: popup-in 0.3s ease;
+		will-change: transform;
 	}
 	&[open]::backdrop {
 		animation: fade-in 0.3s ease;
@@ -75,14 +77,14 @@ html {
 			position: relative;
 			display: flex;
 			gap: 32px;
-			padding: 0px 100px 30px;
+			padding: 0px 94px 20px;
 			.popup__aside {
 				flex: 0.8 1 0;
 				min-width: 0;
 				max-width: 408px;
 				display: flex;
 				flex-direction: column;
-				gap: 93px;
+				justify-content: space-between;
 				padding: 32px 24px;
 				border-radius: 45px 0 45px 0;
 				color: $not-white;
@@ -196,14 +198,23 @@ html {
 								flex: 1 1 0;
 								min-width: 0;
 								display: flex;
-								gap: 4px;
+
 								.form__messenger-icon {
 									flex-shrink: 0;
 									box-sizing: content-box;
-									padding: 10px;
+									padding: 9px;
 									background: $sec-color;
-									border-radius: 6px;
+									border-radius: 6px 0px 0px 6px;
 								}
+								&:nth-of-type(2) {
+									.form__messenger-icon {
+										padding: 8px 7px 8px 9px;
+									}
+								}
+							}
+							.form__card-input {
+								border-radius: 0px 6px 6px 0px;
+								border-left: 1px solid $main-color;
 							}
 						}
 					}
@@ -287,11 +298,11 @@ body:has(.popup[open]) {
 @keyframes popup-in {
 	from {
 		opacity: 0;
-		transform: translateY(20px) scale(0.97);
+		transform: translateY(20px);
 	}
 	to {
 		opacity: 1;
-		transform: none;
+		transform: translateY(0);
 	}
 }
 
@@ -1059,8 +1070,6 @@ footer {
 	}
 }
 
-//burger media <1279
-
 @media (max-width: 1279px) {
 	header {
 		.header__container {
@@ -1213,9 +1222,99 @@ footer {
 			}
 		}
 	}
+
+	.popup {
+		.popup__inner {
+			.popup__content {
+				.popup__body {
+					#lead-form {
+						gap: 12px;
+					}
+				}
+			}
+			.popup__close {
+				svg {
+					width: 42px;
+					height: 42px;
+				}
+			}
+		}
+	}
 }
 
-//burger media <768
+@media (max-width: 1024px) {
+	.popup {
+		.popup__inner {
+			.popup__content {
+				.popup__body {
+					#lead-form {
+						.form__card-submit {
+							font-size: 17px;
+							padding: 20px;
+						}
+						.form__card-note {
+							font-size: 13px;
+						}
+						.form__card-label {
+							font-size: 14px;
+						}
+						.form__card-input {
+							font-size: 16px;
+							&::placeholder {
+								font-size: 16px;
+							}
+						}
+						.form__card-note {
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.popup {
+		.popup__inner {
+			.popup__content {
+				padding: 0px 34px 10px;
+				.popup__aside {
+					display: none;
+				}
+				.popup__body {
+					#lead-form {
+						.form__card-submit {
+							padding: 21px;
+							svg {
+								width: 22px;
+								height: 22px;
+							}
+						}
+						.form__card-row {
+							.form__messengers {
+								.form__messenger {
+									.form__messenger-icon {
+										width: 20px;
+										height: 20px;
+										padding: 10px;
+									}
+									&:nth-of-type(2) {
+										.form__messenger-icon {
+											width: 22px;
+											height: 22px;
+											padding: 9px 8px 9px 10px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 @media (max-width: 767px) {
 	header {
@@ -1227,12 +1326,40 @@ footer {
 			}
 		}
 	}
-	.hero {
-		min-height: calc(100svh + 120px);
-	}
 }
 
-//burger media <440
+@media (max-width: 440px) {
+	.popup {
+		.popup__inner {
+			.popup__content {
+				padding: 0px 4px 10px;
+				.popup__body {
+					#lead-form {
+						gap: 10px;
+						.form__card-row {
+							gap: 10px;
+							flex-wrap: wrap;
+							> * {
+								flex: initial;
+							}
+							.form__messengers {
+								gap: 10px;
+								flex-wrap: wrap;
+								.form__messenger {
+									flex: initial;
+									width: 100%;
+								}
+							}
+						}
+						.form__card-group {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 @media (max-width: 439px) {
 	header {
@@ -1898,6 +2025,25 @@ footer {
 			}
 		}
 	}
+
+	.popup {
+		.popup__inner {
+			.popup__content {
+				padding: 0px 44px 20px;
+				.popup__aside {
+					max-width: 300px;
+					.popup__title {
+						font-size: 38px;
+					}
+					.popup__features {
+						.popup__feature {
+							font-size: 13px;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (768px <= width < 1024px) {
@@ -2143,6 +2289,20 @@ footer {
 					padding-top: 30px;
 					.footer__column-title {
 						font-size: 19px;
+					}
+				}
+			}
+		}
+	}
+
+	.popup {
+		.popup__inner {
+			.popup__content {
+				.popup__body {
+					#lead-form {
+						.form__card-submit {
+							font-size: 16px;
+						}
 					}
 				}
 			}
@@ -2403,6 +2563,23 @@ footer {
 					padding: initial;
 					.footer__column-title {
 						font-size: 19px;
+					}
+				}
+			}
+		}
+	}
+
+	.popup {
+		.popup__inner {
+			.popup__content {
+				.popup__body {
+					#lead-form {
+						.form__card-submit {
+							font-size: 16px;
+						}
+						.form__card-note {
+							max-width: 350px;
+						}
 					}
 				}
 			}
@@ -3218,17 +3395,17 @@ footer {
 /*
 
 -поп-ап (+ сделать под мобилы)
-	1920 1440 1280 1024 768 440 390 375 360
-
--фикс +120px только от max-width 767px
-
--сделать так, чтобы на секции hero на любом устройстве контент был поцентру, а не через верхний padding
-
--придумать hover эффекты
+	1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390 375 360
+	размер шрифта кнопки как на hero
+	размер option как и у текста+placeholder
 
 -eng страница (сделать дефолтной)
 
--оживить выбор языка (+active эффект)
+-оживить выбор языка
+
+-придумать hover эффекты
+
+-настройка/проверки для формы
 
 -безопасность forms -> sheets
 
