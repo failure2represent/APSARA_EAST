@@ -72,6 +72,9 @@ html {
 			color: $main-color;
 			cursor: pointer;
 			transition: transform 0.2s;
+			&:focus-visible {
+				outline: none;
+			}
 		}
 		.popup__content {
 			position: relative;
@@ -246,6 +249,9 @@ html {
 									color: $text-color;
 								}
 								option {
+									font-family: $main-font;
+									font-size: 17px;
+									font-weight: 700;
 									color: $not-white;
 									background: $sec-color;
 								}
@@ -278,7 +284,7 @@ html {
 						align-self: center;
 						font-family: $main-font;
 						font-style: normal;
-						font-size: 14px;
+						font-size: 12px;
 						font-weight: 600;
 						line-height: 1.2;
 						letter-spacing: 0;
@@ -473,7 +479,7 @@ header {
 		.hero__subtitle {
 			max-width: 666px;
 			color: $not-white;
-			font-size: 22px;
+			font-size: 19px;
 			font-family: $main-font;
 			font-weight: 500;
 			font-style: normal;
@@ -1229,31 +1235,9 @@ footer {
 				.popup__body {
 					#lead-form {
 						gap: 12px;
-					}
-				}
-			}
-			.popup__close {
-				svg {
-					width: 42px;
-					height: 42px;
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 1024px) {
-	.popup {
-		.popup__inner {
-			.popup__content {
-				.popup__body {
-					#lead-form {
 						.form__card-submit {
 							font-size: 17px;
 							padding: 20px;
-						}
-						.form__card-note {
-							font-size: 13px;
 						}
 						.form__card-label {
 							font-size: 14px;
@@ -1264,10 +1248,13 @@ footer {
 								font-size: 16px;
 							}
 						}
-						.form__card-note {
-							font-size: 12px;
-						}
 					}
+				}
+			}
+			.popup__close {
+				svg {
+					width: 42px;
+					height: 42px;
 				}
 			}
 		}
@@ -1381,6 +1368,41 @@ footer {
 			margin: auto;
 		}
 	}
+
+	.popup {
+		.popup__inner {
+			.popup__content {
+				.popup__body {
+					#lead-form {
+						gap: 10px;
+						.form__card-submit {
+							font-size: 16px;
+							padding: 20px;
+						}
+						.form__card-label {
+							font-size: 13px;
+						}
+						.form__card-input {
+							font-size: 15px;
+							&::placeholder {
+								font-size: 15px;
+							}
+						}
+						.form__card-note {
+							width: 288px;
+							font-size: 11px;
+						}
+					}
+				}
+			}
+			.popup__close {
+				svg {
+					width: 40px;
+					height: 40px;
+				}
+			}
+		}
+	}
 }
 
 @media (1440px <= width < 1904px) {
@@ -1418,7 +1440,7 @@ footer {
 				font-size: 61px;
 			}
 			.hero__subtitle {
-				font-size: 20px;
+				font-size: 18px;
 			}
 			.hero__button {
 				font-size: 17px;
@@ -1613,7 +1635,7 @@ footer {
 				font-size: 58px;
 			}
 			.hero__subtitle {
-				font-size: 19px;
+				font-size: 18px;
 			}
 			.hero__button {
 				font-size: 16px;
@@ -1817,7 +1839,8 @@ footer {
 				font-size: 56px;
 			}
 			.hero__subtitle {
-				font-size: 19px;
+				font-size: 17px;
+				max-width: 622px;
 			}
 			.hero__button {
 				font-size: 16px;
@@ -2066,7 +2089,7 @@ footer {
 			}
 			.hero__subtitle {
 				max-width: 518px;
-				font-size: 17px;
+				font-size: 16px;
 			}
 			.hero__button {
 				font-size: 16px;
@@ -2339,8 +2362,8 @@ footer {
 				text-align: center;
 			}
 			.hero__subtitle {
-				max-width: 328px;
-				font-size: 16px;
+				max-width: 310px;
+				font-size: 15px;
 				text-align: center;
 			}
 			.hero__button {
@@ -2578,7 +2601,7 @@ footer {
 							font-size: 16px;
 						}
 						.form__card-note {
-							max-width: 350px;
+							max-width: 316px;
 						}
 					}
 				}
@@ -2626,8 +2649,8 @@ footer {
 				text-align: center;
 			}
 			.hero__subtitle {
-				max-width: 328px;
-				font-size: 16px;
+				max-width: 310px;
+				font-size: 15px;
 				text-align: center;
 			}
 			.hero__button {
@@ -3395,8 +3418,8 @@ footer {
 /*
 
 -поп-ап (+ сделать под мобилы)
-	1920~~ 1440~~ 1280~~ 1024~~ 768~~ 440~~ 390 375 360
 	размер шрифта кнопки как на hero
+		1920~~ 1440 1280 1024 768 440 390 375 360
 	размер option как и у текста+placeholder
 
 -eng страница (сделать дефолтной)
