@@ -35,8 +35,8 @@ html {
   inset: 0;
   margin: auto;
   width: min(1280px, 100% - 32px);
-  max-height: calc(100svh - 32px);
-  max-height: calc(100dvh - 32px);
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
   padding: 0;
   border: none;
   border-radius: 30px;
