@@ -42,14 +42,19 @@ html {
 
 //POPUP ФОРМА ЗАЯВКИ
 .popup {
+	position: fixed;
+	inset: 0;
+	margin: auto;
 	width: min(1280px, calc(100% - 32px));
+	max-height: calc(100svh - 32px);
 	max-height: calc(100dvh - 32px);
 	padding: 0;
 	border: none;
 	border-radius: 30px;
 	background: $not-white;
-	overflow: auto;
-	place-self: center;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+
 	&::backdrop {
 		background: rgba($sec-color, 0.7);
 		backdrop-filter: blur(4px);
@@ -1261,7 +1266,7 @@ footer {
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
 	.popup {
 		.popup__inner {
 			.popup__content {
@@ -1313,9 +1318,6 @@ footer {
 			}
 		}
 	}
-}
-
-@media (max-width: 440px) {
 	.popup {
 		.popup__inner {
 			.popup__content {
@@ -1332,6 +1334,7 @@ footer {
 							.form__messengers {
 								gap: 10px;
 								flex-wrap: wrap;
+								width: 100%;
 								.form__messenger {
 									flex: initial;
 									width: 100%;

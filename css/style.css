@@ -31,14 +31,18 @@ html {
 }
 
 .popup {
+  position: fixed;
+  inset: 0;
+  margin: auto;
   width: min(1280px, 100% - 32px);
+  max-height: calc(100svh - 32px);
   max-height: calc(100dvh - 32px);
   padding: 0;
   border: none;
   border-radius: 30px;
   background: #fcfcfc;
-  overflow: auto;
-  place-self: center;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .popup::backdrop {
   background: rgba(1, 14, 28, 0.7);
@@ -1149,7 +1153,7 @@ footer .footer__container .footer__bottom .footer__copyright {
     height: 42px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .popup .popup__inner .popup__content {
     padding: 0px 34px 10px;
   }
@@ -1178,8 +1182,6 @@ footer .footer__container .footer__bottom .footer__copyright {
   header .header__container .header__actions .header__contact-btn {
     display: none;
   }
-}
-@media (max-width: 440px) {
   .popup .popup__inner .popup__content {
     padding: 0px 4px 10px;
   }
@@ -1196,6 +1198,7 @@ footer .footer__container .footer__bottom .footer__copyright {
   .popup .popup__inner .popup__content .popup__body #lead-form .form__card-row .form__messengers {
     gap: 10px;
     flex-wrap: wrap;
+    width: 100%;
   }
   .popup .popup__inner .popup__content .popup__body #lead-form .form__card-row .form__messengers .form__messenger {
     flex: initial;
