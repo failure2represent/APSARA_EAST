@@ -593,16 +593,16 @@
 
 
 					<aside class="popup__aside">
-						<h2 class="popup__title" id="popup-title">Обсудим детали вашей визы в Камбоджу</h2>
+						<h2 class="popup__title" id="popup-title">Let's discuss your Cambodia visa details</h2>
 						<ul class="popup__features">
-							<li class="popup__feature"><img src="/img/popup_clock.svg" alt="">Ответим в течение часа
+							<li class="popup__feature"><img src="/img/popup_clock.svg" alt="">We'll reply within an hour
 							</li>
-							<li class="popup__feature"><img src="/img/popup_stat.svg" alt="">Персональный подход</li>
-							<li class="popup__feature"><img src="/img/popup_sheet.svg" alt="">Поможем в сборе документов
+							<li class="popup__feature"><img src="/img/popup_stat.svg" alt="">Individual approach</li>
+							<li class="popup__feature"><img src="/img/popup_sheet.svg" alt="">We handle the paperwork
 							</li>
-							<li class="popup__feature"><img src="/img/popup_check.svg" alt="">Поддержка на каждом этапе
+							<li class="popup__feature"><img src="/img/popup_check.svg" alt="">Step-by-step support
 							</li>
-							<li class="popup__feature"><img src="/img/popup_lock.svg" alt="">Данные под защитой</li>
+							<li class="popup__feature"><img src="/img/popup_lock.svg" alt="">Secure & Confidential</li>
 						</ul>
 					</aside>
 
@@ -616,13 +616,13 @@
 
 							<div class="form__card-row">
 								<div class="form__card-group">
-									<label class="form__card-label" for="name">Имя<span
+									<label class="form__card-label" for="name">First Name<span
 											class="label-required">*</span></label>
 									<input class="form__card-input" type="text" maxlength="31" id="name" name="name"
 										placeholder="Иван" required>
 								</div>
 								<div class="form__card-group">
-									<label class="form__card-label" for="surname">Фамилия<span
+									<label class="form__card-label" for="surname">Last Name<span
 											class="label-required">*</span></label>
 									<input class="form__card-input" type="text" maxlength="31" id="surname"
 										name="surname" placeholder="Иванов" required>
@@ -630,22 +630,22 @@
 							</div>
 
 							<div class="form__card-group">
-								<label class="form__card-label" for="email">Почта<span
+								<label class="form__card-label" for="email">Email<span
 										class="label-required">*</span></label>
 								<input class="form__card-input" type="email" id="email" maxlength="100" name="email"
 									placeholder="example@gmail.com" required>
 							</div>
 
 							<div class="form__card-group">
-								<label class="form__card-label" for="phone">Телефон<span
+								<label class="form__card-label" for="phone">Phone Number*<span
 										class="label-required">*</span></label>
-								<input class="form__card-input" type="tel" maxlength="15" id="phone" name="phone"
-									placeholder="+7" required>
+								<input class="form__card-input" type="tel" inputmode="numeric" maxlength="15" id="phone"
+									name="phone" placeholder="+7" required>
 							</div>
 
 							<div class="form__card-group">
 								<label class="form__card-label" for="country-input">
-									Страна<span class="label-required">*</span>
+									Country<span class="label-required">*</span>
 								</label>
 								<div class="form__card-wrap custom-select" id="custom-country-select">
 									<input class="form__card-input" type="text" id="country-input" name="country"
@@ -655,7 +655,7 @@
 							</div>
 
 							<div class="form__card-group">
-								<label class="form__card-label" id="service-label">Выбор пакета<span
+								<label class="form__card-label" id="service-label">Select a Service Package<span
 										class="label-required">*</span></label>
 								<div class="form__card-wrap custom-select" id="custom-service-select">
 									<input type="hidden" id="service" name="service" value="" required>
@@ -674,7 +674,7 @@
 
 							<div class="form__card-row">
 								<fieldset class="form__messengers">
-									<legend class="form__card-label">Мессенджер (опционально)</legend>
+									<legend class="form__card-label">Messenger (optional)</legend>
 
 									<div class="form__messenger">
 										<svg class="form__messenger-icon" width="22" height="22" viewBox="0 0 24 24"
@@ -692,8 +692,9 @@
 											<path
 												d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.2c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3z" />
 										</svg>
-										<input class="form__card-input" type="tel" id="whatsapp" name="whatsapp"
-											placeholder="+420770663222" autocomplete="tel" />
+										<input class="form__card-input" type="tel" inputmode="numeric" maxlength="14"
+											id="whatsapp" name="whatsapp" placeholder="+420770663222"
+											autocomplete="tel">
 									</div>
 								</fieldset>
 							</div>
@@ -704,11 +705,11 @@
 									<rect x="2" y="4" width="20" height="16" rx="2"></rect>
 									<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
 								</svg>
-								Отправить заявку
+								Submit
 							</button>
-							<p class="form__card-note">Нажимая «Отправить», вы соглашаетесь на обработку ваших
-								персональных
-								данных с целью обратной связи.</p>
+							<p class="form__card-note">By clicking "Submit", you consent to&nbsp;the&nbsp;processing of
+								your
+								personal data for the purpose of contacting you.</p>
 						</form>
 					</div>
 				</div>
