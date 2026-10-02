@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
@@ -22,7 +22,7 @@
 	<header>
 		<div class="header__container">
 			<div class="header__logo">
-				<a class="header__logo-link" href="/index.html">
+				<a class="header__logo-link" href="/ru/index.html">
 					<img class="header__logo-img" src="/img/logo.svg">
 				</a>
 
@@ -31,22 +31,22 @@
 				<ul class="header__nav-list">
 					<li class="header__nav-item">
 						<a class="header__nav-link" onclick="closeMenu()" href="#services">
-							Packages
+							Тарифы
 						</a>
 					</li>
 					<li class="header__nav-item">
 						<a class="header__nav-link" onclick="closeMenu()" href="#about">
-							What we offer
+							Наши возможности
 						</a>
 
 					</li>
 					<li class="header__nav-item">
 						<a class="header__nav-link" onclick="closeMenu()" href="#faq">
-							FAQ
+							Частые вопросы
 						</a>
 					</li>
 				</ul>
-				<button class="header__nav-contact" data-popup-open>Get Started</button>
+				<button class="header__nav-contact" data-popup-open>Начать оформление</button>
 				<div class="header__nav-socials">
 					<a class="header__nav-media" href="#">
 						<svg class="nav-media__img" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
@@ -105,18 +105,17 @@
 			</nav>
 
 			<div class="header__actions">
-				<button class="header__contact-btn" data-popup-open>Contact</button>
-				<details class="header__lang">
-					<summary>EN</summary>
-					<ul class="langs__dropdown">
-						<li class="dropdown__lang">
-							<a href="/ru/index.html" hreflang="ru">RU</a>
-						</li>
-						<li class="dropdown__lang">
-							<a href="/uk/index.html" hreflang="uk">UA</a>
-						</li>
-					</ul>
-				</details>
+				<button class="header__contact-btn" data-popup-open>Контакт</button>
+				<ul class="header__langs">
+					<li class="header__lang">
+						RU
+						<ul class="langs__dropdown">
+							<li class="dropdown__lang">EN</li>
+							<li class="dropdown__lang">UA</li>
+						</ul>
+					</li>
+
+				</ul>
 				<button type="button" class="header__burger" aria-label="Меню" onclick="toggleMenu()">
 					<span></span>
 					<span></span>
@@ -129,14 +128,13 @@
 	<main>
 		<section class="hero">
 			<div class="hero__container container">
-				<h1 class="hero__title">Your <span class="hero__title-recolor">Gateway</span> to <span
-						class="hero__title-wrap">Southeast Asia</span>
+				<h1 class="hero__title">Ваши <span class="hero__title-recolor">врата</span> в <span
+						class="hero__title-wrap">Юго-Восточную Азию</span>
 				</h1>
-				<h2 class="hero__subtitle">Legal status, new market, a&nbsp;<span class="hero__subtitle-wrap">new
-						life</span>
-					–
-					it all starts with one simple form.</h2>
-				<button class="hero__button" data-popup-open>Get Started</button>
+				<h2 class="hero__subtitle">Легальный статус, новый рынок, <span class="hero__subtitle-wrap">новая
+						жизнь</span> –
+					начните заполнением одной формы</h2>
+				<button class="hero__button" data-popup-open>Начать оформление</button>
 			</div>
 
 		</section>
@@ -147,84 +145,86 @@
 					<img class="about__desc-img" src="/img/about.webp">
 					<div class="about__desc-inner">
 						<p class="about__desc-text"><span class="desc__wrap">APSARA EAST</span> –
-							consulting&nbsp;company
-							that helps obtain a&nbsp;long-term business visa in&nbsp;Cambodia
-							and&nbsp<span class="text__wrap">legally</span>
-							relocate <span class="desc-text__devider">to&nbsp;Southeast Asia.</span></p>
+							консалтинговая&nbsp;компания,
+							которая помогает получить
+							долгосрочную бизнес-визу в&nbsp;Камбодже и&nbsp<span class="text__wrap">легально</span>
+							переехать <span class="desc-text__devider">в Юго-Восточную Азию.</span></p>
 					</div>
 
 				</aside>
 				<div class="about__cards">
 					<article class="about__card">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Visa Support</h3>
+							<h3 class="about__card-title">Визовая поддержка</h3>
 							<img class="about__card-icon" src="/img/about_world.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								We handle the&nbsp;paperwork and guide you until you receive
-								your document.
+								<span class="text__wrap">Консультируем, </span><span class="card-text__devider"><span
+										class="card-text__upper">б</span>ерём на себя бюрократические вопросы
+									и&nbsp;сопровождаем до&nbsp;получения
+									готового&nbsp;документа.</span>
 							</p>
 						</div>
 					</article>
 					<article class="about__card about__card--invert">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Visa Application</h3>
+							<h3 class="about__card-title">Оформление визы</h3>
 							<img class="about__card-icon" src="/img/about_fingerprint.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								We help prepare your documents and support your Cambodia visa application until you
-								receive your visa.
+								Помогаем подготовить документы и&nbsp;сопровождаем оформление визы в&nbsp;Камбоджу
+								до&nbsp;её&nbsp;получения.
 							</p>
 						</div>
 					</article>
 					<article class="about__card about__card--invert">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Bank Accounts</h3>
+							<h3 class="about__card-title">Банковские счета</h3>
 							<img class="about__card-icon" src="/img/about_transaction.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								We advise on opening a&nbsp;bank account in&nbsp;Cambodia, bank requirements and
-								the&nbsp;documents
-								you’ll need.
+								Подскажем, <span class="text__wrap">как открыть банковский счёт в Камбодже,
+								</span><span class="card-text__devider">какие
+									требования
+									предъявляет банк и&nbsp;какие документы понадобятся.</span>
 							</p>
 						</div>
 					</article>
 					<article class="about__card">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Business Registration</h3>
+							<h3 class="about__card-title">Регистрация бизнеса</h3>
 							<img class="about__card-icon" src="/img/about_briefcase.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								We advise on&nbsp;business structure, <span class="card-text__devider">help register
-									a&nbsp;company in&nbsp;Cambodia, and support your
-									launch<span> when needed</span>.</span>
+								Консультируем по выбору формы бизнеса, помогаем зарегистрировать компанию в Камбодже
+								и&nbsp;запустить дело<span> при необходимости</span>.
 							</p>
 						</div>
 					</article>
 					<article class="about__card">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Relocation</h3>
+							<h3 class="about__card-title">Релокация</h3>
 							<img class="about__card-icon" src="/img/about_shield-check.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								We support your move to&nbsp;Cambodia and help you settle&nbsp;in with guidance
-								on&nbsp;key&nbsp;aspects of relocation.
+								Делимся информацией и&nbsp;рекомендациями по&nbsp;ключевым&nbsp;вопросам адаптации.
 							</p>
 						</div>
 					</article>
 					<article class="about__card about__card--invert">
 						<div class="about__card-top">
-							<h3 class="about__card-title">Language Support</h3>
+							<h3 class="about__card-title">Языковая поддержка</h3>
 							<img class="about__card-icon" src="/img/about_lang-support.svg">
 						</div>
 						<div class="about__card-bottom">
 							<p class="about__card-text">
-								We provide expert assistance in&nbsp;English, Russian and Ukrainian.
+								Консультации и&nbsp;поддержка <span class="card-text__devider">на русском, украинском
+									и&nbsp;английском языках.</span>
 							</p>
 						</div>
 					</article>
@@ -234,51 +234,52 @@
 
 		<section class="services" id="services">
 			<div class="services__container container">
-				<h2 class="services__title">Pick a Package</h2>
+				<h2 class="services__title">Выберите тариф</h2>
 				<div class="services__inner">
 					<article class="service__card">
-						<p class="service__card-badge">BASIC</p>
+						<p class="service__card-badge">БАЗОВЫЙ</p>
 						<h3 class="service__card-title">
 							Standart
 						</h3>
 						<p class="service__card-subtitle">
-							Cambodia visa processing: 30+ days
+							Оформление визы в срок от 30 дней
 						</p>
 						<ul class="service__card-list">
-							<li class="service__card-item">Consultation and case assessment</li>
-							<li class="service__card-item">Personal document checklist</li>
-							<li class="service__card-item">Document review and preparation</li>
-							<li class="service__card-item">Application filing and timeline tracking</li>
-							<li class="service__card-item">Receiving your visa</li>
-							<li class="service__card-item service__card-item--disabled">Bank account opening
+							<li class="service__card-item">Консультация и оценка ситуации</li>
+							<li class="service__card-item">Персональный чек-лист документов</li>
+							<li class="service__card-item">Проверка и подготовка пакета</li>
+							<li class="service__card-item">Подача заявки и контроль сроков</li>
+							<li class="service__card-item">Получение готовой визы</li>
+							<li class="service__card-item service__card-item--disabled">Открытие банковского счета
 							</li>
-							<li class="service__card-item service__card-item--disabled">Settling-in support
+							<li class="service__card-item service__card-item--disabled">Поддержка при адаптации в стране
 							</li>
 						</ul>
-						<button class="service__button" data-popup-open data-service="Standart">Select</button>
+						<button class="service__button" data-popup-open data-service="Standart">Выбрать</button>
 					</article>
 					<article class="service__card service__card--invert">
-						<p class="service__card-badge">EXPRESS</p>
+						<p class="service__card-badge">СРОЧНЫЙ</p>
 						<h3 class="service__card-title">
 							Standart+
 						</h3>
 						<p class="service__card-subtitle">
-							Cambodia visa processing: up to 14 days
+							Оформление визы в срок до 14 дней
 						</p>
 						<ul class="service__card-list">
-							<li class="service__card-item">Everything in «Standart»</li>
-							<li class="service__card-item">Priority support
+							<li class="service__card-item">Всё из пакета «Standart»</li>
+							<li class="service__card-item">Приоритетная поддержка
 							</li>
-							<li class="service__card-item">Verification assistance</li>
-							<li class="service__card-item">Bank account consultation</li>
-							<li class="service__card-item">Business registration advice</li>
-							<li class="service__card-item">Help choosing the right bank</li>
-							<li class="service__card-item">Basic settling-in support
+
+							<li class="service__card-item">Сопровождение верификации</li>
+							<li class="service__card-item">Консультация по банковскому счету</li>
+							<li class="service__card-item">Консультация при регистрации бизнеса</li>
+							<li class="service__card-item">Подбор подходящего банка</li>
+							<li class="service__card-item">Помощь в адаптации
 							</li>
 
 
 						</ul>
-						<button class="service__button" data-popup-open data-service="Standart+">Select</button>
+						<button class="service__button" data-popup-open data-service="Standart+">Выбрать</button>
 					</article>
 				</div>
 			</div>
@@ -289,12 +290,12 @@
 
 		<section class="faq" id="faq">
 			<div class="faq__container container">
-				<h3 class="faq__title">FAQ</h3>
+				<h3 class="faq__title">Частые вопросы</h3>
 				<div class="faq__inner">
 					<div class="faq__content">
 						<div class="faq__accordion">
 							<div class="accordion__item">
-								<div class="accordion__title">Can I apply if I don't live in a&nbsp;major city?
+								<div class="accordion__title">Могу ли я подать заявку, если я не живу в крупном городе?
 								</div>
 								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
 									height="50" fill="none" viewBox="8455 4145 50 50">
@@ -321,17 +322,14 @@
 								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Yes. You can apply for a Cambodia visa remotely. <span
-											class="accordion__text-devider">
-											Document submission and
-											consultations take&nbsp;place online, so your location
-											does&nbsp;not&nbsp;matter.
-										</span>
+										Да. Все процессы выстроены удалённо: подача документов и&nbsp;консультации
+										проходят
+										онлайн, поэтому ваше местонахождение не&nbsp;имеет значения.
 									</p>
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">What documents do I need to get started?</div>
+								<div class="accordion__title">Какие документы нужны для начала оформления?</div>
 								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
 									height="50" fill="none" viewBox="8455 4145 50 50">
 									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
@@ -357,15 +355,16 @@
 								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										To get started, you only need your passport and personal details. <span
-											class="accordion__text-devider">Your manager
-											will then clarify your situation and prepare a&nbsp;tailored document
-											checklist.</span>
+										Для старта достаточно паспорта и&nbsp;анкетных данных. <span
+											class="accordion__text-devider">Далее менеджер помогает
+											уточнить детали и&nbsp;формирует итоговый список документов с&nbsp;учетом
+											вашей
+											задачи.</span>
 									</p>
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">How long does the process take?</div>
+								<div class="accordion__title">Сколько времени занимает оформление?</div>
 								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
 									height="50" fill="none" viewBox="8455 4145 50 50">
 									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
@@ -391,16 +390,15 @@
 								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Processing times depend on the service and your circumstances. <span
-											class="accordion__text-devider">We’ll provide an
-											estimated timeline after reviewing your case during the initial
-											consultation.</span>
+										Сроки зависят от типа услуги и специфики вашего запроса. <span
+											class="accordion__text-devider">Ориентировочные рамки
+											мы озвучиваем на&nbsp;первичной консультации, после изучения вашей
+											ситуации.</span>
 									</p>
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">Can everything be done remotely, without being there in
-									person?</div>
+								<div class="accordion__title">Можно ли оформить всё без личного присутствия?</div>
 								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
 									height="50" fill="none" viewBox="8455 4145 50 50">
 									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
@@ -426,18 +424,16 @@
 								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Yes, in most cases the process is fully remote. <span
-											class="accordion__text-devider">If your case requires extra
-											steps or an&nbsp;in‑person visit, we’ll let you know in&nbsp;advance and
-											advise
-											you on
-											the
-											best option.</span>
+										Да, в большинстве случаев оформление ведётся дистанционно. <span
+											class="accordion__text-devider">Если для вашего
+											запроса потребуются дополнительные действия или&nbsp;личное присутствие, мы
+											заранее
+											предупредим вас и&nbsp;подскажем оптимальный формат.</span>
 									</p>
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">What happens if my visa or registration is denied?</div>
+								<div class="accordion__title">Что делать, если мне откажут в визе или регистрации?</div>
 								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
 									height="50" fill="none" viewBox="8455 4145 50 50">
 									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
@@ -463,17 +459,16 @@
 								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										We’ll review the reason for the refusal, <span
-											class="accordion__text-devider">help correct your documents and guide
-											you through the next steps. <span>Your manager will explain the&nbsp;process
-												for
-												your
-												case.</span></span>
+										Мы разбираем причину отказа, <span class="accordion__text-devider">корректируем
+											пакет документов и&nbsp;сопровождаем вас до&nbsp;результата. <span
+												class="text__wrap">Порядок действий в таких ситуациях
+												менеджер разъяснит при
+												необходимости.</span></span>
 									</p>
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">Do you work with citizens of all countries?</div>
+								<div class="accordion__title">Работаете ли вы с гражданами всех стран?</div>
 								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
 									height="50" fill="none" viewBox="8455 4145 50 50">
 									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
@@ -499,15 +494,15 @@
 								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										We work with clients from most countries. Restrictions may apply to certain
-										jurisdictions. <span class="accordion__text-devider">Your manager can clarify
-											whether they affect your
-											case.</span>
+										Мы работаем с клиентами из большинства стран.
+										<span class="accordion__text-devider">По отдельным юрисдикциям возможны
+											ограничения.
+											<span>Рекомендуем уточнить детали у менеджера.</span></span>
 									</p>
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">What payment methods do you accept?</div>
+								<div class="accordion__title">Какие способы оплаты доступны?</div>
 								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
 									height="50" fill="none" viewBox="8455 4145 50 50">
 									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
@@ -533,16 +528,15 @@
 								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										Several payment methods are available, including bank transfers and
-										cryptocurrency. <span class="accordion__text-devider">Your manager will provide
-											the current options and payment
-											details when you apply.</span>
-
+										Доступно несколько вариантов оплаты, включая банковские переводы
+										и&nbsp;криптовалюту.
+										<span class="accordion__text-devider">Актуальные способы и реквизиты предоставит
+											менеджер при оформлении.</span>
 									</p>
 								</div>
 							</div>
 							<div class="accordion__item">
-								<div class="accordion__title">What exactly is covered in the package price?</div>
+								<div class="accordion__title">Что входит в стоимость выбранного пакета?</div>
 								<svg class="accordion__title-icon" xmlns="http://www.w3.org/2000/svg" width="50"
 									height="50" fill="none" viewBox="8455 4145 50 50">
 									<g class="icon icon-tabler icons-tabler-outline icon-tabler-plane"
@@ -568,11 +562,13 @@
 								</svg>
 								<div class="accordion__content">
 									<p class="accordion__text">
-										What’s included depends on your chosen package. <span
-											class="accordion__text-devider">Before we begin, your manager
-											will explain the&nbsp;cost and answer your questions, <span>so you know
-												exactly
-												what you’re paying for.</span></span>
+										Наполнение зависит от выбранного пакета услуг. <span
+											class="accordion__text-devider">Перед началом работы менеджер
+											детально расскажет, что входит в стоимость, и&nbsp;ответит на&nbsp;все
+											вопросы –
+											так
+											вы
+											будете точно понимать, за&nbsp;что&nbsp;платите.</span>
 									</p>
 								</div>
 							</div>
@@ -597,16 +593,16 @@
 
 
 					<aside class="popup__aside">
-						<h2 class="popup__title" id="popup-title">Let's discuss your Cambodia visa details</h2>
+						<h2 class="popup__title" id="popup-title">Обсудим детали вашей визы в Камбоджу</h2>
 						<ul class="popup__features">
-							<li class="popup__feature"><img src="/img/popup_clock.svg" alt="">We'll reply within an hour
+							<li class="popup__feature"><img src="/img/popup_clock.svg" alt="">Ответим в течение часа
 							</li>
-							<li class="popup__feature"><img src="/img/popup_stat.svg" alt="">Individual approach</li>
-							<li class="popup__feature"><img src="/img/popup_sheet.svg" alt="">We handle the paperwork
+							<li class="popup__feature"><img src="/img/popup_stat.svg" alt="">Персональный подход</li>
+							<li class="popup__feature"><img src="/img/popup_sheet.svg" alt="">Поможем в сборе документов
 							</li>
-							<li class="popup__feature"><img src="/img/popup_check.svg" alt="">Step-by-step support
+							<li class="popup__feature"><img src="/img/popup_check.svg" alt="">Поддержка на каждом этапе
 							</li>
-							<li class="popup__feature"><img src="/img/popup_lock.svg" alt="">Secure & Confidential</li>
+							<li class="popup__feature"><img src="/img/popup_lock.svg" alt="">Данные под защитой</li>
 						</ul>
 					</aside>
 
@@ -620,52 +616,52 @@
 
 							<div class="form__card-row">
 								<div class="form__card-group">
-									<label class="form__card-label" for="name">First Name<span
+									<label class="form__card-label" for="name">Имя<span
 											class="label-required">*</span></label>
 									<input class="form__card-input" type="text" maxlength="31" id="name" name="name"
-										placeholder="Rajesh" required>
+										placeholder="Иван" required>
 								</div>
 								<div class="form__card-group">
-									<label class="form__card-label" for="surname">Last Name<span
+									<label class="form__card-label" for="surname">Фамилия<span
 											class="label-required">*</span></label>
 									<input class="form__card-input" type="text" maxlength="31" id="surname"
-										name="surname" placeholder="Kumar" required>
+										name="surname" placeholder="Иванов" required>
 								</div>
 							</div>
 
 							<div class="form__card-group">
-								<label class="form__card-label" for="email">Email<span
+								<label class="form__card-label" for="email">Почта<span
 										class="label-required">*</span></label>
 								<input class="form__card-input" type="email" id="email" maxlength="100" name="email"
 									placeholder="example@gmail.com" required>
 							</div>
 
 							<div class="form__card-group">
-								<label class="form__card-label" for="phone">Phone Number*<span
+								<label class="form__card-label" for="phone">Телефон<span
 										class="label-required">*</span></label>
-								<input class="form__card-input" type="tel" inputmode="numeric" maxlength="15" id="phone"
-									name="phone" placeholder="+91" required>
+								<input class="form__card-input" type="tel" maxlength="15" id="phone" name="phone"
+									placeholder="+7" required>
 							</div>
 
 							<div class="form__card-group">
 								<label class="form__card-label" for="country-input">
-									Country<span class="label-required">*</span>
+									Страна<span class="label-required">*</span>
 								</label>
 								<div class="form__card-wrap custom-select" id="custom-country-select">
 									<input class="form__card-input" type="text" id="country-input" name="country"
-										placeholder="India" autocomplete="off" required />
+										placeholder="Казахстан" autocomplete="off" required />
 									<ul class="custom-select__list" id="country-list" role="listbox"></ul>
 								</div>
 							</div>
 
 							<div class="form__card-group">
-								<label class="form__card-label" id="service-label">Select a Service Package<span
+								<label class="form__card-label" id="service-label">Выбор пакета<span
 										class="label-required">*</span></label>
 								<div class="form__card-wrap custom-select" id="custom-service-select">
 									<input type="hidden" id="service" name="service" value="" required>
 									<button type="button" class="form__card-input custom-select__button is-placeholder"
 										aria-haspopup="listbox" aria-expanded="false">
-										<span class="custom-select__text">Select...</span>
+										<span class="custom-select__text">Выбрать...</span>
 									</button>
 									<ul class="custom-select__list" role="listbox" aria-labelledby="service-label">
 										<li class="custom-select__item" role="option" data-value="Standart">Standart
@@ -678,7 +674,7 @@
 
 							<div class="form__card-row">
 								<fieldset class="form__messengers">
-									<legend class="form__card-label">Messenger (optional)</legend>
+									<legend class="form__card-label">Мессенджер (опционально)</legend>
 
 									<div class="form__messenger">
 										<svg class="form__messenger-icon" width="22" height="22" viewBox="0 0 24 24"
@@ -696,9 +692,8 @@
 											<path
 												d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.2c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3z" />
 										</svg>
-										<input class="form__card-input" type="tel" inputmode="numeric" maxlength="14"
-											id="whatsapp" name="whatsapp" placeholder="+420770663222"
-											autocomplete="tel">
+										<input class="form__card-input" type="tel" id="whatsapp" name="whatsapp"
+											placeholder="+420770663222" autocomplete="tel" />
 									</div>
 								</fieldset>
 							</div>
@@ -709,11 +704,11 @@
 									<rect x="2" y="4" width="20" height="16" rx="2"></rect>
 									<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
 								</svg>
-								Submit
+								Отправить заявку
 							</button>
-							<p class="form__card-note">By clicking "Submit", you consent to&nbsp;the&nbsp;processing of
-								your
-								personal data for the purpose of contacting you.</p>
+							<p class="form__card-note">Нажимая «Отправить», вы соглашаетесь на обработку ваших
+								персональных
+								данных с целью обратной связи.</p>
 						</form>
 					</div>
 				</div>
@@ -728,8 +723,8 @@
 					<div class="footer__logo">
 						<img class="footer__logo-img" src="/img/logo.svg">
 					</div>
-					<p class="footer__socials-text">Your Reliable Partner
-						in Southeast Asia</p>
+					<p class="footer__socials-text">Ваш надёжный партнёр
+						в Юго-Восточной Азии</p>
 					<div class="footer__socials-links">
 						<a class="footer__socials-link" href="#">
 							<svg class="socials-link__img" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
@@ -789,27 +784,27 @@
 					</div>
 				</div>
 				<div class="footer__contacts">
-					<h3 class="footer__column-title">Contacts</h3>
+					<h3 class="footer__column-title">Контакты</h3>
 					<p class="footer__contact-text">apsara.support@gmail.com</p>
 					<a class="footer__contact-text" href="tel:+76667777777">+76667777777</a>
 				</div>
 				<div class="footer__open-hours">
-					<h3 class="footer__column-title">Working Hours</h3>
+					<h3 class="footer__column-title">График работы</h3>
 					<div class="content__wrap">
 						<div class="footer__hours-list">
-							<p class="footer__hours-item">Mon-Fri</p>
-							<p class="footer__hours-item">Sat</p>
-							<p class="footer__hours-item">Sun</p>
+							<p class="footer__hours-item">Пн-Пт</p>
+							<p class="footer__hours-item">Сб</p>
+							<p class="footer__hours-item">Вс</p>
 						</div>
 						<div class="footer__hours-list">
 							<p class="footer__hours-item">10:00-18:00</p>
 							<p class="footer__hours-item">10:00-15:00</p>
-							<p class="footer__hours-item">Day off</p>
+							<p class="footer__hours-item">Выходной</p>
 						</div>
 					</div>
 				</div>
 				<div class="footer__pay-methods">
-					<h3 class="footer__column-title">We Accept</h3>
+					<h3 class="footer__column-title">Принимаем оплату</h3>
 					<div class="pay-methods">
 						<img class="pay-method__icon" src="/img/footer_mastercard.svg">
 						<img class="pay-method__icon" src="/img/footer_visa.svg">
@@ -821,7 +816,7 @@
 
 
 			<div class="footer__bottom">
-				<p class="footer__copyright">© 2026 Apsara East. All rights reserved</p>
+				<p class="footer__copyright">© 2026 Aspara East. Все права защищены</p>
 			</div>
 		</div>
 	</footer>

@@ -85,233 +85,274 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 	});
 });
 
+//lang-switcher dissmiss
+document.addEventListener('click', (e) => {
+	document.querySelectorAll('.header__lang[open]').forEach((d) => {
+		if (!d.contains(e.target)) d.removeAttribute('open');
+	});
+});
+
 //supported countries
-const countries = [
-	"Австралия",
-	"Австрия",
-	"Азербайджан",
-	"Албания",
-	"Алжир",
-	"Андорра",
-	"Ангола",
-	"Антигуа и Барбуда",
-	"Аргентина",
-	"Армения",
-	"Афганистан",
-	"Багамские Острова",
-	"Бангладеш",
-	"Барбадос",
-	"Бахрейн",
-	"Беларусь",
-	"Белиз",
-	"Бельгия",
-	"Бенин",
-	"Болгария",
-	"Боливия",
-	"Босния и Герцеговина",
-	"Ботсвана",
-	"Бразилия",
-	"Бруней",
-	"Буркина-Фасо",
-	"Бурунди",
-	"Бутан",
-	"Вануату",
-	"Ватикан",
-	"Великобритания",
-	"Венгрия",
-	"Венесуэла",
-	"Восточный Тимор",
-	"Вьетнам",
-	"Габон",
-	"Гаити",
-	"Гайана",
-	"Гамбия",
-	"Гана",
-	"Гватемала",
-	"Гвинея",
-	"Гвинея-Бисау",
-	"Германия",
-	"Гондурас",
-	"Гренада",
-	"Греция",
-	"Грузия",
-	"Дания",
-	"Джибути",
-	"Доминика",
-	"Доминиканская Республика",
-	"Египет",
-	"Замбия",
-	"Зимбабве",
-	"Израиль",
-	"Индия",
-	"Индонезия",
-	"Иордания",
-	"Ирак",
-	"Иран",
-	"Ирландия",
-	"Исландия",
-	"Испания",
-	"Италия",
-	"Йемен",
-	"Кабо-Верде",
-	"Казахстан",
-	"Камбоджа",
-	"Камерун",
-	"Канада",
-	"Катар",
-	"Кения",
-	"Кипр",
-	"Киргизия",
-	"Кирибати",
-	"Китай",
-	"Колумбия",
-	"Коморы",
-	"Конго",
-	"Коста-Рика",
-	"Кот-д'Ивуар",
-	"Куба",
-	"Кувейт",
-	"Лаос",
-	"Латвия",
-	"Лесото",
-	"Либерия",
-	"Ливан",
-	"Ливия",
-	"Литва",
-	"Лихтенштейн",
-	"Люксембург",
-	"Маврикий",
-	"Мавритания",
-	"Мадагаскар",
-	"Малави",
-	"Малайзия",
-	"Мали",
-	"Мальдивы",
-	"Мальта",
-	"Марокко",
-	"Маршалловы Острова",
-	"Мексика",
-	"Микронезия",
-	"Мозамбик",
-	"Молдова",
-	"Монако",
-	"Монголия",
-	"Мьянма",
-	"Намибия",
-	"Науру",
-	"Непал",
-	"Нигер",
-	"Нигерия",
-	"Нидерланды",
-	"Никарагуа",
-	"Новая Зеландия",
-	"Норвегия",
-	"Объединённые Арабские Эмираты",
-	"Оман",
-	"Пакистан",
-	"Палау",
-	"Панама",
-	"Папуа — Новая Гвинея",
-	"Парагвай",
-	"Перу",
-	"Польша",
-	"Португалия",
-	"Республика Корея",
-	"Россия",
-	"Руанда",
-	"Румыния",
-	"Сальвадор",
-	"Самоа",
-	"Сан-Марино",
-	"Сан-Томе и Принсипи",
-	"Саудовская Аравия",
-	"Северная Корея",
-	"Северная Македония",
-	"Сейшельские Острова",
-	"Сенегал",
-	"Сент-Винсент и Гренадины",
-	"Сент-Китс и Невис",
-	"Сент-Люсия",
-	"Сербия",
-	"Сингапур",
-	"Сирия",
-	"Словакия",
-	"Словения",
-	"Соломоновы Острова",
-	"Сомали",
-	"Судан",
-	"Суринам",
-	"США",
-	"Сьерра-Леоне",
-	"Таджикистан",
-	"Таиланд",
-	"Танзания",
-	"Того",
-	"Тонга",
-	"Тринидад и Тобаго",
-	"Тувалу",
-	"Тунис",
-	"Туркменистан",
-	"Турция",
-	"Уганда",
-	"Узбекистан",
-	"Украина",
-	"Уругвай",
-	"Фиджи",
-	"Филиппины",
-	"Финляндия",
-	"Франция",
-	"Хорватия",
-	"Центральноафриканская Республика",
-	"Чад",
-	"Черногория",
-	"Чехия",
-	"Чили",
-	"Швейцария",
-	"Швеция",
-	"Шри-Ланка",
-	"Эквадор",
-	"Экваториальная Гвинея",
-	"Эритрея",
-	"Эсватини",
-	"Эстония",
-	"Эфиопия",
-	"Южно-Африканская Республика",
-	"Южный Судан",
-	"Ямайка",
-	"Япония",
+const pageLang = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
+const uiLang = ['ru', 'uk'].includes(pageLang) ? pageLang : 'en';
+
+const UI = {
+	en: { notFound: 'Nothing found', chooseService: 'Select...' },
+	ru: { notFound: 'Ничего не найдено', chooseService: 'Выбрать...' },
+	uk: { notFound: 'Нічого не знайдено', chooseService: 'Вибрати...' },
+};
+
+const countryCodes = [
+	"AD", "AE", "AF", "AG", "AL", "AM", "AO", "AR", "AT", "AU", "AW", "AZ", "BA", "BB", "BD", "BE", "BF", "BG",
+	"BH", "BI", "BJ", "BN", "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CA", "CD", "CF", "CG", "CH", "CI", "CL",
+	"CM", "CN", "CO", "CR", "CU", "CV", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "ER",
+	"ES", "ET", "FI", "FJ", "FM", "FR", "GA", "GB", "GD", "GE", "GH", "GM", "GN", "GQ", "GR", "GT", "GW", "GY",
+	"HN", "HR", "HT", "HU", "ID", "IE", "IL", "IN", "IQ", "IR", "IS", "IT", "JM", "JO", "JP", "KE", "KG", "KH",
+	"KI", "KM", "KN", "KP", "KR", "KW", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY",
+	"MA", "MC", "MD", "ME", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MR", "MT", "MU", "MV", "MW", "MX", "MY",
+	"MZ", "NA", "NE", "NG", "NI", "NL", "NO", "NP", "NR", "NZ", "OM", "PA", "PE", "PG", "PH", "PK", "PL", "PT",
+	"PW", "PY", "QA", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SI", "SK", "SL", "SM", "SN",
+	"SO", "SR", "SS", "ST", "SV", "SY", "SZ", "TD", "TG", "TH", "TJ", "TL", "TM", "TN", "TO", "TR", "TT", "TV",
+	"TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA", "VC", "VE", "VN", "VU", "WS", "YE", "ZA", "ZM", "ZW",
 ];
 
-const datalist = document.getElementById("countries");
+let regionNames = null;
+try {
+	regionNames = new Intl.DisplayNames([uiLang], { type: 'region' });
+} catch (e) {
+	regionNames = null;
+}
 
-countries.forEach((country) => {
-	const option = document.createElement("option");
-	option.value = country;
-	datalist.appendChild(option);
+const countries = countryCodes
+	.map((code) => ({ code, name: regionNames ? regionNames.of(code) : code }))
+	.filter((c) => c.name)
+	.sort((a, b) => a.name.localeCompare(b.name, uiLang));
+
+const countrySelectWrap = document.getElementById("custom-country-select");
+const countryInput = document.getElementById("country-input");
+const countryList = document.getElementById("country-list");
+let selectedCountry = null;
+
+function isValidCountry(v) {
+	const q = v.trim().toLocaleLowerCase(uiLang);
+	return countries.some((c) => c.name.toLocaleLowerCase(uiLang) === q);
+}
+
+function renderCountryList(filterText = "") {
+	countryList.innerHTML = "";
+	const query = filterText.trim().toLocaleLowerCase(uiLang);
+	const filtered = countries.filter((country) =>
+		country.name.toLocaleLowerCase(uiLang).includes(query)
+	);
+
+	if (filtered.length === 0) {
+		const emptyItem = document.createElement("li");
+		emptyItem.className = "custom-select__item";
+		emptyItem.style.cursor = "default";
+		emptyItem.style.opacity = "0.6";
+		emptyItem.textContent = UI[uiLang].notFound;
+		countryList.appendChild(emptyItem);
+		return;
+	}
+
+	filtered.forEach((country) => {
+		const li = document.createElement("li");
+		li.className = "custom-select__item";
+		li.textContent = country.name;
+		li.dataset.code = country.code;
+		if (countryInput.value === country.name) {
+			li.classList.add("is-selected");
+		}
+		li.addEventListener("mousedown", (e) => {
+			e.preventDefault();
+			countryInput.value = country.name;
+			selectedCountry = country.name;
+			countrySelectWrap.classList.remove("is-open");
+		});
+		countryList.appendChild(li);
+	});
+}
+
+countryInput.addEventListener("focus", () => {
+	renderCountryList(countryInput.value);
+	countrySelectWrap.classList.add("is-open");
+});
+
+countryInput.addEventListener("blur", () => {
+	if (!countryInput.value.trim() || isValidCountry(countryInput.value)) return;
+	countryInput.value = "";
+	selectedCountry = null;
+	countrySelectWrap.classList.remove("is-open");
+});
+
+countryInput.addEventListener("input", () => {
+	selectedCountry = null;
+	countrySelectWrap.classList.remove("is-error");
+	renderCountryList(countryInput.value);
+	countrySelectWrap.classList.add("is-open");
+});
+
+document.addEventListener("click", (e) => {
+	if (!countrySelectWrap.contains(e.target)) {
+		countrySelectWrap.classList.remove("is-open");
+	}
 });
 
 //order popup
 const popup = document.getElementById('order-popup');
-const serviceSelect = document.getElementById('service');
+const customSelect = document.getElementById('custom-service-select');
+const hiddenServiceInput = document.getElementById('service');
+const selectBtn = customSelect.querySelector('.custom-select__button');
+const selectText = customSelect.querySelector('.custom-select__text');
+const selectItems = customSelect.querySelectorAll('.custom-select__item');
+
+const serviceWrap = customSelect;
+
+function setServiceError(isError) {
+	serviceWrap.classList.toggle('is-error', isError);
+	selectBtn.setAttribute('aria-invalid', isError ? 'true' : 'false');
+}
+
+function setCustomService(value) {
+	hiddenServiceInput.value = value || "";
+	if (value) {
+		selectText.textContent = value;
+		selectBtn.classList.remove("is-placeholder");
+		setServiceError(false);
+	} else {
+		selectText.textContent = UI[uiLang].chooseService;
+		selectBtn.classList.add("is-placeholder");
+	}
+
+	selectItems.forEach((item) => {
+		if (item.dataset.value === value) {
+			item.classList.add("is-selected");
+		} else {
+			item.classList.remove("is-selected");
+		}
+	});
+}
+
+selectBtn.addEventListener('click', (e) => {
+	e.stopPropagation();
+	const isOpen = customSelect.classList.toggle('is-open');
+	selectBtn.setAttribute('aria-expanded', isOpen);
+});
+
+selectItems.forEach((item) => {
+	item.addEventListener('click', (e) => {
+		e.stopPropagation();
+		setCustomService(item.dataset.value);
+		customSelect.classList.remove('is-open');
+		selectBtn.setAttribute('aria-expanded', 'false');
+	});
+});
+
+document.addEventListener('click', (e) => {
+	if (!customSelect.contains(e.target)) {
+		customSelect.classList.remove('is-open');
+		selectBtn.setAttribute('aria-expanded', 'false');
+	}
+});
 
 document.querySelectorAll('[data-popup-open]').forEach((btn) => {
 	btn.addEventListener('click', () => {
 		const service = btn.dataset.service;
-		if (service) serviceSelect.value = service;
+		setCustomService(service || '');
 
 		closeMenu();
 		popup.showModal();
 	});
 });
 
-popup.querySelector('[data-popup-close]').addEventListener('click', () => popup.close());
+popup.querySelector('[data-popup-close]').addEventListener('click', () => {
+	customSelect.classList.remove('is-open');
+	popup.close();
+	resetLeadForm();
+});
 
 popup.addEventListener('click', (e) => {
-	if (e.target === popup) popup.close();
+	if (e.target === popup) {
+		customSelect.classList.remove('is-open');
+		popup.close();
+		resetLeadForm();
+	}
 });
+
+const namePattern = /[^\p{L}\s'’-]/gu;
+const phoneInputs = [document.getElementById('phone'), document.getElementById('whatsapp')];
+
+function applyPhoneMask(input) {
+	const raw = input.value;
+	const caret = input.selectionStart ?? raw.length;
+	const digitsBefore = raw.slice(0, caret).replace(/\D/g, '').length;
+	const limit = input.maxLength > 0 ? input.maxLength : 14;
+	const digits = raw.replace(/\D/g, '').slice(0, limit - 1);
+
+	if (!digits) {
+		if (document.activeElement === input) {
+			if (raw !== '+') {
+				input.value = '+';
+				input.setSelectionRange(1, 1);
+			}
+		} else if (raw !== '') {
+			input.value = '';
+		}
+		return;
+	}
+
+	const value = '+' + digits;
+	if (raw === value) return;
+
+	input.value = value;
+	const pos = 1 + Math.min(digitsBefore, digits.length);
+	input.setSelectionRange(pos, pos);
+}
+
+phoneInputs.forEach((input) => {
+	input.addEventListener('focus', () => {
+		if (input.value === '') {
+			input.value = '+';
+			input.setSelectionRange(1, 1);
+		}
+	});
+
+	input.addEventListener('input', () => applyPhoneMask(input));
+
+	input.addEventListener('blur', () => {
+		if (input.value === '+') input.value = '';
+	});
+});
+
+
+function filterInput(input, pattern) {
+	input.addEventListener('input', () => {
+		input.value = input.value.replace(pattern, '');
+	});
+}
+
+filterInput(document.getElementById('name'), namePattern);
+filterInput(document.getElementById('surname'), namePattern);
+filterInput(countryInput, namePattern);
+
+
+
+function resetLeadForm() {
+	form.reset();
+	setCustomService('');
+	selectedCountry = null;
+	countrySelectWrap.classList.remove('is-open');
+}
+
+window.addEventListener('pageshow', resetLeadForm);
 
 //lead_id generation
 const form = document.getElementById("lead-form");
+
+form.querySelector(".form__card-submit").addEventListener("click", () => {
+	setServiceError(!hiddenServiceInput.value);
+});
+
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxhTGBugtStzgWt6c9jMTXeu5GoIWFEpiaaRrqgTRxYB8WCEUahHd4H3OMuLmqLQ6VMGw/exec";
 
 function makeLeadId() {
@@ -322,6 +363,15 @@ function makeLeadId() {
 
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
+
+	if (!selectedCountry) return;
+
+	if (!hiddenServiceInput.value) {
+		setServiceError(true);
+		selectBtn.focus();
+		return;
+	}
+	setServiceError(false);
 
 	form.lead_id.value = makeLeadId();
 	const formData = new FormData(form);
