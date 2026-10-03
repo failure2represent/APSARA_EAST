@@ -1605,6 +1605,12 @@ footer {
 	}
 }
 
+@media (max-width: 440px) {
+	.hero {
+		min-height: calc(100svh + 70px);
+	}
+}
+
 @media (max-width: 439px) {
 	header {
 		.header__container {
@@ -4657,9 +4663,6 @@ footer {
 }
 
 /*
-
--поп-ап (+ сделать под мобилы)
-	фикс с позиционированием на реальных устройствах!
 
 -uk страница
 	1920 header hero about services faq footer popup
