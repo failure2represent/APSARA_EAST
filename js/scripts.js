@@ -353,15 +353,30 @@ form.querySelector(".form__card-submit").addEventListener("click", () => {
 	setServiceError(!hiddenServiceInput.value);
 });
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxhTGBugtStzgWt6c9jMTXeu5GoIWFEpiaaRrqgTRxYB8WCEUahHd4H3OMuLmqLQ6VMGw/exec";
+const SCRIPT_URL = "https://healing-trout-winston-relationships.trycloudflare.com/api/lead";
 
 function makeLeadId() {
 	const date = new Date().toISOString().slice(0, 10).replaceAll("-", "");
-	const rand = Math.random().toString(36).slice(2, 6).toUpperCase();
-	return `F-${date}-${rand}`; // F-20260818-A3F9
+
+	const bytes = new Uint8Array(16);
+	window.crypto.getRandomValues(bytes);
+
+	bytes[6] = (bytes[6] & 0x0f) | 0x40;
+	bytes[8] = (bytes[8] & 0x3f) | 0x80;
+
+	const hex = [...bytes].map((b) => b.toString(16).padStart(2, "0"));
+	const uuid = [
+		hex.slice(0, 4).join(""),
+		hex.slice(4, 6).join(""),
+		hex.slice(6, 8).join(""),
+		hex.slice(8, 10).join(""),
+		hex.slice(10, 16).join(""),
+	].join("-");
+
+	return `F-${date}-${uuid.toUpperCase()}`; // F-20260924-550E8400-E29B-41D4-A716-446655440000
 }
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
 	e.preventDefault();
 
 	if (!selectedCountry) return;
@@ -376,12 +391,37 @@ form.addEventListener("submit", (e) => {
 	form.lead_id.value = makeLeadId();
 	const formData = new FormData(form);
 
-	fetch(SCRIPT_URL, {
-		method: "POST",
-		mode: "no-cors",
-		body: formData,
-		keepalive: true,
-	}).catch(() => { });
+	phoneInputs.forEach((input) => {
+		if (!input || !input.name) return;
+		const plain = input.value.replace(/\D/g, '');
+		if (!plain) return;
+		formData.set(input.name, '+' + plain);
+		formData.set(input.name + '_plus', '+');
+		formData.set(input.name + '_plain', plain);
+	});
 
-	form.submit();
+	const payload = Object.fromEntries(formData.entries());
+
+
+	const submitBtn = form.querySelector(".form__card-submit");
+	if (submitBtn) submitBtn.disabled = true;
+
+	try {
+		const res = await fetch(SCRIPT_URL, {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(payload)
+		});
+
+		if (res.ok) {
+
+			form.submit();
+		} else {
+			if (submitBtn) submitBtn.disabled = false;
+			console.error("Ошибка сервера:", res.status);
+		}
+	} catch (err) {
+		if (submitBtn) submitBtn.disabled = false;
+		console.error("Сетевая ошибка:", err);
+	}
 });
